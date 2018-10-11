@@ -1,0 +1,4 @@
+.banner{
+    height:116rpx;
+    margin-bottom:18rpx;
+}

@@ -1,0 +1,26 @@
+.header-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    background:white;
+    border-top:1px solid #efefef;
+    min-height:180rpx;
+}
+.header-wrap{
+    text-align: center;
+    font-size:22rpx;
+    color:#262626;
+}
+.header-wrap .item{
+    flex:1;
+    min-width: 20%;
+    margin-bottom:10rpx;
+}
+.header-wrap image{
+    width:82rpx;
+    height:82rpx;
+    display:block;
+    margin:0 auto 20rpx;
+
+} 

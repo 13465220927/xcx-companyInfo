@@ -1,0 +1,10 @@
+<view class="search-wrap">
+ <i-button i-class="serachBtn" bind:click="handleClick" type="primary" size="small">
+     搜索<i-icon type="unfold" size="18" color="white" />
+ </i-button>
+ <view class="input-wrap">
+     <i-icon  type="search" size="18" color="black" />
+     <i-input i-class="inputSty"  placeholder="请输入关键字" />
+ </view>
+ 
+</view>

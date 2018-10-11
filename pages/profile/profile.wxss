@@ -1,0 +1,10 @@
+page{
+    width:100%;
+    background:#f5f5f5;
+}
+.cell-panel-demo{
+    margin-bottom:30rpx;
+}
+.card-demo image {
+    border-radius: 50%;
+ }

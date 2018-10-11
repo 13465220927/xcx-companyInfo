@@ -1,0 +1,61 @@
+.info-wrap .operaBtns{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    font-size:26rpx; 
+    background:white;
+}
+.operaBtns .toggle{
+   width:45%;
+   height:100rpx;
+   line-height:100rpx;
+}
+.toggle i-icon{
+   position: relative;
+   top:-3rpx;
+}
+.operaBtns .active{
+   color:#fe7c00;
+}
+
+.infoData-wrap{
+    padding:0 42rpx;
+}
+.infoData-wrap .infoData-sign{
+    font-size:26rpx;
+    color:#fe7c00;
+}
+.infoData-wrap .info-header{
+    font-size:24rpx;
+    color:#949494;
+    text-align:center;
+    font-weight:700;
+}
+.infoData-wrap .info-promote,.infoData-wrap .info-content{
+    font-size:22rpx;
+    color:#929292;
+}
+.infoData-wrap .info-promote{
+    height:30rpx;
+    margin:11rpx 0;
+}
+.infoData-wrap .info-promote view{
+    display:inline-block;
+    width:50%;
+    text-align: center;
+    height:30rpx;
+    line-height:30rpx;
+}
+
+
+.infoData-wrap .info-content{
+    text-indent:48rpx;
+}
+.infoData-wrap .info-content view{
+    float:right;
+    margin-top:30rpx;
+    font-size:20rpx;
+    color:#1565a3;
+   
+}

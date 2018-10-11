@@ -1,0 +1,26 @@
+.tools-wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top:40rpx;
+}
+.tools-wrap .item{
+    text-align: center;
+    width:25%;
+    font-size:26rpx;
+    color:#908888; 
+    margin-bottom:20rpx;
+}
+.tools-wrap .item image{
+    width:94rpx;
+    height:66rpx;
+    display:block;
+    margin:0 auto;
+}
+.toMore{
+    float:right;
+    margin-right:30rpx;
+    font-size:26rpx;
+    color:#908888; 
+
+}

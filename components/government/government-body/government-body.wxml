@@ -1,0 +1,36 @@
+<view class="info-wrap">
+    <view class="operaBtns">
+        <view data-sign="0" bindtap="toggleBtn"  class="toggle  {{isActive=='0'?'active':''}}">
+           通知公告 
+        </view>
+    
+        <view data-sign="1" bindtap="toggleBtn" class="toggle {{isActive=='1'?'active':''}}">
+           政策宣传
+        </view>
+        <view data-sign="2" bindtap="toggleBtn" class="toggle {{isActive=='2'?'active':''}}">
+           办事服务
+        </view>
+    </view>
+    <view class="infoData-wrap">
+          <view class="infoData-sign">
+              通知公告
+          </view>
+          <view class="item">
+              <view class="info-header">
+                  2018年国务院打督查征集问题线索和一键建议公告
+              </view>
+              <view class="info-promote">
+                  <view>
+                      发布人:XX县中小企业
+                  </view>
+                  <view>
+                      4天谴-07-26 15:32
+                  </view>
+              </view>
+              <view class="info-content">
+                  为做好2018年方正日，叶璇在微博自曝有新欢，对方是清华大学的高材生。叶璇在微博上传一张高晓松综艺节目的截图，当中话题讲到：“最好的感情，就是让彼此成为更好的自己。叶璇也发表感想称：“他校友高老师的话很在理哦。”随后，有网友留言问到：“帅锅是清华大学高材生啊！”叶璇未否认并回复该位网友：“就是有说不完的共同话题而已。”...
+                  <view>全文</view>
+              </view>
+          </view>
+    </view>
+</view>

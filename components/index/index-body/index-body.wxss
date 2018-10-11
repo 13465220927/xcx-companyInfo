@@ -1,0 +1,103 @@
+.info-wrap{
+
+}
+
+.info-wrap .operaBtns{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     text-align:center;
+     font-size:26rpx; 
+     background:white;
+}
+.operaBtns .toggle{
+    width:45%;
+    height:100rpx;
+    line-height:100rpx;
+}
+.toggle i-icon{
+    position: relative;
+    top:-3rpx;
+}
+.operaBtns .toggle:nth-child(1){
+    margin-right:5%;
+}
+.operaBtns .active{
+    border-bottom:1px solid #e05267;
+}
+.divide{
+    width:2px;
+    height:70rpx;
+    background:#e8e8e8;   
+}
+
+
+.infoData{
+   padding-top:20rpx;
+   margin-top:20rpx;
+   background:white;
+}
+
+.infoData .item{
+    background:white;
+}
+.infoData .item .header{
+    width:100%;
+    height:80rpx;
+    display: flex;
+    align-items: center;
+}
+.infoData .item .header .userImg{
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 10rpx;
+}
+.infoData .item .header .userName{
+    font-size:26rpx;
+    color:#575d86;
+}
+.infoData .item .header .userData{
+    width:60%;
+    display: flex;
+    align-items: center;
+}
+.infoData .item .header .kind{
+    float:right;
+}
+.infoData .item .header .kind .infoType{
+    width:126rpx;
+    height:34rpx;
+    background:#ff8000;
+    font-size:26rpx;
+    color:white;
+}
+.infoData .item .header .kind .call{
+    height:34rpx;
+    width:34rpx;
+    margin:0 10rpx;
+}
+.infoData .item .header .kind text{
+    font-size:24rpx;
+    color:#8f8f8f;
+}
+
+.infoData .item .content{
+    width:100%;
+    padding-left:126rpx;
+    font-size:24rpx;
+    color:#8f8f8f;
+    line-height:30rpx; 
+    padding-bottom:38rpx;
+}
+.infoData .item .content .subType{
+    color:#575d86;
+    font-size:26rpx;
+    margin:18rpx 0;
+    font-weight:700;
+}
+.infoData .item .content .time i-icon{
+    float:right;
+    margin-right:30rpx;
+} 

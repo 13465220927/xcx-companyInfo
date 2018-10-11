@@ -1,0 +1,9 @@
+<search></search>
+
+<index-header infoData="{{infoData}}"></index-header>
+
+<notice></notice>
+
+<banner></banner>
+
+<index-body useInfoTem="serviceTem" leftText="服务机构" rightText="最新发布"></index-body>

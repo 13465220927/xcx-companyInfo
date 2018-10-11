@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/tool/tool",
+    "pages/profile/profile",
+    "pages/service_organ/service_organ",
+    "pages/index/index",
+    "pages/intermediary/intermediary",
+    "pages/government_info/government_info",
+    
+    
+    "pages/link/link",
+    "pages/submit/submit"   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3792d9",
+    "navigationBarTitleText": "新绛县中小企业公众服务",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "backgroundColor": "white",
+    "selectedColor": "#2e74af",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "img/tarbar/index.png",
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "img/tarbar/index_active.png"
+      },
+      {
+        "text": "互联",
+        "iconPath": "img/tarbar/link.png",
+        "pagePath": "pages/link/link",
+        "selectedIconPath": "img/tarbar/link_active.png"
+      },
+      {
+        "text": "发布",
+        "iconPath": "img/tarbar/submit.png",
+        "pagePath": "pages/submit/submit",
+        "selectedIconPath": "img/tarbar/submit.png"
+      },
+      {
+        "text": "工具",
+        "iconPath": "img/tarbar/tool.png",
+        "pagePath": "pages/tool/tool",
+        "selectedIconPath": "img/tarbar/tool_active.png"
+      },
+      {
+        "text": "我的",
+        "iconPath": "img/tarbar/profile.png",
+        "pagePath": "pages/profile/profile",
+        "selectedIconPath": "img/tarbar/profile_active.png"
+      }
+    ]
+  }
+}

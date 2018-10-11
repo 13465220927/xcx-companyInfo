@@ -1,0 +1,34 @@
+.notice-wrap{
+    height:156rpx;
+    background:white;
+    display: flex;
+    align-items: center;
+    padding:20rpx 58rpx 32rpx 20rpx;
+    margin-top:16rpx;
+    position: relative;
+}
+
+.notice-wrap .noticeSign{
+   width:82rpx;
+   height:99rpx;
+   margin-right:20rpx;
+}
+
+.notice-wrap .notice{
+    flex:1;
+    padding-top:20rpx;
+}
+.notice .item{
+    font-size:16rpx;
+    color:#363636;
+    height:24rpx;
+    margin-bottom:14rpx;
+}
+.notice .item .time{
+    float:right;
+}
+.notice .seeMore{
+    float:right;
+    color:#ff3636;
+    font-size:13rpx;
+}

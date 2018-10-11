@@ -1,0 +1,13 @@
+<view class="notice-wrap">
+    <image class="noticeSign" src="../../../img/index/noticesign.jpg" />
+    <view class="notice">
+        <view wx:for="{{noticeData}}" wx:key="{{index}}" class="item">
+            <i-icon color="#363636" type="systemprompt" />
+            [通知公告] {{item.header}}
+            <text class="time">{{item.time}}</text>
+        </view>
+        <view class="seeMore">
+            more>>
+        </view>
+    </view>
+</view>

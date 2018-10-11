@@ -1,0 +1,29 @@
+<view class="infoData">
+         <view class="item">
+              <view class="header">
+                    <view class="userData">
+                        <image class="userImg" src="https://images.pexels.com/photos/1462634/pexels-photo-1462634.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
+                        <text class="userName">怕怕</text>
+                    </view>
+                    
+                    <view class="kind">
+                        <text style="opacity:{{bShowInfoType?'1':'0'}}" class="infoType">求职招聘</text>
+                        <image class="call" src="../../../img/index/call.png" />
+                        <text>拨打电话</text>
+                    </view>
+               </view> 
+               <view class="content">
+                   <view>
+                       本人有几年洪作经验睡得晚怎么样怎么也的大声道撒多撒多半拉吧拉倒阿萨德
+                   </view>
+                   <view class="subType">
+                       个人发布
+                   </view>
+                   <view class="time">
+                       4天前,07-26 15:23
+                       <i-icon type="message_fill" size="16" color="#2e74af" />   
+                   </view>
+               </view>
+        </view>
+         
+    </view> 

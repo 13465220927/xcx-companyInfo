@@ -1,0 +1,10 @@
+<view class="tools-wrap">
+    <view class="item" wx:for="{{toolsData}}" wx:key="{{index}}">
+        <image src="../../../img/{{item.img}}" />
+        <text class="tool-name">
+            {{item.name}}
+        </text>
+    </view>
+   
+</view>
+<view class="toMore">>>更多</view>

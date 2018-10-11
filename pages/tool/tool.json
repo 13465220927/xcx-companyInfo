@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "tool-index":"../../components/tool/tool-index/tool-index"
+      },
+      "navigationBarTitleText": "工具"
+}
