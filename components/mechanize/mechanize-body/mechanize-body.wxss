@@ -1,0 +1,30 @@
+.body-wrap{
+    margin-top:10rpx;
+    background:white;
+    color:#939393;
+    font-size:18rpx;
+    padding:20rpx;
+}
+.body-wrap .info-header{
+    font-size:24rpx;
+    color:#2b3135;
+    font-weight:700;
+}
+.info-detail{
+    text-indent: 36rpx;
+    line-height:30rpx;
+    margin-bottom:20rpx;
+}
+.prizeImg,.pictureImg{
+    display:flex;
+    padding:14rpx;
+    align-items: center;
+}
+.prizeImg image,.pictureImg image{
+    width:126rpx;
+    height:126rpx;
+    margin-right:50rpx;
+}
+.pictureImg image{
+    margin-right:6rpx;
+}

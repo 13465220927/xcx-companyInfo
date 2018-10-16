@@ -1,0 +1,32 @@
+<i-panel title="基础用法">
+    <i-input bind:change="change"  title="企业名称*" autofocus placeholder="请输入服务名称" />
+    <i-input bind:change="change"  title="服务电话*"  placeholder="请输入服务电话" />
+    <i-input bind:change="change"  title="联系人*"  placeholder="服务分类" />
+    <i-input bind:change="change"  title="服务分类*"  placeholder="可选择企业宣传或服务机构" />
+    <i-input bind:change="change"  title="服务logo*" placeholder="(建议尺寸80px*80px)" disabled/>
+    <view class="addImg-wrap">
+        <i-icon type="add" size="38" color="black" />
+    </view>
+    
+    
+    <view class="textarea">
+        <text>企业简介*</text>
+        <textarea placeholder="请输入文字内容,不超过300字" ></textarea>
+    </view>
+    <view class="textarea">
+        <text>服务项目*</text>
+        <textarea placeholder="请输入文字内容,不超过300字" ></textarea>
+    </view>
+    <view class="addImg-wrap">
+        <i-icon type="add" size="38" color="black" />
+    </view>
+    
+    <i-input bind:change="change"  title="收费标准*"  placeholder="服务分类" />
+    <i-input bind:change="change"  title="优惠政策*"  placeholder="服务分类" />
+    <i-input   title="资质证书" placeholder="(建议尺寸375px*150px)" disabled/>
+    <view class="addImg-wrap">
+        <i-icon type="add" size="38" color="black" />
+    </view>
+
+    <i-button bind:click="handleClick" size="small" type="primary">提交</i-button>
+</i-panel>

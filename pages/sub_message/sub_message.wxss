@@ -1,0 +1,40 @@
+.info-item{
+    display:flex;
+    align-items: center;
+}
+.info-item text,radio-group text,.section__title,.textarea-wrap text{
+    width:220rpx;
+    text-align:center;
+    font-size:30rpx;
+    color:#495060;
+}
+radio-group text,.textarea-wrap text{
+    padding-left:36rpx;
+    margin-right:20rpx;
+}
+.section__title{
+    display:inline-block;
+    text-align: left;
+    padding-left:36rpx;
+}
+picker{
+    display:inline-block;
+    width:300rpx;
+    font-size:30rpx;
+    color:#495060;
+}
+.section{
+    margin:20rpx auto;
+}
+.textarea-wrap textarea{
+    height:200rpx;
+
+    padding-left:36rpx;
+    font-size:30rpx;
+}
+.addImg-wrap{
+    margin:20rpx 0 20rpx 30rpx;
+    width:100rpx;
+    height:100rpx;
+    border:1px solid #dddddd;
+}

@@ -1,2 +1,11 @@
-<!--components/index/login/login.wxml-->
-<text>components/index/login/login.wxml</text>
+<view class="login-wrap">
+    <view class="body">
+         <image class="loginText" src="../../../img/index/loginText.png" />
+         <button open-type="getUserInfo">自动授权登录</button>
+
+         <view class="toPhoneIdent">
+            手机验证码登录>
+          </view>
+    </view>
+    
+</view>

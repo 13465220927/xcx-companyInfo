@@ -1,1 +1,7 @@
-{}
+{
+    
+    "usingComponents": {
+        "link-item":"../../components/link/link-item/link-item"
+      },
+      "navigationBarTitleText": "互通"
+}

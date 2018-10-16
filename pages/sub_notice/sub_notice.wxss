@@ -1,0 +1,20 @@
+.agreement{
+    font-size:30rpx;
+    padding-left:40rpx;
+}
+.agreement text{
+    color:#ed3f14;
+}
+.promote{
+    background:#2d8cf0;
+    font-size:30rpx;
+    color:white;
+    text-indent: 60rpx;
+    padding:10rpx;
+}
+.subBtn{
+    width:400rpx !important;
+    height:80rpx !important;
+    line-height:80rpx;
+    margin:30rpx auto !important;
+}

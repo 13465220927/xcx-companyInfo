@@ -21,9 +21,16 @@
                    </view>
                    <view class="time">
                        4天前,07-26 15:23
-                       <i-icon type="message_fill" size="16" color="#2e74af" />   
+                       <i-icon bindtap="showReply" type="message_fill" size="16" color="#2e74af" />   
+                   </view>
+                   <view class="replayMessage">
+                        <view wx:for="{{replyMessage}}" wx:key="{{index}}" class="item">
+                            {{item.name}}:{{item.comment}}
+                        </view>
                    </view>
                </view>
+               
+               <i-input i-class="replyInp" bind:blur="blur" bind:confirm="confirm" wx:if="{{bShowReply}}"  autofocus placeholder="请输入回复信息" />
         </view>
          
     </view> 

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "message-item":"../../components/message/message-item/message-item"
+      },
+      "navigationBarTitleText": "我的消息"
+}

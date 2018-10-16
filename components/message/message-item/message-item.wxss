@@ -1,0 +1,41 @@
+.mess-wrap{
+    width:100%;
+    background:white;
+}
+.mess-wrap .item {
+   display:flex;
+   align-items: center;
+   padding:24rpx;
+   border-bottom:1px solid #f1eded;
+}
+.mess-wrap .item .userImg{
+    position: relative;
+}
+.mess-wrap .item .userImg i-badge {
+    position: absolute;
+    left:80%;
+    top:-20%;
+}
+.mess-wrap .item .userImg image{
+    width:96rpx;
+    height:96rpx;
+    margin:0 32rpx;
+    border-radius:50%;
+}
+.item .item-content{
+
+}
+.item .item-content .header{
+    font-size:30rpx;
+    font-weight: 600;
+    margin-bottom:10rpx;
+}
+.item .item-content .last-info{
+    font-size:24rpx;
+    color:#7c7c7c;
+}
+.item .time{
+    width:166rpx;
+    font-size:23rpx;
+    text-align:right;
+}

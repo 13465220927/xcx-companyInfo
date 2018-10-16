@@ -1,0 +1,17 @@
+<view class="notice_wrap">
+     <i-input disabled bind:change="change"  title="类型" placeholder="通知公告" />
+
+     <i-input  bind:change="change"  title="标题" placeholder="请输入标题" />
+     <i-input  bind:change="change"  title="作者" placeholder="请填写作者" />
+     <textarea placeholader="输入公告内容"></textarea>
+     <i-input  bind:change="change"   placeholder="上传图片(最多上传6张)" />
+     <view class="agreement">
+         发布条款
+         <checkbox value="{{isAgree}}" checked="{{true}}"/>已阅读,并同意
+        <text>发布须知</text>
+     </view>
+     <view class="promote">
+         该模块展示时间为60天，发布后您可以在【我的】-【发布管理】手动下架信息
+     </view>
+     <i-button i-class="subBtn" bind:click="handleClick" size="small" type="primary">发布</i-button>
+</view>

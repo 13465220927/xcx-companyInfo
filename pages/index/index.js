@@ -1,7 +1,7 @@
-//index.js
-//获取应用实例
-const app = getApp()
 
+const app = getApp()
+const manageLib=require('../../utils/manage');
+const apiLib=require('../../utils/api');
 Page({
   data: {
     infoData:[
@@ -15,7 +15,8 @@ Page({
   //事件处理函数
 
   onLoad: function () {
-    
+     apiLib.getMessageList('rkx2FZ7sX')
+   
   },
   getUserInfo: function(e) {
    

@@ -1,0 +1,21 @@
+.addImg-wrap{
+    margin:20rpx 0 20rpx 30rpx;
+    width:100rpx;
+    height:100rpx;
+    border:1px solid #dddddd;
+}
+.textarea{
+    height:174rpx;
+    color:#495060;
+    min-width:65px;
+    padding-right:10px;
+    font-size:32rpx;
+    padding-left:28rpx;
+}
+.textarea text{
+    font-weight:700;
+    margin-bottom:20rpx;
+}
+.textarea textarea{
+    display:inline-block;
+}

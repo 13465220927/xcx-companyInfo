@@ -1,0 +1,38 @@
+<view class="header-wrap">
+     <image class="userImg" src="https://images.pexels.com/photos/1468311/pexels-photo-1468311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
+     <view class="company-name">
+          xxx先机械有限公司
+     </view>
+     <view class="company-info">
+            <view>
+                电话:0351-032269
+                <i-icon type="mobilephone" size="16" color="white" />
+            </view>
+            <view>
+                地址:太原市小店区体育南路200号
+                <i-icon type="coordinates" size="16" color="white" />
+            </view>
+            <view>
+                分类:机械制造
+                
+            </view>
+     </view>
+</view>
+<view class="contact">
+    <i-icon bindtap="toggleOpera"  i-class="floRight" type="more" size="24" color="white" />
+    <view wx:if="{{bShowOpera}}" class="opera">
+         <view class="item">
+            <i-icon type="interactive_fill" size="16" color="white" />
+            私信
+         </view>
+         <view class="item">
+            <i-icon type="collection_fill" size="16" color="white" />
+            评论
+         </view>
+         <view class="item">
+           <i-icon type="mobilephone_fill" size="16" color="white" />
+            电话
+         </view>
+    </view>
+    
+</view>

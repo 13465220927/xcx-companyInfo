@@ -1,0 +1,14 @@
+<view class="link-wrap">
+    <view class="item" wx:for="{{linkData}}" wx:key="{{index}}">
+        <i-panel class="cell-panel-demo">
+            <i-cell i-class="listSty" title="{{item.title}}" is-link value="更多"></i-cell>
+        </i-panel>
+        <view class="sites">
+            <view class="site-item" wx:for="{{item.sites}}" wx:key="{{index}}">
+                {{item.name}}
+            </view>
+            
+        </view>
+    </view>
+</view>
+

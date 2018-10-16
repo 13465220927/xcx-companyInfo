@@ -1,15 +1,24 @@
 {
   "pages": [
-    "pages/tool/tool",
-    "pages/profile/profile",
-    "pages/service_organ/service_organ",
     "pages/index/index",
-    "pages/intermediary/intermediary",
+    "pages/mechanize/mechanize",
     "pages/government_info/government_info",
     
+    "pages/sub_message/sub_message",
+    "pages/sub_notice/sub_notice",
     
+    
+    "pages/message/message",
+    
+    "pages/profile/profile",
+    "pages/conpany_manage/company_manage",
     "pages/link/link",
-    "pages/submit/submit"   
+    "pages/tool/tool",
+    "pages/service_organ/service_organ",
+    "pages/intermediary/intermediary",
+    
+    "pages/submit/submit"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

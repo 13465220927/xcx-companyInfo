@@ -67,3 +67,14 @@
      float:right;
      margin-right:30rpx;
  } 
+ .replayMessage{
+     padding-top:5rpx;
+     padding-right:10rpx;
+ }
+ .replyInp{
+     position: absolute;
+     bottom:0rpx;
+     left:0;
+     background:rgb(232, 233, 229);
+     width:100%;
+ }

@@ -10,7 +10,7 @@ Page({
          {icon:"collection_fill",name:"我的企业"},
          {icon:"interactive_fill",name:"消息管理"},
          {icon:"mine_fill",name:"用户注册"},
-         {icon:"emoji_fill",name:"信息记录"},
+         {icon:"emoji_fill",name:"信息反馈"},
        ]
   },
 

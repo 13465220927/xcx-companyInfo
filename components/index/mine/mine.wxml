@@ -1,0 +1,30 @@
+<view class="mine-wrap">
+     <view class="mine-header">
+         <image class="userImg" src="https://images.pexels.com/photos/704857/pexels-photo-704857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"/>
+         <view class="userName">风信子</view>
+         <view class="userID">
+             UID:3028211
+         </view>
+         <view class="promote">
+             <i-icon type="flag_fill" size="32" color="white" />
+             <view>
+                 如果您是个人用户直接点击发布管理,如果您是企业用户请点击企业管理
+             </view>
+         </view>
+     </view>
+     <view class="mine-body">
+         <i-panel  class="cell-panel-demo" title="">
+            <i-cell title="店铺管理" is-link>
+                <i-icon color="#feb624" size="25" type="shop_fill" slot="icon" />
+            </i-cell>
+         </i-panel>
+          <i-panel  class="cell-panel-demo" title="">
+            <i-cell title="发布管理" is-link>
+                <i-icon color="#3b97ee" size="25" type="document" slot="icon" />
+            </i-cell>
+         </i-panel>
+     </view>
+     <view class="mine-footer">
+        <i-button size="small" bind:click="handleClick" type="primary">退出</i-button>
+     </view>
+</view>

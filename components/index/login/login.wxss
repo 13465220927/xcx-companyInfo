@@ -1,1 +1,41 @@
-/* components/index/login/login.wxss */
+.login-wrap{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+    background:url('https://xcx5.zhuozhida.cn/images/zhuqi/loginBg.jpg') no-repeat;
+    background-size:100% 100vh;
+    z-index:1;
+}
+.login-wrap .body{
+    background:white;
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:530rpx;
+    height:536rpx;
+    transform: translate(-50%,-50%);
+    padding-top:60rpx;
+}
+.body .loginText{
+    width:80rpx;
+    height:41rpx;
+    display:block;
+    margin:0 auto;
+}
+.body button{
+    width:308rpx;
+    height:96rpx;
+    padding:0;
+    background:#3bb5f6;
+    color:white;
+    font-size:30rpx;
+    margin:112rpx auto;
+    line-height:96rpx;
+}
+.body  .toPhoneIdent{
+    color:#5bafd6;
+    font-size:30rpx;
+    text-align:center;
+}

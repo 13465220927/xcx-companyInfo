@@ -1,4 +1,14 @@
+.banner-wrap{
+    display:flex;
+}
+.banner-wrap .myqy{
+    width:148rpx;
+    height:116rpx;
+    margin-right:10rpx;
+}
+
 .banner{
     height:116rpx;
+    flex:1;
     margin-bottom:18rpx;
 }

@@ -1,2 +1,1 @@
-<!--pages/link/link.wxml-->
-<text>pages/link/link.wxml</text>
+<link-item></link-item>
