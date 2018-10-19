@@ -1,12 +1,12 @@
 
-<i-card full title="某某某有限责任公司"  thumb="https://i.loli.net/2017/08/21/599a521472424.jpg" i-class="card-demo">
+<i-card full title="{{userName}}"  thumb="{{logo}}" i-class="card-demo">
    
 </i-card>
 
 
 <i-cell-group>
     <i-panel wx:for="{{operaData}}" wx:key="{{index}}" class="cell-panel-demo" title="带 icon 的 Cell">
-        <i-cell title="{{item.name}}" is-link>
+        <i-cell title="{{item.name}}" is-link url="{{item.url}}">
             <i-icon  size="25" type="{{item.icon}}" slot="icon" />
         </i-cell>
     </i-panel>

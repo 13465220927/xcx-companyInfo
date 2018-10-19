@@ -8,6 +8,6 @@
 
 <index-body></index-body>
 
-<!-- <login></login>
+<login wx:if="{{bShowLogin}}"  bind:cancelLoginDialog="cancelLoginDialog"></login>
 
-<mine></mine> -->
+<!-- <mine></mine> -->

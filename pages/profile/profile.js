@@ -1,12 +1,18 @@
-// pages/profile/profile.js
+
+const app=getApp();
+const manageLib=require('../../utils/manage');
+const userLib=require('../../utils/user');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+       userName:"",
+       logo:"https://i.loli.net/2017/08/21/599a521472424.jpg",
        operaData:[
-         {icon:"brush_fill",name:"我的发布"},
+         {icon:"brush_fill",name:"我的发布",url:"../profile_my_subcontent/profile_my_subcontent"},
          {icon:"collection_fill",name:"我的企业"},
          {icon:"interactive_fill",name:"消息管理"},
          {icon:"mine_fill",name:"用户注册"},
@@ -18,7 +24,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(['userData['+'userName'+']'])
+       this.setData({
+          userName:app.globalData.userData.userName,
+          logo:app.globalData.userData.logo
+       })  
+       //userLib.updateUserLogo(app.globalData.userData.id,"/upload/images/img20181013173940.jpeg");
   },
 
   /**

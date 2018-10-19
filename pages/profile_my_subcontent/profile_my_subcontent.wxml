@@ -1,0 +1,6 @@
+<view class="header">
+    信息列表 <i-icon type="unfold" size="16" color="black" />
+    <i-button i-class="btn" bind:click="handleClick" type="ghost">继续发布</i-button>
+</view>
+
+<government-body  docs="{{docs}}"  bShowToggerBar="{{false}}"></government-body>

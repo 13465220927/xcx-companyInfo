@@ -1,0 +1,9 @@
+<view class="header">{{doc.title}}</view>
+<view class="promote">
+   <text>{{doc.author}}</text>
+   <text>{{doc.data}}</text>
+</view>
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

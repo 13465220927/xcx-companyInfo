@@ -21,6 +21,7 @@
 
 .infoData-wrap{
     padding:0 42rpx;
+    margin-bottom:20rpx;
 }
 .infoData-wrap .infoData-sign{
     font-size:26rpx;

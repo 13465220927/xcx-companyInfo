@@ -1,10 +1,15 @@
 <view class="login-wrap">
     <view class="body">
          <image class="loginText" src="../../../img/index/loginText.png" />
-         <button open-type="getUserInfo">自动授权登录</button>
+         <view class="loginInput">
+               <i-input bind:change="emailChange"  title="邮箱" autofocus placeholder="请输入邮箱" />
+               <i-input bind:change="passChange" title="密码" placeholder="请输入密码" />
+         </view>
+         
+         <button bindtap="handleLogin">自动授权登录</button>
 
          <view class="toPhoneIdent">
-            手机验证码登录>
+            注册账号>
           </view>
     </view>
     
