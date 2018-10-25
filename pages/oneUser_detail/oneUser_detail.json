@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "recruit-info":"../../components/common/recruit-info/recruit-info"
+    }  
+}

@@ -13,7 +13,8 @@ Page({
       {url:"",img:"index/service.png",name:"服务机构"},
       {url:"",img:"index/infogroup.png",name:"信息广场"}
     ],
-    bShowLogin:false
+    bShowLogin:false,
+    contentList:[]
   },
   //事件处理函数
 
@@ -21,12 +22,11 @@ Page({
      let userData=wx.getStorageSync('userData');
      if(userData){
        console.log(userData)
-       app.globalData.userData=userData;
+       userLib.doLogin(userData.email,userData.password,app,this)
      }else{
        this.setData({bShowLogin:true})
      }
-     //userLib.doLogin('wangjuesix@gmail.com','123456',app);
-     //apiLib.getMessageList('rkx2FZ7sX')
+     manageLib.getContentList(this);
    
   },
   getUserInfo: function(e) {

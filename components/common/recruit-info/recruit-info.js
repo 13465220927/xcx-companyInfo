@@ -7,6 +7,10 @@ Component({
      bShowInfoType:{
        type:Boolean,
        value:true
+     },
+     contentList:{
+       type:Array,
+       valuse:[]
      }
   },
 
@@ -18,13 +22,36 @@ Component({
      replyMessage:[
        {name:"路人甲",comment:"这是路人甲的评论"},
        {name:"路人已",comment:"这是d2312312路人甲的评论老铁666，无敌，点赞关注走一波"}
-     ]
+     ],
+     bShowOpera:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    toUserDetail(e){
+      let obj={};
+      let userData=this.data.contentList[e.currentTarget.dataset.index];
+      obj.udate=userData.udate;
+      obj.uid=userData.uid;
+      obj.userName=userData.userName;
+      obj.logo=userData.logo;
+      obj.isAdmin=userData.isAdmin;
+      wx.navigateTo({
+        url:`../oneUser_detail/oneUser_detail?userData=${JSON.stringify(obj)}`
+      })
+    },
+    showOpera(){
+      this.setData({
+        bShowOpera:!this.data.bShowOpera
+      })
+    },
+    calling(){
+      wx.makePhoneCall({
+        phoneNumber:"12345656"
+      })
+    },
     showReply(){
        this.setData({
         bShowReply:!this.data.bShowReply

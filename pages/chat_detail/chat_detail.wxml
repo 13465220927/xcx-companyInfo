@@ -1,0 +1,4 @@
+<view>
+    <friend_panel conversationData="{{conversationData}}"></friend_panel>
+    <my-panel bind:postMessage="postMessage" friendId="{{friendId}}"></my-panel>
+</view>

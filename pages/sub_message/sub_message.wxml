@@ -51,11 +51,11 @@
         <text>自我评价</text>
          <textarea  placeholder="个人介绍，工作经历，职位等信息,为了保护个人隐私,请不要泄漏个人qq或者微信号" />
    </view>
-   <i-input   title="添加照片" placeholder="最多提交9张" disabled/>
+   <i-input title="添加照片" placeholder="最多提交9张" disabled/>
    <view class="addImg-wrap">
-        <i-icon type="add" size="38" color="black" />
+        <i-icon bindtap="chooseImg" type="add" size="38" color="black" />
     </view>
      <i-input bind:change="change"  title="电话" placeholder="请填写联系人电话" />
      <i-input bind:change="change" disabled  title="信息置顶" placeholder="选择后信息将显示在最顶部" />
 </i-panel>
-<i-button bind:click="handleClick" type="primary" size="small">发布</i-button>
+<i-button bind:click="handleSubmit" type="primary" size="small">发布</i-button>

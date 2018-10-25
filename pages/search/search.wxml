@@ -1,0 +1,2 @@
+<search bind:searchArticle="searchArticle" isNav="{{false}}"></search>
+<recruit-info contentList="{{docs}}"></recruit-info>

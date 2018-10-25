@@ -1,4 +1,6 @@
-// pages/sub_message/sub_message.js
+const userLib=require('../../utils/user');
+const manageLib=require('../../utils/manage');
+const app=getApp();
 Page({
 
   /**
@@ -36,7 +38,10 @@ Page({
             {name: '男', value: '1'},
             {name: '女', value: '2'}
     ],
-    array: ['美国', '中国', '巴西', '日本']
+    array: ['美国', '中国', '巴西', '日本'],
+    upLoadImages:[],
+    contentTags:[],
+    categoryList:[]
   },
 
   /**
@@ -51,9 +56,32 @@ Page({
       
   },
   onLoad: function (options) {
-
+    if(app.globalData.contentTags.length>0){
+        manageLib.getCategoryList(this,app);
+        manageLib.getContentTagList(this,app)
+    }  
+   
+    
   },
-
+  chooseImg(){
+    let that=this;  
+    wx.chooseImage({
+        count: 9-this.data.upLoadImages.length, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+            console.log(res.tempFilePaths)
+            var tempFilePaths = res.tempFilePaths;
+            that.setData({
+                upLoadImages:that.data.upLoadImages.concat(tempFilePaths)
+            })
+        }
+    })
+  },
+  handleSubmit(){
+    userLib.uploadImg(this.data.upLoadImages[i]);
+    userLib.addOneContent();
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

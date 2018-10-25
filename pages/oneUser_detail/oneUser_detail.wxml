@@ -1,0 +1,12 @@
+<view class="user-header">
+    <image src="{{userData.logo}}"></image>
+    <view class="userInfo">
+         <view>{{userData.userName}}</view>
+         <view class="info-wrap">
+             <view>注册时间：{{userData.udate}}</view>
+             <view>助企圈发布：{{totalItems}}条</view>
+         </view>
+    </view>
+</view>
+
+<recruit-info contentList="{{docs}}"></recruit-info>

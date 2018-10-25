@@ -10,12 +10,12 @@ Page({
    */
   data: {
        userName:"",
-       logo:"https://i.loli.net/2017/08/21/599a521472424.jpg",
+       logo:"",
        operaData:[
          {icon:"brush_fill",name:"我的发布",url:"../profile_my_subcontent/profile_my_subcontent"},
-         {icon:"collection_fill",name:"我的企业"},
-         {icon:"interactive_fill",name:"消息管理"},
-         {icon:"mine_fill",name:"用户注册"},
+         {icon:"collection_fill",name:"我的企业",url:"../company_info/company_info"},
+         {icon:"interactive_fill",name:"消息管理",url:"../message/message"},
+         {icon:"mine_fill",name:"用户注册",url:"../signin/signin"},
          {icon:"emoji_fill",name:"信息反馈"},
        ]
   },

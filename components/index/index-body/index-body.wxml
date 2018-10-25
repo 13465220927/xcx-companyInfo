@@ -10,6 +10,6 @@
            <i-icon type="unfold" size="16" color="black" />
         </view>
     </view>
-    <recruit-info wx:if="{{!useInfoTem}}"  bShowInfoType="{{bShowInfoType}}"></recruit-info>
-    <service-info wx:if="{{useInfoTem=='serviceTem'?true:false}}"></service-info>
+    <recruit-info contentList="{{contentList}}" wx:if="{{!useInfoTem}}"  bShowInfoType="{{bShowInfoType}}"></recruit-info>
+    <service-info contentList="{{contentList}}" wx:if="{{useInfoTem=='serviceTem'?true:false}}"></service-info>
 </view>

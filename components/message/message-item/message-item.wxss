@@ -7,6 +7,7 @@
    align-items: center;
    padding:24rpx;
    border-bottom:1px solid #f1eded;
+   position: relative;
 }
 .mess-wrap .item .userImg{
     position: relative;
@@ -38,4 +39,8 @@
     width:166rpx;
     font-size:23rpx;
     text-align:right;
+    position: absolute;
+    right:20rpx;
+    top:50%;
+    transform: translateY(-50%);
 }

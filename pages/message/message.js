@@ -1,18 +1,20 @@
-// pages/message/message.js
+const userLib=require('../../utils/user');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+       chatList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    userLib.getChatList('111',this)
+      
+   
   },
 
   /**

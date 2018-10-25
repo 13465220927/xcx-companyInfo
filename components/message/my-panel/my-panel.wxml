@@ -1,0 +1,4 @@
+<view class="sendInput">
+    <input bindinput="inputChange" placeholder="在此回复消息" />
+    <button bindtap="handleSubmit">发送</button>
+</view>

@@ -5,6 +5,8 @@ App({
    
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    contentTags:[],
+    categoryList:[]
   }
 })

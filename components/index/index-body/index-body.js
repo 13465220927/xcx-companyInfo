@@ -19,6 +19,10 @@ Component({
     useInfoTem:{       //使用的信息模板
       type:String,
       value:""
+    },
+    contentList:{
+      type:Array,
+      value:""
     }
   },
 

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "friend_panel":"../../components/message/friend-panel/friend-panel",
+        "my-panel":"../../components/message/my-panel/my-panel"
+      }
+}

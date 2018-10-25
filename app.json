@@ -1,22 +1,27 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/index/index",
-    "pages/sub_message/sub_message",
+    "pages/oneUser_detail/oneUser_detail",
+    "pages/company_info/company_info",
+    "pages/map/map",
     "pages/mechanize/mechanize",
-    
+    "pages/message/message",
+    "pages/chat_detail/chat_detail",
+    "pages/signin/signin",
+    "pages/sub_message/sub_message",
+    "pages/submit/submit",
     "pages/profile_my_subcontent/profile_my_subcontent",
     "pages/government_info/government_info",
-   
     "pages/sub_notice/sub_notice",
-    "pages/message/message",
     "pages/profile/profile",
     "pages/conpany_manage/company_manage",
     "pages/link/link",
     "pages/tool/tool",
     "pages/service_organ/service_organ",
     "pages/intermediary/intermediary",
-    "pages/submit/submit",
     "pages/read_content/read_content"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

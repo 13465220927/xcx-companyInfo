@@ -21,7 +21,7 @@
               </view>
               <view class="info-promote">
                   <view>
-                      发布人:{{item.author}}
+                      发布人:{{item.userName}}
                   </view>
                   <view>
                      {{item.date}}

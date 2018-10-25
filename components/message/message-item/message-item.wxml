@@ -1,38 +1,21 @@
 <view class="mess-wrap">
-    <view class="item">
+    <view wx:for="{{chatList}}" data-id="{{item.friend_id}}" wx:key="{{index}}" class="item" bindtap="toDetail">
         <view class="userImg" >
             <i-badge count="66" i-class-alone="demo-badge-alone" />
-            <image src="https://images.pexels.com/photos/376361/pexels-photo-376361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
+            <image src="{{item.img}}" />
         </view>
         
         <view class="item-content">
            <view class="header">
-               xx先公司租客龙附
+               {{item.name}}
            </view>
            <view class="last-info">
-               您好，我有个事请教的水电站额。。
+              {{item.message_content}}
            </view>
         </view>
         <view class="time">
-            2018-03-04
+           {{item.send_time}}
         </view>
     </view>
-    <view class="item">
-        <view class="userImg" >
-            <i-badge count="4" i-class-alone="demo-badge-alone" />
-            <image src="https://images.pexels.com/photos/376361/pexels-photo-376361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
-        </view>
-        
-        <view class="item-content">
-           <view class="header">
-               xx先公司租客龙附
-           </view>
-           <view class="last-info">
-               您好，我有个事请教的水电站额。。
-           </view>
-        </view>
-        <view class="time">
-            2018-03-04
-        </view>
-    </view>
+   
 </view>

@@ -20,6 +20,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    toSign(){
+      wx.navigateTo({
+        url:"../signin/signin"
+      })
+    },
     emailChange(e){
         console.log(e.detail.detail.value);
         this.setData({

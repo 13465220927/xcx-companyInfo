@@ -4,7 +4,7 @@
  </i-button>
  <view class="input-wrap">
      <i-icon  type="search" size="18" color="black" />
-     <i-input i-class="inputSty"  placeholder="请输入关键字" />
+     <i-input bind:change="inputChange" i-class="inputSty"  placeholder="请输入关键字" />
  </view>
  
 </view>

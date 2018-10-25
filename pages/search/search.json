@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "search":"../../components/index/search/search",
+        "recruit-info":"../../components/common/recruit-info/recruit-info"
+      }
+}

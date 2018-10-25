@@ -78,3 +78,21 @@
      background:rgb(232, 233, 229);
      width:100%;
  }
+ .opera{
+    width:375rpx;
+    height:80rpx;
+    background:#4c5154;
+    font-size:24rpx;
+    float:right;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    margin-right:10rpx;
+    padding:0 8rpx;
+}
+.opera .item{
+    
+    border-right:1px solid #313639;
+    background:#4c5154;
+}

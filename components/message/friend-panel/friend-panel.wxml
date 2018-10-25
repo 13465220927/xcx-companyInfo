@@ -1,0 +1,8 @@
+<view class="conversation-wrap">
+   <view wx:for="{{conversationData}}" wx:key="{{index}}" class="item">
+     <image class="{{item.sender_id==openId?'floRight':''}}" src="https://images.pexels.com/photos/1087735/pexels-photo-1087735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
+     <view class="content  {{item.sender_id==openId?'floRight':''}}">
+          {{item.message_content}}
+     </view>
+   </view> 
+</view>

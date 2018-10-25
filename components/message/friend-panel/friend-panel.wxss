@@ -1,0 +1,38 @@
+.item{
+    min-height:100rpx;
+    width:100%;
+    overflow: hidden;
+    margin-bottom:20rpx;
+}
+.item::after{
+    content: "";
+    height:0;
+    clear: both;
+}
+.item image{
+    width:100rpx;
+    height:100rpx;
+    float:left;
+}
+.item .content{
+    max-width:460rpx;
+    margin-left:20rpx;
+    background:white;
+    min-height:100rpx;
+    float:left;
+    font-size:30rpx;
+    padding:20rpx;
+}
+
+.item .floRight{
+    float:right;
+}
+image.floRight{
+    margin-left:20rpx;
+}
+.item view.floRight{
+    background:#9eea6a;
+}
+.item .mine{
+    
+}
