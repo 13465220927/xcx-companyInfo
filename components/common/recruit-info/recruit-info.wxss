@@ -6,6 +6,7 @@
  
  .infoData .item{
      background:white;
+     position: relative;
  }
  .infoData .item .header{
      width:100%;
@@ -30,7 +31,8 @@
      align-items: center;
  }
  .infoData .item .header .kind{
-     float:right;
+    position: absolute;
+    right:10rpx;
  }
  .infoData .item .header .kind .infoType{
      width:126rpx;
@@ -83,16 +85,22 @@
     height:80rpx;
     background:#4c5154;
     font-size:24rpx;
-    float:right;
     display:flex;
     justify-content: center;
     align-items: center;
     color:white;
     margin-right:10rpx;
     padding:0 8rpx;
+    position: absolute;
+    right:60rpx;
+    bottom:0;
 }
+
 .opera .item{
     
     border-right:1px solid #313639;
     background:#4c5154;
+}
+.opera .item i-icon{
+    margin-right:5rpx;
 }

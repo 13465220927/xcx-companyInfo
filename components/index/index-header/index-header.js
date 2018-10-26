@@ -21,6 +21,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  }
+      toUrl(e){
+          if(e.currentTarget.dataset.url){
+            wx.navigateTo({
+              url:e.currentTarget.dataset.url
+            })
+          }
+          
+      }
+  } 
 })

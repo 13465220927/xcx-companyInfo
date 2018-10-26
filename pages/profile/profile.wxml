@@ -2,13 +2,12 @@
 <i-card full title="{{userName}}"  thumb="{{logo}}" i-class="card-demo">
    
 </i-card>
-
-
 <i-cell-group>
     <i-panel wx:for="{{operaData}}" wx:key="{{index}}" class="cell-panel-demo" title="带 icon 的 Cell">
         <i-cell title="{{item.name}}" is-link url="{{item.url}}">
             <i-icon  size="25" type="{{item.icon}}" slot="icon" />
         </i-cell>
     </i-panel>
-    
 </i-cell-group>
+
+<i-button i-class="loginOut" bind:click="loginOut" type="error">退出登录</i-button>

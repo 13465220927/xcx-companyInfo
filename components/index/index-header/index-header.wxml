@@ -1,5 +1,5 @@
 <view class="header-wrap">
-    <view data-url="{{item.url}}" wx:for="{{infoData}}" wx:key="{{index}}" class="item">
+    <view bindtap="toUrl" data-url="{{item.url}}" wx:for="{{infoData}}" wx:key="{{index}}" class="item">
           <image src="../../../img/{{item.img}}" />
           <view>{{item.name}}</view>
     </view>

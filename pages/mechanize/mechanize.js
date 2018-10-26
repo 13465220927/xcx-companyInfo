@@ -1,18 +1,24 @@
-// pages/mechanize/mechanize.js
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      company:{},
+      isMe:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     if(options.isMe==1){
+         this.setData({
+          company:app.globalData.userData,
+          isMe:true
+         })
+     }
   },
 
   /**

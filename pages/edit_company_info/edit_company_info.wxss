@@ -1,0 +1,45 @@
+.logo-wrap{
+    padding-top:20rpx;
+}
+.logo-wrap image{
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    display:block;
+    margin:0 auto;
+}
+.logo-wrap .btn{
+    width:200rpx;
+    height:70rpx;
+    padding:0;
+    line-height:70rpx;
+    margin:20rpx auto 0;
+}
+.aboutPhoto{
+     
+}
+.aboutPhoto text{
+    font-size:33rpx;
+    padding-left:40rpx;
+    color:#495060;
+}
+
+.img-wrap{
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    padding:20rpx 40rpx;
+}
+.img-wrap image{
+    width:100rpx;
+    height:100rpx;
+    margin-right:10rpx;
+}
+.add{
+    width:100rpx;
+    height:100rpx;
+    font-size:60rpx;
+    text-align:center;
+    line-height:80rpx;
+    border:1px solid rgb(214, 207, 207);
+}

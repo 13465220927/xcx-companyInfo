@@ -1,5 +1,5 @@
 const userLib=require('../../utils/user');
-
+const app=getApp();
 Page({
 
   /**
@@ -32,8 +32,8 @@ Page({
      let conversationData=this.data.conversationData;
      let data=e.detail;
      conversationData.push({
-       sender_id:"111",
-       receive_id:data.receive_id,
+       sender_id:app.globalData.userData._id,
+       receive_id:this.data.friendId,
        message_type:data.message_type,
        message_content:data.message_content
       });

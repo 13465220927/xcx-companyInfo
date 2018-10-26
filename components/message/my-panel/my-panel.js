@@ -23,7 +23,7 @@ Component({
         if(this.data.content){
             this.triggerEvent('postMessage',{receive_id:this.data.friendId,message_type:1,message_content:this.data.content});
             userLib.sendChatMessage(
-              "111",
+              app.globalData.userData._id,
               this.data.friendId,
               1,
               this.data.content

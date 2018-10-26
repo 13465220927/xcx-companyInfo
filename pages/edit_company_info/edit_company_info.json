@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "i-icon": "../../components/dist/icon/index",
+        "i-input": "../../components/dist/input/index",
+        "i-button":"../../components/dist/button/index"
+    },
+    "navigationBarTitleText": "我的企业信息"
+}

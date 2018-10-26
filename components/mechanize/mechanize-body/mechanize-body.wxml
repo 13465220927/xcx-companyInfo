@@ -4,27 +4,20 @@
          企业简介
      </view>
      <view class="info-detail">
-         山西博尔特进球啦！在代表澳超球队中央海岸出战热身赛时，这位牙买加短跑名将打进了自己足球职业生涯的首个进球。随后，博尔特又利用对方后卫的失误，迅速梅开二度。这2个进球是否能帮助博尔特迎来一份职业合同？
-        众所周知，百米飞人博尔特是个超级球迷。他曾多次现场观看欧洲顶级联赛，又一直声称是曼联球迷，曾经在老特拉福德慈善赛登场亮相。今年春天博尔特远赴德国，参加多特蒙德的试训也让他登上了足球版面的头条。实训没有通过没有打倒孜孜不倦追求足球路的博尔特，上个月博尔特跨过重洋跑去南半球，参加了澳超中央海岸水手的试训。
-        中央海岸水手的主帅就承诺将在热身赛中给这位“世界级”球员以比赛机会，他也在之前球队集训的热身赛中得到了登场亮相的机会，不过表现平平甚至错失良机引来不少嘲讽。北京时间10月12日，中央海岸水手与麦克阿瑟西南联队的友谊赛，被博尔特称之为“获得职业合同的最后机会”，比赛中博尔特出场亮相梅开二度引发众多媒体和球迷的关注。
-        32岁的博尔特在与麦克阿瑟西南联队的比赛中首发登场，身穿95号球衣。他和曾在富勒姆以及利兹联队踢球的罗斯-麦考马克搭档锋线。上半场博尔特表现平平，唯一的亮点是在禁区里的一次头球攻门稍微偏出。下半场则成为了博尔特的表演舞台。
-        下半场开始10分钟后，博尔特率先破门，他在禁区左侧的一记强有力的抽射直接打穿了对方球门。进球后的博尔特高兴的以自己标志性的“弯弓射箭”庆祝动作来庆贺自己的首个进球。
-体育采访时，31岁的牙买加退役飞人博尔特再次谈到了2020年东京奥运会复出的可能。“闪电”表示，回归的大门随时敞开，但自己暂时没有复出的计划。也许在奥运会到来之前，一切皆有可能。
+        {{company_info}}
      </view>
        <view class="info-header">
              <i-icon type="integral" size="18" color="#2b3135" />
              资质荣誉
       </view>
       <view class="prizeImg">
-          <image src="https://images.pexels.com/photos/1475392/pexels-photo-1475392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
-          <image src="https://images.pexels.com/photos/1475392/pexels-photo-1475392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" /> 
+          <image wx:for="{{honor_photo}}" wx:key="{{index}}" src="{{hostname}}{{item}}" />
      </view>
       <view class="info-header">
              <i-icon type="picture" size="18" color="#2b3135" />
              产品照片
       </view>
       <view class="pictureImg">
-          <image src="https://images.pexels.com/photos/1475392/pexels-photo-1475392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
-          <image src="https://images.pexels.com/photos/1475392/pexels-photo-1475392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" /> 
+          <image wx:for="{{product_photo}}" wx:key="{{index}}" src="{{hostname}}{{item}}" />
      </view>
 </view>

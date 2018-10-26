@@ -1,4 +1,5 @@
 const userLib=require('../../../utils/user');
+const app=getApp();
 Component({
   /**
    * 组件的属性列表
@@ -42,15 +43,33 @@ Component({
         url:`../oneUser_detail/oneUser_detail?userData=${JSON.stringify(obj)}`
       })
     },
-    showOpera(){
+    showOpera(e){
+      console.log('点击了')
+      let contentList=this.data.contentList;
+      contentList.forEach((item,index)=>{
+            if(index!==e.currentTarget.dataset.index){
+              item.bOpera=false;
+            }   
+      })
+      contentList[e.currentTarget.dataset.index].bOpera=!contentList[e.currentTarget.dataset.index].bOpera;
       this.setData({
-        bShowOpera:!this.data.bShowOpera
+        contentList
       })
     },
-    calling(){
-      wx.makePhoneCall({
-        phoneNumber:"12345656"
-      })
+    calling(e){
+      let index=e.currentTarget.dataset.index;
+      console.log(this.data.contentList[index].phoneNum);
+      if(this.data.contentList[index].phoneNum){
+        wx.makePhoneCall({
+          phoneNumber:this.data.contentList[index].phoneNum.toString()
+        })
+      }else{
+         wx.showToast({
+           title:"该用户未填写手机号",
+           icon:"none"
+         })
+      }
+     
     },
     showReply(){
        this.setData({
@@ -72,6 +91,16 @@ Component({
       this.setData({
         bShowReply:false
       })
+    },
+    toChat(e){
+       
+          let userData=this.data.contentList[e.currentTarget.dataset.index];   
+       if(userData.uid!=app.globalData.userData._id){
+          wx.navigateTo({
+            url:`../chat_detail/chat_detail?name=${userData.userName}&friendId=${userData.uid}`
+          })
+       };
+       
     }
   }
 })

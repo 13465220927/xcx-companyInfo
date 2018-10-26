@@ -23,6 +23,12 @@ function doLogin(email,password,app,that){
             title: `${err}`,
             icon: 'none'
         });
+        if(that){
+            that.setData({
+                bShowLogin:true
+            })
+        }
+        
     })
 }
 function replyMessage(content,user_id,contentId){        //回复一条消息
@@ -107,8 +113,9 @@ function updateUserLogo(uid,logo){
 }
 
 //用户私信相关
-function getChatList(openId,that){
-    return lib.get(`/users/getMyMessList?openId=${openId}`).then(result=>{
+function getChatList(openId,userName,userImg,that){
+    return lib.get(`/users/getMyMessList?openId=${openId}&userName=${userName}&userImg=${userImg}`).then(result=>{
+        
         User.reveiveChatList(result,that)
     });
 }
@@ -169,7 +176,22 @@ function chooseImg(count=1){
     })
     
 }
+function getOpenId(app){
+    return new Promise((resolve,reject)=>{
+        wx.login({
+            success(res) {
+                lib.get(`/users/getOpenId?code=${res.code}`).then(result=>{
+                    app.sessionKey=result.session_key; 
+                    app.openId=result.openid;
+                })
+            }
+        })
+    })
 
+};
+function decryptPhone(sessionKey,encryptedData,iv){  
+  return lib.normalPost('/users/decryptPhone',{appId:config.appId,sessionKey,encryptedData,iv})
+}
 module.exports={
     doReg,
     doLogin,
@@ -183,5 +205,7 @@ module.exports={
     getConversatiomDetail,
     sendChatMessage,
     updateUserInfo,
-    chooseImg
+    chooseImg,
+    getOpenId,
+    decryptPhone
 }

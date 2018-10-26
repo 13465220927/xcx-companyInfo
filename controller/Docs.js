@@ -52,22 +52,35 @@ class Docs{
                 obj.uid=item.author._id;
                 obj.udate=formatDate(new Date(item.author.date));
                 obj.logo=hostname+item.author.logo;
-                obj.isAdmin=true;
+                obj.phoneNum=item.author.phoneNum;
+                obj.isAdmin=1;
              }else{
                 obj.userName=item.uAuthor.userName;
                 obj.uid=item.uAuthor._id;
                 obj.udate=formatDate(new Date(item.uAuthor.date));
                 obj.logo=hostname+item.uAuthor.logo;
-                obj.isAdmin=false;
+                obj.phoneNum=item.uAuthor.email;
+                obj.isAdmin=0;
              }
              obj.title=item.title;
              obj.category=item.categories[0].name;
              obj.date=item.date;
              obj.discription=item.discription;
-
+             obj.bOpera=false;
              data.push(obj)
          })
          return data;
+    }
+    switchType(type,app){
+        let docTypeData=app.globalData.categoryList;
+        let typeId='';
+        for(let i=0;i<docTypeData.length;i++){
+          if(docTypeData[i].name==type){
+               typeId=docTypeData[i].id;
+               break;
+          }
+        }
+        return typeId;
     }
 }
 module.exports=new Docs();

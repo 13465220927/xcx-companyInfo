@@ -34,7 +34,7 @@
     background:#3bb5f6;
     color:white;
     font-size:30rpx;
-    margin:42rpx auto 20rpx;
+    margin:102rpx auto 20rpx;
     line-height:96rpx;
 }
 .body  .toPhoneIdent{

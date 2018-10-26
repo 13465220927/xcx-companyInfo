@@ -7,19 +7,29 @@ const apiLib=require('../../utils/api');
 Page({
   data: {
     infoData:[
-      {url:"",img:"index/info.png",name:"政府信息"},
+      {url:"../government_info/government_info",img:"index/info.png",name:"政府信息"},
       {url:"",img:"index/enterprise.png",name:"企业宣传"},
       {url:"",img:"index/intermediary.png",name:"中介机构"},
       {url:"",img:"index/service.png",name:"服务机构"},
       {url:"",img:"index/infogroup.png",name:"信息广场"}
     ],
     bShowLogin:false,
-    contentList:[]
+    contentList:[],
+    totalPage:0,
+    current:1,
+    bLoadMore:true,
+    loadTip:"正在加载更多数据",
+    bLoadData:false
   },
   //事件处理函数
 
-  onLoad: function () {
+  onLoad: function (options) {
      let userData=wx.getStorageSync('userData');
+     this.setData({
+      totalPage:0,
+      current:1,
+      bLoginOut:options.bLoginOut?options.bLoginOut:0
+     })
      if(userData){
        console.log(userData)
        userLib.doLogin(userData.email,userData.password,app,this)
@@ -27,7 +37,8 @@ Page({
        this.setData({bShowLogin:true})
      }
      manageLib.getContentList(this);
-   
+     manageLib.getContentTagList(this,app);
+     manageLib.getCategoryList(this,app);
   },
   getUserInfo: function(e) {
    
@@ -36,5 +47,38 @@ Page({
     this.setData({
       bShowLogin:false
     })
+  },
+  onReachBottom() {
+    console.log('到底了');
+    if(this.data.current>=this.data.totalPage){
+        this.setData({
+          bLoadMore:false,
+          loadTip:"无更多数据可加载"
+        })
+    }else if(!this.data.bLoadData){
+        this.setData({
+          bLoadMore:true,
+          loadTip:"正在加载数据",
+          current:this.data.current+1,
+          bLoadData:true
+        })
+        
+        manageLib.getContentList(this,this.data.current);
+    } 
+  },
+  onShow(){
+  
+      if(app.bLoginOut==1){
+        this.setData({bShowLogin:true})
+      }  
+  },
+  toggleType(e){
+      console.log(e.detail.typeId);
+      this.setData({
+        totalPage:0,
+        current:1
+       })
+       manageLib.getContentList(this,1,e.detail.typeId);
   }
+  
 })

@@ -7,6 +7,7 @@
       "search":"../../components/index/search/search",
       "banner":"../../components/index/banner/banner",
       "login":"../../components/index/login/login",
-      "mine":"../../components/index/mine/mine"
+      "mine":"../../components/index/mine/mine",
+      "i-load-more": "../../components/dist/load-more/index"
     }
 }

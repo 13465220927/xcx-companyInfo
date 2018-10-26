@@ -1,3 +1,14 @@
-<mechanize-header></mechanize-header>
-<mechanize-body></mechanize-body>
+<mechanize-header  
+        phone="{{company.email}}"
+        isMe="{{isMe}}"
+        companyName="{{company.userName}}"
+        addr="长江公寓撒打"
+>
+</mechanize-header>
+<mechanize-body
+        honor_photo="{{company.honor_photo}}" 
+        company_info="{{company.company_info}}"
+        product_photo="{{company.product_photo}}"
+>
+</mechanize-body>
 <mechanize-footer></mechanize-footer>

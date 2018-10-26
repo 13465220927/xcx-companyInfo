@@ -16,6 +16,7 @@ class User{
     loginAfter(result,app,that,email,password){
         result.data.logo=config.hostname+result.data.logo;
         app.globalData.userData=result.data;
+        app.bLoginOut=0;
         wx.setStorage({key:"userData",data:{email,password}})
         wx.showToast({title: `登录成功`});
         that.triggerEvent('cancelLoginDialog',{},{});

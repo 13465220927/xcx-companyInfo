@@ -1,4 +1,5 @@
 const userLib=require('../../utils/user');
+const app=getApp();
 Page({
 
   /**
@@ -12,9 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    userLib.getChatList('111',this)
-      
-   
+    userLib.getChatList(app.globalData.userData._id,app.globalData.userData.userName,app.globalData.userData.logo,this)  
   },
 
   /**

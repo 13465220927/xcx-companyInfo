@@ -15,7 +15,11 @@ Page({
   onLoad: function (options) {
     userLib.getUserContent(1,app.globalData.userData._id,this)
   },
-
+  toSubMessage(){
+     wx.navigateTo({
+       url:"../sub_message/sub_message"
+     })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -27,7 +27,7 @@ Component({
           url:`../search/search?key=${this.data.key}`
        })
       }else{
-        this.triggerEvent('searchArticle',{key:'ww'},{})
+        this.triggerEvent('searchArticle',{key:this.data.key},{})
       }
        
     },

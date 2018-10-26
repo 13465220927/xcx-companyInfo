@@ -19,6 +19,7 @@ Page({
         this.setData({
           userData:options.userData
         })
+        console.log('admin is'+options.userData.isAdmin)
         userLib.getUserContent(1,options.userData.uid,this,options.userData.isAdmin);
   },
 

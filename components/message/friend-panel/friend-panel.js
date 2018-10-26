@@ -14,9 +14,13 @@ Component({
    * 组件的初始数据
    */
   data: {
-       openId:"111"
+       openId:""
   },
-
+  ready(){
+    this.setData({
+      openId:app.globalData.userData._id
+    })
+  },
   /**
    * 组件的方法列表
    */

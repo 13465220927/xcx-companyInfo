@@ -9,7 +9,7 @@
                     <view class="kind">
                         <text style="opacity:{{bShowInfoType?'1':'0'}}" class="infoType">{{item.category}}</text>
                         <image class="call" src="../../../img/index/call.png" />
-                        <text bindtap="calling">拨打电话</text>
+                        <text data-index="{{index}}" bindtap="calling">拨打电话</text>
                     </view>
                </view> 
                <view class="content">
@@ -21,17 +21,18 @@
                    </view>
                    <view class="time">
                       {{item.date}}
-                       <i-icon bindtap="showOpera" type="message_fill" size="16" color="#2e74af" />   
-                       <view wx:if="{{bShowOpera}}" class="opera">
+                       <i-icon bindtap="showOpera" data-index="{{index}}" type="message_fill" size="16" color="#2e74af" />   
+                       <view hidden="{{!item.bOpera}}" class="opera">
                             <view class="item">
+                                <i-icon type="prompt_fill" size="16" color="white" />
+                                举报
+                            </view>
+                            <view class="item" bindtap="toChat" data-index="{{index}}">
                                 <i-icon type="interactive_fill" size="16" color="white" />
                                 私信
                             </view>
-                            <view class="item">
-                                <i-icon type="collection_fill" size="16" color="white" />
-                                评论
-                            </view>
-                            <view class="item">
+                        
+                            <view class="item" data-index="{{index}}" bindtap="calling">
                                 <i-icon type="mobilephone_fill" size="16" color="white" />
                                     电话
                                 </view>

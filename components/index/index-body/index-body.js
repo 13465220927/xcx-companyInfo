@@ -1,4 +1,5 @@
-// components/index/index-body/index-body.js
+const app=getApp();
+const Docs=require('../../../controller/Docs');
 Component({
   /**
    * 组件的属性列表
@@ -38,9 +39,12 @@ Component({
    */
   methods: {
     toggleBtn(e){
+        let type=e.currentTarget.dataset.type;
+        console.log(type);
         this.setData({
           isActive:e.currentTarget.dataset.sign
-        }) 
+        });
+        this.triggerEvent('toggleType',{typeId:Docs.switchType(type,app)},{}) 
     }
   }
 })

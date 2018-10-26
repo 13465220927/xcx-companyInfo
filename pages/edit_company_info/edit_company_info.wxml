@@ -1,0 +1,35 @@
+<view class="logo-wrap">
+   <image src="{{userData.logo}}" />
+   <i-button bindtap="chooseLogo" type="primary" i-class="btn">修改logo</i-button>
+</view>
+<i-input title="公司名称" data-type="name" bind:change="modifyInput" value="{{userData.name}}"  placeholder="请输入您的公司名称" />
+<view class="aboutPhoto">
+    <text>公司资质照片</text>
+    <view  class="img-wrap">
+         <image bindtap="delHonorPho" wx:for="{{userData.honor_photo}}" wx:key="{{index}}" data-index="{{index}}" src="{{hostname}}{{item}}" />
+         <view bindtap="chooseHonorPho" class="add">+</view>
+  </view>
+   
+</view>
+<!-- type==1 -->
+<view wx:if="{{userData.company_type==1}}">
+    <view class="aboutPhoto">
+        <text>公司产品照片</text>
+        <view  class="img-wrap">
+          <image bindtap="delProductPho" wx:for="{{userData.product_photo}}" wx:key="{{index}}" data-index="{{index}}" src="{{hostname}}{{item}}" />
+          <view bindtap="chooseProductPho"  class="add">+</view>
+        </view>
+        
+    </view>
+    <i-input data-type="supply_info" bind:change="modifyInput" value="{{userData.supply_info}}" title="供求信息" type="textarea" placeholder="请输入您的公司的产品信息" />
+</view>
+
+<!-- type==2 -->
+<view wx:if="{{userData.company_type==2}}">
+    <i-input bind:change="modifyInput" data-type="service_item" value="{{userData.service_item}}" title="服务项目" type="textarea" placeholder="请输入您的公司的服务项目" />
+    <i-input bind:change="modifyInput" data-type="prefer_policy" value="{{userData.prefer_policy}}" title="优惠政策" type="textarea" placeholder="请输入您的公司的优惠政策" />
+    <i-input bind:change="modifyInput" data-type="free_item" value="{{userData.free_item}}" title="服务项目" type="textarea" placeholder="请输入您的公司的免费服务项目" />
+</view>
+
+<i-button bind:click="handleSubmit" type="primary">保存修改</i-button>
+

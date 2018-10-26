@@ -1,25 +1,24 @@
 <view class="header-wrap">
      <image class="userImg" src="https://images.pexels.com/photos/1468311/pexels-photo-1468311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
      <view class="company-name">
-          xxx先机械有限公司
+         {{companyName}}
      </view>
      <view class="company-info">
-            <view>
-                电话:0351-032269
+            <view bindtap="call" data-phone="{{telphone}}">
+                电话:{{phone}}
                 <i-icon type="mobilephone" size="16" color="white" />
             </view>
             <view>
-                地址:太原市小店区体育南路200号
+                地址:{{addr}}
                 <i-icon type="coordinates" size="16" color="white" />
             </view>
             <view>
                 分类:机械制造
-                
             </view>
      </view>
 </view>
-<view class="contact">
-    <i-icon bindtap="toggleOpera"  i-class="floRight" type="more" size="24" color="white" />
+<view class="contact" >
+    <i-icon wx:if="{{!isMe}}" bindtap="toggleOpera"  i-class="floRight" type="more" size="24" color="white" />
     <view wx:if="{{bShowOpera}}" class="opera">
          <view class="item">
             <i-icon type="interactive_fill" size="16" color="white" />

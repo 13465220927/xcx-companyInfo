@@ -8,3 +8,12 @@ page{
 .card-demo image {
     border-radius: 50%;
  }
+
+.loginOut{
+     width:240rpx;
+     height:80rpx !important;
+     line-height:80rpx !important;
+     padding:0;
+     display: block;
+     margin:50rpx auto 0 !important;
+ }

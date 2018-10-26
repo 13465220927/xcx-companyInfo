@@ -9,15 +9,30 @@ function addAnnounceOne(){
     return lib.post('/manage/systemAnnounce/addOne',s)
 }
 function getAnnounceList(){
-    return lib.get('/manage/systemAnnounce/getList')
+    return lib.get('/manage/systemAnnounce/getList?pageSize=3')
 }
-function getContentList(that,current=1){     //获取所有招聘文章的
-    let api=`/manage/content/getList?current=${current}&state=true&model=simple`
+function getContentList(that,current=1,typeId){     //获取所有招聘文章的
+    let api=``;
+    if(typeId){
+        api=`/manage/content/getList?current=${current}&state=true&model=simple&typeId=${typeId}`;
+    }else{
+        api=`/manage/content/getList?current=${current}&state=true&model=simple`;
+    }
+   
     return lib.get(api).then(result=>{
+        if(result.data.docs.length<=0){
+            that.setData({
+                bLoadMore:false,
+                loadTip:"没有更多数据了",
+            })
+        }
         let data=Docs.tidyArticleData(result.data.docs);
+
         console.log(data)
         that.setData({
-            contentList:data
+            contentList:data,
+            bLoadData:false,
+            totalPage:result.data.pageInfo.totalPage
         })
     })
 }
