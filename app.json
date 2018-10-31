@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/search/search",
+    "pages/feedback/feedback",
     
+    "pages/search/search",
     "pages/oneUser_detail/oneUser_detail",
     "pages/edit_company_info/edit_company_info",
     "pages/map/map",

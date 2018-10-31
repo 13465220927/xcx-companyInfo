@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "注册",
+    "navigationBarTitleText": "企业账号登录",
     "usingComponents": {
         "i-input": "../../components/dist/input/index",
         "i-button": "../../components/dist/button/index"

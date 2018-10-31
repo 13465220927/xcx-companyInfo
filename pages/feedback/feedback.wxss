@@ -1,0 +1,8 @@
+.btn{
+    position: absolute !important;
+    left:50%;
+    bottom:20rpx;
+    width:80%;
+    transform: translateX(-50%);
+    margin:0 !important;
+}

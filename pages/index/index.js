@@ -24,15 +24,19 @@ Page({
   //事件处理函数
 
   onLoad: function (options) {
+    console.log('来首页了')
+    console.log(options)
      let userData=wx.getStorageSync('userData');
      this.setData({
       totalPage:0,
       current:1,
       bLoginOut:options.bLoginOut?options.bLoginOut:0
      })
-     if(userData){
+     if(userData&&!userData.isCompanyUser){
        console.log(userData)
-       userLib.doLogin(userData.email,userData.password,app,this)
+        userLib.doLogin(userData.email,userData.password,app,this)
+     }else if(userData&&userData.isCompanyUser){
+        userLib.companyUserLogin(userData.email,userData.password,app,this)
      }else{
        this.setData({bShowLogin:true})
      }
@@ -67,10 +71,12 @@ Page({
     } 
   },
   onShow(){
-  
+   
       if(app.bLoginOut==1){
         this.setData({bShowLogin:true})
-      }  
+      }else if(app.bLoginOut==0){
+        this.setData({bShowLogin:false})
+      }
   },
   toggleType(e){
       console.log(e.detail.typeId);

@@ -1,0 +1,6 @@
+<i-panel title="反馈">
+    <i-input data-type="name"  bind:change="inputChange" title="联系人" autofocus placeholder="请输入联系人" />
+    <i-input data-type="phone" bind:change="inputChange"  title="联系电话" type="number" title="联系电话" placeholder="请输入手机号" />
+    <i-input data-type="message" bind:change="inputChange"   type="textarea" title="反馈内容" placeholder="请输入反馈内容" maxlength="150" />
+    <i-button bindtap="subFeed" i-class="btn" type="primary">发布</i-button>
+</i-panel>

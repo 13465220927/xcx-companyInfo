@@ -1,14 +1,14 @@
 const userLib=require('../../utils/user');
-const app=getApp();
+const Form=require('../../controller/Form');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
-     password:"",
-     account:""
+    phone:"",
+    name:"",
+    message:""
   },
 
   /**
@@ -17,33 +17,29 @@ Page({
   onLoad: function (options) {
 
   },
-
+  inputChange(e){
+    Form.modifyFeedForm(this,e.currentTarget.dataset.type,e.detail.detail.value)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+  subFeed(){
+    if(!this.data.phone||!this.data.name||this.data.message){
+       wx.showToast({title:"有表单项未填写",icon:"none"})      
+       return;      
+    }
+    userLib.addOneFeedMsg(this.data.phone,this.data.name,this.data.message)
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
 
   },
-  passChange(e){
-    this.setData({
-       password:e.detail.detail.value
-    })
-  },
-  accountChange(e){
-    this.setData({
-      account:e.detail.detail.value
-    })
-  },
-  handleClick(){
-    userLib.companyUserLogin(this.data.account,this.data.password,app,this,true)
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

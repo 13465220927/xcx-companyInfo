@@ -13,13 +13,17 @@ class User{
     constructor(){
 
     }
-    loginAfter(result,app,that,email,password){
+    loginAfter(result,app,that,email,password,isCompanyUser=false){
         result.data.logo=config.hostname+result.data.logo;
         app.globalData.userData=result.data;
         app.bLoginOut=0;
-        wx.setStorage({key:"userData",data:{email,password}})
-        wx.showToast({title: `登录成功`});
+        
+        wx.setStorage({key:"userData",data:{email,password,isCompanyUser}})
         that.triggerEvent('cancelLoginDialog',{},{});
+       
+        
+        wx.showToast({title: `登录成功`});
+        
     }
     reveiveChatList(result,that){
         result.forEach(item=>{

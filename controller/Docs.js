@@ -2,6 +2,7 @@ const {hostname}=require('../utils/config');
 function formatDate(time){
      return time.getFullYear()+'年'+(time.getMonth()+1)+'月'+time.getDate()+'日';
 }
+console.log(new Date().valueOf())
 class Docs{
     constructor(){
 
@@ -63,7 +64,11 @@ class Docs{
                 obj.isAdmin=0;
              }
              obj.title=item.title;
-             obj.category=item.categories[0].name;
+            
+             if(item.categories[0]){
+                obj.category=item.categories[0].name;
+             }
+            
              obj.date=item.date;
              obj.discription=item.discription;
              obj.bOpera=false;

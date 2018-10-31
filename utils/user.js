@@ -192,6 +192,26 @@ function getOpenId(app){
 function decryptPhone(sessionKey,encryptedData,iv){  
   return lib.normalPost('/users/decryptPhone',{appId:config.appId,sessionKey,encryptedData,iv})
 }
+function addOneFeedMsg(phone,name,message){
+  return lib.normalPost('/users/decryptPhone',{phone,name,message})
+}
+
+function companyUserLogin(account,password,app,that,isInCompanyPage){
+    return lib.normalPost('/manage/regUser/companyUserLogin',{account,password}).then(result=>{
+        User.loginAfter(result,app,that,account,password,true);
+        if(isInCompanyPage){
+            wx.switchTab({
+                url: '../index/index'
+            })
+        }
+           
+    }).catch(err=>{
+        wx.showToast({
+            title: `${err}`,
+            icon: 'none'
+        });
+    })
+}
 module.exports={
     doReg,
     doLogin,
@@ -207,5 +227,7 @@ module.exports={
     updateUserInfo,
     chooseImg,
     getOpenId,
-    decryptPhone
+    decryptPhone,
+    addOneFeedMsg,
+    companyUserLogin
 }

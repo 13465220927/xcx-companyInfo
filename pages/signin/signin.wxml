@@ -1,5 +1,5 @@
-<i-input bind:change="emailChange"  title="邮箱" autofocus placeholder="请输入您的邮箱" />
+<i-input bind:change="accountChange"  title="账号" autofocus placeholder="请输入您的邮箱" />
 <i-input bind:change="passChange"  title="密码" autofocus placeholder="请输入密码" />
-<i-input bind:change="userNameChange"  title="用户名" autofocus placeholder="请填写您或公司的名字" />
 
-<i-button size="small" i-class="btn" bind:click="handleClick" type="primary">注册</i-button>
+
+<i-button size="small" i-class="btn" bind:click="handleClick" type="primary">登录</i-button>

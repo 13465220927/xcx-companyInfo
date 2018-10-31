@@ -9,5 +9,5 @@ App({
     contentTags:[],
     categoryList:[]
   },
-  bLoginOut:0
+  bLoginOut:1
 })
