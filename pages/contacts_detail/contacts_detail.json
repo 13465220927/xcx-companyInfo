@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "i-index": "../../components/dist/index/index",
+        "i-index-item": "../../components/dist/index-item/index"
+    },
+   "navigationBarTitleText": "xx号码录"
+}

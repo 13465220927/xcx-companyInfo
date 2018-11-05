@@ -1,12 +1,14 @@
 .infoData{
-    padding-top:20rpx;
+ 
     margin-top:20rpx;
     background:white;
+    padding:20rpx 30rpx 14rpx 0;
  }
  
  .infoData .item{
      background:white;
      position: relative;
+     padding-left:4rpx;
  }
  .infoData .item .header{
      width:100%;
@@ -35,16 +37,28 @@
     right:10rpx;
  }
  .infoData .item .header .kind .infoType{
-     width:126rpx;
-     height:34rpx;
+     width:120rpx;
+     height:44rpx;
+     text-align:Center;
+     line-height:44rpx;
+     display: inline-block;
      background:#ff8000;
-     font-size:26rpx;
+     font-size:13px;
      color:white;
+     border-radius:10rpx;
  }
  .infoData .item .header .kind .call{
-     height:34rpx;
      width:34rpx;
+     height:34rpx;
      margin:0 10rpx;
+     display: inline-block;
+     position: relative;
+ }
+ .call image{
+     position: absolute;
+     top:8rpx;
+     width:34rpx;
+     height:34rpx;
  }
  .infoData .item .header .kind text{
      font-size:24rpx;
@@ -54,18 +68,19 @@
  .infoData .item .content{
      width:100%;
      padding-left:126rpx;
-     font-size:24rpx;
-     color:#8f8f8f;
-     line-height:30rpx; 
+     font-size:13px;
+     line-height:18px;
+     color:#9b9b9b;
+   
      padding-bottom:38rpx;
  }
  .infoData .item .content .subType{
-     color:#575d86;
-     font-size:26rpx;
+     /* color:#575d86; */
+     font-size:13px;
      margin:18rpx 0;
-     font-weight:700;
+     /* font-weight:700; */
  }
- .infoData .item .content .time i-icon{
+ .infoData .item .content .time .opera-click{
      float:right;
      margin-right:30rpx;
  } 
@@ -81,9 +96,10 @@
      width:100%;
  }
  .opera{
-    width:375rpx;
+    width:385rpx;
     height:80rpx;
     background:#4c5154;
+    border-radius:6rpx;
     font-size:24rpx;
     display:flex;
     justify-content: center;
@@ -93,14 +109,39 @@
     padding:0 8rpx;
     position: absolute;
     right:60rpx;
-    bottom:0;
+    bottom:60rpx;
+    z-index:2;
 }
 
 .opera .item{
-    
     border-right:1px solid #313639;
+    display:flex;
+    align-items:center;
+    justify-content: center;
     background:#4c5154;
+    padding:0 15rpx;
 }
 .opera .item i-icon{
-    margin-right:5rpx;
+    margin-right:8rpx;
+}
+
+
+.clickNum{
+    background:#e8e8e8;
+    margin-top:40rpx;
+    display:flex;
+    align-items: center;
+    padding-left:20rpx;
+    position: relative; 
+    line-height:50rpx;
+    border-radius:6rpx;
+}
+.clickNum .rubb{
+    margin-right:20rpx;
+}
+.triangle{
+    position: absolute;
+    bottom:20rpx; 
+    left:25rpx;
+    transform: rotate(-90deg);
 }

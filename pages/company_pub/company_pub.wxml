@@ -1,0 +1,20 @@
+<view class="operaBtns">
+        <view data-sign="1"  data-sign="0" bindtap="toggleBtn"  class="toggle  {{isActive=='0'?'active':''}}">
+           企业宣传
+         
+        </view>
+        <view class="divide"></view>
+        <view data-sign="1"  bindtap="toggleBtn" class="toggle {{isActive=='1'?'active':''}}">
+            最新发布
+        </view>
+</view>
+
+<view  hidden="{{isActive=='0'?false:true}}">
+     <service-info docs="{{docs}}"></service-info>
+</view>
+
+<view hidden="{{isActive=='1'?false:true}}">
+      <recruit-info  contentList="{{docs}}"></recruit-info>
+</view>
+
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

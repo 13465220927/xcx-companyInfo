@@ -45,6 +45,11 @@ Component({
           isActive:e.currentTarget.dataset.sign
         });
         this.triggerEvent('toggleType',{typeId:Docs.switchType(type,app)},{}) 
+    },
+    toGovInfo(){
+       wx.navigateTo({
+         url:"../company_propa/company_propa"
+       })
     }
   }
 })

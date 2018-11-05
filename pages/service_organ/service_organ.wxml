@@ -1,4 +1,4 @@
-  12    qwewqe<search></search>
+<search></search>
 
 <index-header infoData="{{infoData}}"></index-header>
 
@@ -6,4 +6,23 @@
 
 <banner></banner>
 
-<index-body useInfoTem="serviceTem" leftText="服务机构" rightText="最新发布"></index-body>
+<view class="operaBtns">
+        <view data-sign="1"  data-sign="0" bindtap="toggleBtn"  class="toggle  {{isActive=='0'?'active':''}}">
+            服务机构
+        </view>
+        <view class="divide"></view>
+        <view data-sign="1"  bindtap="toggleBtn" class="toggle {{isActive=='1'?'active':''}}">
+            最新发布
+        </view>
+</view>
+
+
+<view  hidden="{{isActive=='0'?false:true}}">
+     <service-info docs="{{docs}}"></service-info>
+</view>
+
+<view hidden="{{isActive=='1'?false:true}}">
+      <recruit-info  contentList="{{docs}}"></recruit-info>
+</view>
+
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

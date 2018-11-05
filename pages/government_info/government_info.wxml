@@ -1,9 +1,11 @@
 <search></search>
 
-<index-header infoData="{{infoData}}"></index-header>
+<index-header isTrigger="{{true}}" bind:toggleAnnounce="toggleAnnounce" infoData="{{infoData}}"></index-header>
 
 <notice></notice>
 
 <banner></banner>
 
-<government-body></government-body>
+<government-body isActive="{{noticeKind}}" bind:toggleAnnounce="toggleAnnounce" docs="{{docs}}"></government-body>
+
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

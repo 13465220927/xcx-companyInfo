@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "recruit-info":"../../components/common/recruit-info/recruit-info",
+        "i-load-more": "../../components/dist/load-more/index",
+        "i-icon": "../../components/dist/icon/index"
+    },
+    "navigationBarTitleText": "信息广场"
+
+}

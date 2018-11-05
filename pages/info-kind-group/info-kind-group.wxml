@@ -1,0 +1,13 @@
+<view class="section">
+  <picker bindcancel="cancelPicker" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      {{multiArray[0][multiIndex[0]]}}
+      <i-icon type="unfold" size="15" color="#80848f" />
+      -  {{multiArray[1][multiIndex[1]]}}
+      <i-icon type="unfold" size="15" color="#80848f" />
+    </view>
+  </picker>
+</view>
+
+<recruit-info contentList="{{docs}}"></recruit-info>
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

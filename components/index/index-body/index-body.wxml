@@ -2,12 +2,12 @@
     <view class="operaBtns">
         <view data-sign="1" data-type="{{rightText?rightText:'最新发布'}}" data-sign="0" bindtap="toggleBtn"  class="toggle  {{isActive=='0'?'active':''}}">
            {{leftText?leftText:'最新发布'}}  
-           <i-icon type="unfold" size="16" color="black" />   
+         
         </view>
         <view class="divide"></view>
-        <view data-sign="1" data-type="{{rightText?rightText:'企业宣传'}}" bindtap="toggleBtn" class="toggle {{isActive=='1'?'active':''}}">
+        <view data-sign="1" data-type="{{rightText?rightText:'企业宣传'}}" bindtap="toGovInfo" class="toggle {{isActive=='1'?'active':''}}">
            {{rightText?rightText:'企业宣传'}}      
-           <i-icon type="unfold" size="16" color="black" />
+    
         </view>
     </view>
     <recruit-info contentList="{{contentList}}" wx:if="{{!useInfoTem}}"  bShowInfoType="{{bShowInfoType}}"></recruit-info>

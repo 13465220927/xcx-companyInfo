@@ -1,4 +1,4 @@
-<i-input bind:change="accountChange"  title="账号" autofocus placeholder="请输入您的邮箱" />
+<i-input bind:change="accountChange"  title="账号" autofocus placeholder="请输入您的账号" />
 <i-input bind:change="passChange"  title="密码" autofocus placeholder="请输入密码" />
 
 

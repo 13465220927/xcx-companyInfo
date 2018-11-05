@@ -5,32 +5,36 @@
         </view>
     
         <view data-sign="1" bindtap="toggleBtn" class="toggle {{isActive=='1'?'active':''}}">
-           政策宣传
+            政策宣传
         </view>
         <view data-sign="2" bindtap="toggleBtn" class="toggle {{isActive=='2'?'active':''}}">
-           办事服务
+          办事服务  
         </view>
     </view>
-    <view class="infoData-wrap" wx:for="{{docs}}" wx:key="{{index}}">
-          <view class="infoData-sign">
-              {{item.tag}}
-          </view>
-          <view class="item">
+   
+    <view class="infoData-wrap" >
+           <view class="infoData-sign">
+             {{isActive=='0'?'通知公告':''}}
+             {{isActive=='1'?'政策宣传':''}}
+             {{isActive=='2'?'办事服务':''}}
+           </view>
+          <view class="item" wx:for="{{docs}}" wx:key="{{index}}">
               <view class="info-header">
                  {{item.title}}
               </view>
               <view class="info-promote">
                   <view>
-                      发布人:{{item.userName}}
+                      发布人:{{item.adminSender.userName}}
                   </view>
                   <view>
-                     {{item.date}}
+                      时间: {{item.date}}
                   </view>
               </view>
               <view class="info-content">
-                  {{item.discription}}
+                 {{item.subContent}}
                   <view data-index="{{index}}" bindtap="toDetail">全文</view>
               </view>
+              <view class="divided"></view>
           </view>
     </view>
 </view>

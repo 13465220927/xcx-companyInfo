@@ -1,0 +1,74 @@
+.info-item{
+    display:flex;
+    align-items: center;
+    padding:30rpx 0 10rpx 0;
+   
+}
+.info-item text,radio-group text,.section__title,.textarea-wrap text{
+    width:220rpx;
+    text-align:center;
+   font-size:13px;
+    color:#495060;
+}
+.section{
+    border-bottom:1px solid #f8f8f8;
+    margin-bottom:20rpx;
+    padding-bottom:20rpx;
+}
+.posLeft{
+    margin-left:10rpx;
+}
+radio-group text,.textarea-wrap text{
+    padding-left:38rpx;
+    margin-right:20rpx;
+    font-size:13px;
+    color:#495060;
+}
+.radio,radio{
+    font-size:13px;
+    color:#495060;
+}
+.section__title{
+    display:inline-block;
+    text-align: left;
+    padding-left:36rpx;
+}
+picker{
+    display:inline-block;
+    width:300rpx;
+    font-size:13px;
+    color:#495060;
+}
+.section{
+    margin:20rpx auto;
+    background:white;
+}
+.textarea-wrap textarea{
+    height:200rpx;
+    padding-left:36rpx;
+    font-size:30rpx;
+}
+.addImg-wrap{
+    margin:20rpx 0 20rpx 30rpx;
+    width:100rpx;
+    height:100rpx;
+    border:1px solid #dddddd;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.otherOpera{
+    color:red;
+}
+
+.tags{
+    font-size:14px !important;
+    line-height:50rpx;
+    height:50rpx;
+    margin-bottom:20rpx;
+}
+
+.textareaInp{
+    height:140rpx;
+   
+}

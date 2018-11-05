@@ -1,0 +1,22 @@
+
+<view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      分类：{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+
+
+<i-input bind:change="nameChange"  title="名称"  placeholder="请输入单位名称" />
+<i-input bind:change="phoneChange"  title="电话"  placeholder="请输入电话号码" />
+<view class="getLocation">
+    <i-input value="{{address}}"  title="点击右侧获取定位"  />
+    <i-icon bindtap="openMap" type="label_fill" size="28" color="#ff9900" />
+</view>
+
+
+
+<i-button bindtap="submit" type="primary">提交申请</i-button>
+
+

@@ -20,12 +20,28 @@ Page({
         userData:app.globalData.userData,
         hostname:config.hostname
       })
+      
+  },
+  openMap(){
+    let that=this;
+    wx.chooseLocation({
+        success(res){
+            console.log(res);
+            let userData=that.data.userData;
+            userData.city=res.address;
+            userData.latitude=res.latitude;
+            userData.longitude=res.longitude;
+            that.setData({
+              userData
+            })
+        }
+     })
   },
   chooseLogo(){
       userLib.chooseImg().then((result)=>{
         let userData=this.data.userData;
-        userData.logo=config.hostname+''+result;
-        app.globalData.userData.logo=config.hostname+''+result;
+        userData.logo=result;
+        app.globalData.userData.logo=result;
         this.setData({
           userData
         })
@@ -42,7 +58,11 @@ Page({
       wx.showToast({
         title:`修改成功`
       })
-      app.globalData.userData.name=this.data.userData.name;
+      app.globalData.userData.userName=this.data.userData.userName;
+      setTimeout(()=>{
+        wx.navigateBack();
+      },1000)
+     
     }).catch(err=>{
        wx.showToast({
          title:`${err}`,

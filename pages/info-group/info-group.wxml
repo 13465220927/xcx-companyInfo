@@ -1,0 +1,11 @@
+<search></search>
+
+<index-header infoData="{{infoData}}"></index-header>
+
+<notice></notice>
+
+<banner></banner>
+
+<recruit-info contentList="{{docs}}"></recruit-info>
+
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

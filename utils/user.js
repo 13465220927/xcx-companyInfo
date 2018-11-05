@@ -115,7 +115,7 @@ function updateUserLogo(uid,logo){
 //用户私信相关
 function getChatList(openId,userName,userImg,that){
     return lib.get(`/users/getMyMessList?openId=${openId}&userName=${userName}&userImg=${userImg}`).then(result=>{
-        
+        console.log(result);
         User.reveiveChatList(result,that)
     });
 }
@@ -162,9 +162,10 @@ function chooseImg(count=1){
             sizeType: ['original', 'compressed'],
             sourceType: ['album', 'camera'],
             success (res) {
+                console.log(res);
               // tempFilePath可以作为img标签的src属性显示图片
               const tempFilePaths = res.tempFilePaths;
-              wx.showLoading();
+              wx.showLoading({title:"上传图片中~"});
               uploadImg(tempFilePaths[0]).then(result=>{
                 wx.hideLoading(); 
                 resolve(result.path);
@@ -207,7 +208,7 @@ function companyUserLogin(account,password,app,that,isInCompanyPage){
            
     }).catch(err=>{
         wx.showToast({
-            title: `${err}`,
+            title: `账号或密码有误`,
             icon: 'none'
         });
     })

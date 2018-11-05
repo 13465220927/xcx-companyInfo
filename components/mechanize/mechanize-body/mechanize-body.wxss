@@ -2,28 +2,35 @@
     margin-top:10rpx;
     background:white;
     color:#939393;
-    font-size:18rpx;
+    font-size:12px;
     padding:20rpx;
 }
 .body-wrap .info-header{
-    font-size:24rpx;
+    font-size:14px;
     color:#2b3135;
-    font-weight:700;
+    padding-left:10rpx;
+}
+.info-header i-icon{
+    margin-right:10rpx;
 }
 .info-detail{
-    text-indent: 36rpx;
+    text-indent:46rpx;
     line-height:30rpx;
-    margin-bottom:20rpx;
+    margin-bottom:30rpx;
+    font-size:12px;
+    padding-top:20rpx;
 }
 .prizeImg,.pictureImg{
     display:flex;
-    padding:14rpx;
+    padding:14rpx 14rpx 0rpx 46rpx;
     align-items: center;
 }
 .prizeImg image,.pictureImg image{
     width:126rpx;
     height:126rpx;
     margin-right:50rpx;
+    margin-bottom:30rpx;
+    border-radius:6rpx;
 }
 .pictureImg image{
     margin-right:6rpx;

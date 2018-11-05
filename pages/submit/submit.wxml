@@ -1,2 +1,25 @@
-<!--pages/submit/submit.wxml-->
-<text>pages/submit/submit.wxml</text>
+<i-divider content="请选择您要发布的栏目"></i-divider>
+
+<div class="flex-wrap">
+    <div data-index="{{index}}" bindtap="toSubMessage" class="item" wx:for="{{infoData}}" wx:key="{{index}}}">
+        <image src="../../img/{{item.img}}" />
+        <view>{{item.name}}</view>
+    </div>
+</div>
+
+<view class="mustRead">
+    <view class="header">用户必读</view>
+    <view class="content">
+          1）禁止发布的产品信息：包含违反国家相关法律法规的产品及服务、不适合在网络平台发布的产品等。
+    </view>
+    <view class="content">
+         2）搜了网用户在发布产品信息前，应当仔细阅读《禁止发布的产品信息规则》，并给予遵守。由于发布下列产品信息所引发的法律责任由相关用户完全承担，与搜了网无关。一旦搜了网发现有任何违反本规则的产品信息，搜了网有权立即予以删除，并保留警告、暂停服务，直至终止服务的权利，请各位用户自觉遵守。
+    </view>
+    <view class="header divideHeader">限制发布的产品信息规则</view>
+    <view class="content">
+        食用盐、出版物、票务（火车票、汽车票、机票等）、非处方药品、医疗器械、文物、海关罚没类物资、烟花爆竹、音像制品需提供相关证据或许可证才可发布；
+    </view>
+    <view class="content">
+        涉及第三方知识产权的物品、保健食品和根据其他法律、法规禁止销售或网站认为违背工序良俗应限制销售的其他商品。
+    </view>
+</view>

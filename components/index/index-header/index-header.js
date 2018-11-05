@@ -7,6 +7,10 @@ Component({
       infoData:{
         type:Array,
         value:[]
+      },
+      isTrigger:{
+        type:Boolean,
+        value:false
       }
   },
 
@@ -22,12 +26,14 @@ Component({
    */
   methods: {
       toUrl(e){
-          if(e.currentTarget.dataset.url){
+          if(this.data.isTrigger){
+            this.triggerEvent('toggleAnnounce',{noticeKind:e.currentTarget.dataset.sign})
+            
+          }else if(e.currentTarget.dataset.url&&!this.data.isTrigger){
             wx.navigateTo({
               url:e.currentTarget.dataset.url
             })
-          }
-          
+          }   
       }
   } 
 })

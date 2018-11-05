@@ -8,7 +8,10 @@
                     
                     <view class="kind">
                         <text style="opacity:{{bShowInfoType?'1':'0'}}" class="infoType">{{item.category}}</text>
-                        <image class="call" src="../../../img/index/call.png" />
+                        <view class="call">
+                            <image  src="../../../img/index/call.png" />
+                        </view>
+                       
                         <text data-index="{{index}}" bindtap="calling">拨打电话</text>
                     </view>
                </view> 
@@ -17,11 +20,11 @@
                       {{item.discription}}
                    </view>
                    <view class="subType">
-                       个人发布
+                       {{item.company_type!=0?'企业发布':'个人发布'}}
                    </view>
                    <view class="time">
                       {{item.date}}
-                       <i-icon bindtap="showOpera" data-index="{{index}}" type="message_fill" size="16" color="#2e74af" />   
+                       <i-icon i-class="opera-click" bindtap="showOpera" data-index="{{index}}" type="message_fill" size="22" color="#2e74af" />   
                        <view hidden="{{!item.bOpera}}" class="opera">
                             <view class="item">
                                 <i-icon type="prompt_fill" size="16" color="white" />
@@ -43,9 +46,15 @@
                             {{item.name}}:{{item.comment}}
                         </view>
                    </view> -->
+                    <view class="clickNum">
+                            <i-icon i-class="triangle" type="play_fill" size="20" color="#e2dcdc" />
+                            <i-icon i-class="rubb" bindtap="showOpera" type="like" size="16" color="#2e74af" />   
+                            {{item.clickNum}}浏览
+                     </view>
                </view>
-               
+              
                <i-input i-class="replyInp" bind:blur="blur" bind:confirm="confirm" wx:if="{{bShowReply}}"  autofocus placeholder="请输入回复信息" />
+
         </view>
          
     </view> 

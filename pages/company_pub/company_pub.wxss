@@ -1,0 +1,28 @@
+.operaBtns{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    font-size:26rpx; 
+    background:white;
+}
+.operaBtns .toggle{
+   width:45%;
+   height:100rpx;
+   line-height:100rpx;
+}
+.toggle i-icon{
+   position: relative;
+   top:-3rpx;
+}
+.operaBtns .toggle:nth-child(1){
+   margin-right:5%;
+}
+.operaBtns .active{
+   border-bottom:1px solid #e05267;
+}
+.divide{
+   width:2px;
+   height:70rpx;
+   background:#e8e8e8;   
+}

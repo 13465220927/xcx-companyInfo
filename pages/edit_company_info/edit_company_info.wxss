@@ -43,3 +43,8 @@
     line-height:80rpx;
     border:1px solid rgb(214, 207, 207);
 }
+.getLocation{
+    display:flex;
+    align-items: center;
+    padding-right:50rpx;
+}

@@ -1,17 +1,17 @@
 <view class="service-wrap">
-     <view class="item">
-         <image class="userImg" src="https://images.pexels.com/photos/1462634/pexels-photo-1462634.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"/>
+     <view class="item" wx:for="{{docs}}" wx:key="{{index}}">
+         <image bindtap="toDetail" data-index="{{index}}" class="userImg" src="{{hostname}}{{item.logo}}"/>
          <view class="servie-info">
              <view class="header">
-                 多多互联网金福
+                 {{item.userName}}
              </view>
              <view class="belongType">
-                 金融服务-综合金融
+                 {{item.kind}}
              </view>
              <view class="location">
-                  赣州市南康区
+                  {{item.city}}
              </view>
          </view>
-         <image class="tel" src="../../../img/service/tel.png"/>
+         <image bindtap="calling" data-phone="{{item.email}}" class="tel" src="../../../img/service/tel.png"/>
      </view>
 </view>

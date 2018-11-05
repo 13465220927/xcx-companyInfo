@@ -1,5 +1,5 @@
 <view class="tools-wrap">
-    <view class="item" wx:for="{{toolsData}}" wx:key="{{index}}">
+    <view data-index="{{index}}" bindtap="toUrl" class="item" wx:for="{{toolsData}}" wx:key="{{index}}">
         <image src="../../../img/{{item.img}}" />
         <text class="tool-name">
             {{item.name}}

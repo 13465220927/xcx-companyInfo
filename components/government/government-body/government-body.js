@@ -11,6 +11,10 @@ Component({
     docs:{
       type:Array,
       value:[]
+    },
+    isActive:{
+      type:Number,
+      value:0 
     }
   },
 
@@ -18,7 +22,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    isActive:0
+    
   }, 
 
   /**
@@ -26,14 +30,12 @@ Component({
    */
   methods: {
     toggleBtn(e){
-      this.setData({
-        isActive:e.currentTarget.dataset.sign
-      }) 
+      this.triggerEvent('toggleAnnounce',{noticeKind:e.currentTarget.dataset.sign},{});
     },
     toDetail(e){
        console.log(e.currentTarget.dataset.index);
        wx.navigateTo({
-           url:`../read_content/read_content?content=${JSON.stringify(this.data.docs[e.currentTarget.dataset.index])}`
+           url:`../read_content/read_content?needGet=1&content=${JSON.stringify(this.data.docs[e.currentTarget.dataset.index])}`
        })
     }
   }

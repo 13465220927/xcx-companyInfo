@@ -1,1 +1,39 @@
-/* pages/submit/submit.wxss */
+.flex-wrap{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding:80rpx 0;
+    border:3px solid #e9f7ff;
+}
+.flex-wrap .item {
+   margin-right:20rpx;
+}
+.flex-wrap .item image{
+    width:80rpx;
+    height:80rpx;
+    border-radius:50%;
+    display:block;
+    margin:10rpx auto;
+} 
+.flex-wrap .item view{
+    font-size:12px;
+    text-align:center;
+}
+
+.mustRead{
+    width:95%;
+    margin:30rpx auto 0;
+    background:#f0f4f7;
+    color:#888888;
+    font-size:12px;
+    line-height:20px;
+    padding:20rpx 50rpx 50rpx;
+}
+.mustRead .header{
+    font-size:14px;
+    text-align:Center;
+
+}
+.mustRead .divideHeader{
+    margin-top:30rpx !important;
+}

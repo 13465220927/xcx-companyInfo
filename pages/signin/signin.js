@@ -43,6 +43,7 @@ Page({
   },
   handleClick(){
     userLib.companyUserLogin(this.data.account,this.data.password,app,this,true)
+    //userLib.companyUserLogin('  ','123456',app,this,true)
   },
   /**
    * 生命周期函数--监听页面隐藏

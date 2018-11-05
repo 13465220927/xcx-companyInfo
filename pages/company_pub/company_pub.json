@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "service-info":"../../components/common/service-info/service-info",
+         "i-load-more": "../../components/dist/load-more/index",
+         "recruit-info":"../../components/common/recruit-info/recruit-info"
+      }
+}

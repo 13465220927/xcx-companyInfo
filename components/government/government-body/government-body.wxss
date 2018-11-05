@@ -1,3 +1,6 @@
+.info-wrap{
+    background:white;
+}
 .info-wrap .operaBtns{
     display:flex;
     justify-content: center;
@@ -18,33 +21,49 @@
 .operaBtns .active{
    color:#fe7c00;
 }
-
+.item{
+    padding-bottom:30rpx;
+    padding-top:10rpx;
+  
+}
 .infoData-wrap{
-    padding:0 42rpx;
+    
     margin-bottom:20rpx;
 }
 .infoData-wrap .infoData-sign{
-    font-size:26rpx;
+    font-size:14px;
     color:#fe7c00;
+    margin:20rpx 0;
+    padding:20rpx 42rpx 0;
+    border-top:1px solid #e8e8e8;
+
 }
 .infoData-wrap .info-header{
-    font-size:24rpx;
+    font-size:12px;
     color:#949494;
-    text-align:center;
     font-weight:700;
+    padding:0 42rpx;
 }
 .infoData-wrap .info-promote,.infoData-wrap .info-content{
-    font-size:22rpx;
+    font-size:12px;
     color:#929292;
+    padding:0 42rpx;
+
 }
 .infoData-wrap .info-promote{
     height:30rpx;
     margin:11rpx 0;
+    padding-right:20rpx;
+}
+.infoData-wrap .info-promote view:nth-child(1){
+    text-align:left;
+}
+.infoData-wrap .info-promote view:nth-child(2){
+    text-align:right;
 }
 .infoData-wrap .info-promote view{
     display:inline-block;
     width:50%;
-    text-align: center;
     height:30rpx;
     line-height:30rpx;
 }
@@ -52,11 +71,19 @@
 
 .infoData-wrap .info-content{
     text-indent:48rpx;
+    padding-top:5px;
+    line-height:22px;
 }
 .infoData-wrap .info-content view{
     float:right;
     margin-top:30rpx;
-    font-size:20rpx;
+    font-size:10px;
     color:#1565a3;
    
+}
+
+.divided{
+    margin-top:35rpx;
+    background:#f5f5f5;
+    height:5px;
 }

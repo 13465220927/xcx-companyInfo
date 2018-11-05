@@ -5,7 +5,6 @@ function get(api){
             url:hostname+api,
             data:{},
             success(res){
-               console.log(res.data);
                if(res.data.status==500){
                    reject(res.data.message)
                }else{
@@ -23,7 +22,7 @@ function post(api,data){
             contentType: "application/json; charset=utf-8",
             data:JSON.stringify(data),
             success(res){
-                console.log(res.data)
+             
                 if(res.data.status==500){
                     reject(res.data.message) 
                 }else{ 

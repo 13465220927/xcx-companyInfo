@@ -1,0 +1,7 @@
+<i-input  title="项目概要"  placeholder="请填写项目概要" />
+
+<i-input  title="内容摘要"   placeholder="请填写内容摘要"/>
+
+<i-input i-class="areaInput" title="详细内容" placeholder="请填写详细内容"  type="textarea"/>
+
+<i-button bind:click="handleSubmit" type="primary" size="small">发布</i-button>

@@ -5,6 +5,24 @@
     width:148rpx;
     height:116rpx;
     margin-right:10rpx;
+    transition:.5s all ease-in-out;
+    text-align: center;
+    color:white;
+    padding-top:24rpx;
+    position: relative;
+}
+.myqy image{
+    width:35rpx;
+    height:42rpx;
+    display:block;
+    margin:0 auto;
+}
+.myqy text{
+    font-size:11px; 
+    position: absolute;
+    width:100%;
+    left:0;
+    bottom:10rpx;
 }
 
 .banner{

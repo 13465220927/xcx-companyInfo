@@ -1,4 +1,6 @@
 let WxParse = require('../../wxParse/wxParse.js');
+const manageLib=require('../../utils/manage');
+
 Page({
 
   /**
@@ -12,12 +14,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     console.log(JSON.parse(options.content));
-     let article=JSON.parse(options.content).content;
+     let doc=JSON.parse(options.content);
+     let article=doc.content;
      this.setData({
-       doc:JSON.parse(options.content)
+       doc:doc
      })
-     WxParse.wxParse('article', 'html', article, this, 5);
+     if(options.needGet){
+        console.log(doc._id);
+        manageLib.getOneAnnounceContent(doc._id).then(result=>{
+          WxParse.wxParse('article', 'html', result.data, this, 5);
+        })
+     }else{
+      WxParse.wxParse('article', 'html', article, this, 5);
+     }
+     
   },
 
   /**

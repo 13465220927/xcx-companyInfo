@@ -2,7 +2,9 @@
     "usingComponents": {
         "mechanize-header":"../../components/mechanize/mechanize-header/mechanize-header",
         "mechanize-body":"../../components/mechanize/mechanize-body/mechanize-body",
-        "mechanize-footer":"../../components/mechanize/mechanize-footer/mechanize-footer"
+        "mechanize-footer":"../../components/mechanize/mechanize-footer/mechanize-footer",
+        "service-info":"../../components/common/service-info/service-info",
+        "i-load-more": "../../components/dist/load-more/index"
       },
       "navigationBarTitleText": "企业宣传-机械制造",
       "navigationBarBackgroundColor": "#52a9ec"

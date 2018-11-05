@@ -1,9 +1,10 @@
 {
     "usingComponents": {
-        "i-tag": "../../components/dist/tag/index",
-        "i-icon": "../../components/dist/icon/index",
-        "i-input": "../../components/dist/input/index",
-        "i-button": "../../components/dist/button/index"
+        "need-work":"../../components/sub_message/need_work/need_work",
+        "write-article":"../../components/sub_message/write_article/write_article",
+        "project_info":"../../components/sub_message/project_info/project_info",
+        "supplyAndDem":"../../components/sub_message/supplyAndDem/supplyAndDem",
+        "item-info":"../../components/sub_message/item_info/item_info"
     },
    "navigationBarTitleText": "发布消息"
 }

@@ -1,5 +1,5 @@
 
-<i-card full title="{{userName}}"  thumb="{{logo}}" i-class="card-demo">
+<i-card full title="{{userName}}"  thumb="{{hostname}}{{logo}}" i-class="card-demo">
    
 </i-card>
 <i-cell-group>

@@ -8,13 +8,13 @@ Page({
   data: {
     infoData:[
       {url:"../government_info/government_info",img:"index/info.png",name:"政府信息"},
-      {url:"",img:"index/enterprise.png",name:"企业宣传"},
-      {url:"",img:"index/intermediary.png",name:"中介机构"},
-      {url:"",img:"index/service.png",name:"服务机构"},
-      {url:"",img:"index/infogroup.png",name:"信息广场"}
+      {url:"../company_propa/company_propa",img:"index/enterprise.png",name:"企业宣传"},
+      {url:"../intermediary/intermediary",img:"index/intermediary.png",name:"中介机构"},
+      {url:"../service_organ/service_organ",img:"index/service.png",name:"服务机构"},
+      {url:"../info-group/info-group",img:"index/infogroup.png",name:"信息广场"}
     ],
     bShowLogin:false,
-    contentList:[],
+    docs:[],
     totalPage:0,
     current:1,
     bLoadMore:true,
@@ -71,7 +71,7 @@ Page({
     } 
   },
   onShow(){
-   
+       console.log('onshow le ')
       if(app.bLoginOut==1){
         this.setData({bShowLogin:true})
       }else if(app.bLoginOut==0){

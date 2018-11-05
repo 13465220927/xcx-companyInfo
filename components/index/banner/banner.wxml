@@ -1,5 +1,9 @@
 <view class="banner-wrap">
-  <image class="myqy" src="../../../img/index/myqy.jpg" /> 
+  <view style="background:{{bg}}"  bindtap="modifyBg" class="myqy">
+        <image src="../../../img/index/leftNotice.png" /> 
+        <text>名优企业</text>
+  </view>
+ 
   <swiper class="banner" indicator-dots="{{false}}"
     autoplay="true" interval="2000" duration="2000">
     <block wx:for="{{bannerImg}}" wx:key="{{index}}">

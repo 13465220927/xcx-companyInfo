@@ -2,13 +2,22 @@
         phone="{{company.email}}"
         isMe="{{isMe}}"
         companyName="{{company.userName}}"
-        addr="长江公寓撒打"
+        addr="{{company.city}}"
+        logo="{{company.logo}}"
+        latitude="{{company.latitude}}"
+        longitude="{{company.longitude}}"
 >
 </mechanize-header>
 <mechanize-body
         honor_photo="{{company.honor_photo}}" 
         company_info="{{company.company_info}}"
         product_photo="{{company.product_photo}}"
+        company_type="{{company.company_type}}"
+        prefer_policy="{{company.prefer_policy}}"
+        service_item="{{company.service_item}}"
+        free_item="{{company.free_item}}"   
 >
 </mechanize-body>
-<mechanize-footer></mechanize-footer>
+<mechanize-footer bind:toggleKind="toggleKind"></mechanize-footer>
+
+<recruit-info contentList="{{docs}}"></recruit-info>

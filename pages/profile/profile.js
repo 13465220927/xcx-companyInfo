@@ -1,4 +1,4 @@
-
+const {hostname}=require('../../utils/config');
 const app=getApp();
 const manageLib=require('../../utils/manage');
 const userLib=require('../../utils/user');
@@ -14,20 +14,28 @@ Page({
        operaData:[
          {icon:"brush_fill",name:"我的发布",url:"../profile_my_subcontent/profile_my_subcontent"},
          {icon:"collection_fill",name:"我的企业",url:"../mechanize/mechanize?isMe=1"},
+         {icon:"editor",name:"修改资料",url:"../edit_company_info/edit_company_info"},
          {icon:"interactive_fill",name:"消息管理",url:"../message/message"},
-         {icon:"mine_fill",name:"用户注册",url:"../signin/signin"},
-         {icon:"emoji_fill",name:"信息反馈"},
-       ]
+         {icon:"emoji_fill",name:"信息反馈",url:"../feedback/feedback"},
+       ],
+       hostname:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(['userData['+'userName'+']'])
+       console.log(app.globalData.userData)
+       let operaData=this.data.operaData;
+
+       if(app.globalData.userData.company_type==0){
+        operaData.splice(1,1);
+       }
        this.setData({
           userName:app.globalData.userData.userName,
-          logo:app.globalData.userData.logo
+          logo:app.globalData.userData.logo,
+          operaData,
+          hostname
        })  
        //userLib.updateUserLogo(app.globalData.userData.id,"/upload/images/img20181013173940.jpeg");
   },
@@ -36,6 +44,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   loginOut(){
+    let that=this;
     wx.showModal({
       title: '提示',
       content: '您确定要退出登录吗?',
@@ -44,6 +53,10 @@ Page({
           wx.clearStorageSync();
           app.globalData.userData={};
           app.bLoginOut=1;
+          that.setData({
+            userName:"",
+             logo:""
+          })
           wx.switchTab({
               url: '../index/index'
           })
@@ -61,7 +74,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(!this.data.userName){
+      this.setData({
+        userName:app.globalData.userData.userName,
+        logo:app.globalData.userData.logo
+     })  
+    }
+    
   },
 
   /**

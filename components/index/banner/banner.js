@@ -14,13 +14,25 @@ Component({
     apiLib.getAllAds(this)
   },
   data: {
-    bannerImg:[]
+    bannerImg:[],
+    bg:"#f0a027"
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    modifyBg(){
+        if(this.data.bg=="#f0a027"){
+          this.setData({
+            bg:"#40becc"
+          })
+        }else{
+          this.setData({
+            bg:"#f0a027"
+          })
+        }
+        
+    }
   }
 })

@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+      "index-header":"../../components/index/index-header/index-header",
+      "recruit-info":"../../components/common/recruit-info/recruit-info",
+      "index-footer":"../../components/index/index-footer/index-footer",
+      "notice":"../../components/index/notice/notice",
+      "search":"../../components/index/search/search",
+      "banner":"../../components/index/banner/banner",
+      "service-info":"../../components/common/service-info/service-info",
+      "i-load-more": "../../components/dist/load-more/index"
+    },
+    "navigationBarTitleText": "首页-信息广场"
+}

@@ -1,0 +1,4 @@
+.picker{
+    text-align:center;
+    padding-top:20rpx;
+}

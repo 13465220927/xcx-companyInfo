@@ -6,7 +6,7 @@
             [通知公告] {{item.title}}
             <text class="time">{{item.date}}</text>
         </view>
-        <view class="seeMore">
+        <view bindtap="toMore" class="seeMore">
             more>>
         </view>
     </view>

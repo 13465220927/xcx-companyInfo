@@ -10,12 +10,13 @@ class Docs{
     tidyData(docs){
         let data=[];
         docs.forEach(item=>{
+            console.log(item.tags[1].name)
             data.push({
                 userName:item.uAuthor.userName,
                 logo:hostname+item.uAuthor.logo,
                 date:item.date,
                 title:item.title,
-                tag:item.tags[0].name,
+                tag:item.tags.length>1?item.tags[1].name:item.tags[0].name,
                 content:item.comments,
                 discription:item.discription
             })
@@ -55,6 +56,7 @@ class Docs{
                 obj.logo=hostname+item.author.logo;
                 obj.phoneNum=item.author.phoneNum;
                 obj.isAdmin=1;
+                obj.company_type=item.author.company_type;
              }else{
                 obj.userName=item.uAuthor.userName;
                 obj.uid=item.uAuthor._id;
@@ -62,11 +64,12 @@ class Docs{
                 obj.logo=hostname+item.uAuthor.logo;
                 obj.phoneNum=item.uAuthor.email;
                 obj.isAdmin=0;
+                obj.company_type=item.uAuthor.company_type;
              }
              obj.title=item.title;
-            
+             obj.clickNum=item.clickNum;
              if(item.categories[0]){
-                obj.category=item.categories[0].name;
+                obj.category=item.categories[item.categories.length-1].name;
              }
             
              obj.date=item.date;

@@ -3,6 +3,6 @@
         <i-tab key="tab1" title="供求信息"></i-tab>
         <i-tab key="tab2" title="创业项目"></i-tab>
         <i-tab key="tab3" title="招聘信息"></i-tab>
-        <i-tab key="tab3" title="综合项目"></i-tab>
+        <i-tab key="tab4" title="综合项目"></i-tab>
    </i-tabs>
 </view>

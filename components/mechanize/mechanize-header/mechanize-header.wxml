@@ -1,19 +1,19 @@
 <view class="header-wrap">
-     <image class="userImg" src="https://images.pexels.com/photos/1468311/pexels-photo-1468311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" />
+     <image class="userImg" src="{{hostname}}{{logo}}" />
      <view class="company-name">
          {{companyName}}
      </view>
      <view class="company-info">
-            <view bindtap="call" data-phone="{{telphone}}">
-                电话:{{phone}}
-                <i-icon type="mobilephone" size="16" color="white" />
+            <view bindtap="call" data-phone="{{phone}}">
+                电话 : {{phone}}
+                <i-icon type="mobilephone" size="16" color="#08f087" />
+            </view>
+            <view bindtap="toMap">
+                地址 : {{addr}}
+                <i-icon type="coordinates" size="16" color="#ffc600" />
             </view>
             <view>
-                地址:{{addr}}
-                <i-icon type="coordinates" size="16" color="white" />
-            </view>
-            <view>
-                分类:机械制造
+                分类 : 机械制造
             </view>
      </view>
 </view>
@@ -24,10 +24,7 @@
             <i-icon type="interactive_fill" size="16" color="white" />
             私信
          </view>
-         <view class="item">
-            <i-icon type="collection_fill" size="16" color="white" />
-            评论
-         </view>
+         
          <view class="item">
            <i-icon type="mobilephone_fill" size="16" color="white" />
             电话
