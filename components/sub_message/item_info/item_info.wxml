@@ -1,7 +1,7 @@
- <i-input  title="项目概括"  placeholder="请填写项目概括" />
+<i-input data-type="title" bind:change="inputChange"  title="项目概括"  placeholder="请填写项目概括" />
  
-<i-input  title="项目简要介绍"   placeholder="项目简要介绍"/>
+<i-input data-type="stitle" bind:change="inputChange"  title="项目简要介绍"   placeholder="项目简要介绍"/>
 
-<i-input i-class="areaInput" title="项目详情" placeholder="请填写详情"  type="textarea"/>
+<i-input data-type="discription" bind:change="inputChange"  i-class="areaInput" title="项目详情" placeholder="请填写详情"  type="textarea"/>
 
-<i-button bind:click="handleSubmit" type="primary" size="small">发布</i-button>
+<i-button data-type="comments" bind:change="inputChange"  bind:click="submit" type="primary" size="small">发布</i-button>

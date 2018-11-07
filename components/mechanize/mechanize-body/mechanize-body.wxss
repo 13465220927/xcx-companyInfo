@@ -15,7 +15,8 @@
 }
 .info-detail{
     text-indent:46rpx;
-    line-height:30rpx;
+    line-height:40rpx;
+    text-align:justify;
     margin-bottom:30rpx;
     font-size:12px;
     padding-top:20rpx;

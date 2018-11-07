@@ -1,5 +1,6 @@
 const app=getApp();
 const manageLib=require('../../utils/manage');
+const User=require('../../controller/User');
 Page({
 
   /**
@@ -22,17 +23,30 @@ Page({
    */
   onLoad: function (options) {
     console.log('公司类型')
-    console.log(JSON.parse(options.userData).company_type)
+  
      if(options.isMe==1){
+         if(app.globalData.userData.company_type==2){
+          app.globalData.userData.kind='中介机构';
+         }else{
+          app.globalData.userData.kind=User.switchKind(app.globalData.userData.company_kind_name);
+         }
+        
          this.setData({
           company:app.globalData.userData,
           isMe:true,
           company_id:app.globalData.userData._id
          })
      }else{
+        let company=JSON.parse(options.userData)
+        if(company.company_type==2){
+          company.kind="中介机构"
+        }else{
+          company.kind=User.switchKind(company.company_kind_name);
+        }
+       
         this.setData({
-            company:JSON.parse(options.userData),
-            company_id:JSON.parse(options.userData)._id
+            company,
+            company_id:company._id
         })
      }
      console.log('公司ID is');
@@ -41,7 +55,7 @@ Page({
   },
   getList(){
     manageLib.getCompanyConts(this,this.data.current,this.searchCateId(this.data.kind),this.data.company_id)
-  },
+  },  
   toggleKind(e){
       console.log(e.detail.kind);
       this.setData({
@@ -49,6 +63,7 @@ Page({
         current:1,
         totalItems:1
       })
+      console.log('点击了啊啊')
       this.getList();
   },
   searchCateId(name){

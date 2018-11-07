@@ -1,4 +1,4 @@
-// pages/submit/submit.js
+const app=getApp();
 Page({
 
   /**
@@ -6,11 +6,10 @@ Page({
    */
   data: {
     infoData:[
-      {img:"index/info.png",name:"综合信息"},
+      
       {img:"index/enterprise.png",name:"招聘求职"},
-      {img:"index/intermediary.png",name:"供求信息"},
-      {img:"index/service.png",name:"创业信息"},
-      {img:"index/infogroup.png",name:"项目信息"}
+      {img:"index/service.png",name:"创业项目"}
+     
     ]
   },
 
@@ -25,8 +24,9 @@ Page({
     })
   },
   onLoad: function (options) {
-
-  },
+       console.log(app.globalData.userData);
+      
+  }, 
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -39,7 +39,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let infoData=[];
+    if(app.globalData.userData.logo&&app.globalData.userData.company_type!=0){
+      infoData=[
+        {img:"index/enterprise.png",name:"招聘信息"},
+        {img:"index/intermediary.png",name:"供求信息"},
+        {img:"index/info.png",name:"综合发布"},
+        {img:"index/infogroup.png",name:"项目合作"}
+      ]   
+      
+   }else{
+    infoData=[
+      {img:"index/enterprise.png",name:"招聘求职"},
+      {img:"index/service.png",name:"创业信息"}
+    ]
+   }
+   this.setData({
+    infoData
+  })
   },
 
   /**

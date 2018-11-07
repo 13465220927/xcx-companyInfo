@@ -5,10 +5,10 @@
   </view>
  
   <swiper class="banner" indicator-dots="{{false}}"
-    autoplay="true" interval="2000" duration="2000">
+    autoplay="true" interval="7000" duration="2000">
     <block wx:for="{{bannerImg}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+        <image src="{{item.img}}" class="slide-image"/>
       </swiper-item>
     </block>
   </swiper>

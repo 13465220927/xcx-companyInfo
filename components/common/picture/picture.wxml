@@ -1,0 +1,8 @@
+<view class="pics">
+    <view wx:if="{{index<3||bShowMore}}" class="picItem"  wx:for="{{pics}}"  wx:key="{{index}}" >
+       <image lazy-load="true"  src="{{item}}"></image>
+    </view>
+    <view bindtap="showMore" wx:if="{{!bShowMore}}" class="morePic">更多图片</view>
+ 
+    
+</view>

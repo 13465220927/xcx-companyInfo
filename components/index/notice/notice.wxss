@@ -28,6 +28,18 @@
     margin-bottom:14rpx;
     position: relative;
     padding-left:20rpx;
+    overflow:hidden;
+}
+.item i-icon{
+    position: relative;
+    top:-5rpx;
+}
+.notice  .title{
+     width:400rpx;
+     overflow:hidden;
+     display: inline-block;
+     text-overflow: ellipsis;
+     white-space:nowrap;
 }
 .notice .item .time{
   position: absolute;

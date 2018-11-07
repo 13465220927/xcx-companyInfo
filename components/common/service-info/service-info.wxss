@@ -22,8 +22,13 @@
 
 .servie-info view{
     font-size:12px;
+  
     color:#635757;
 }
+.servie-info .location{
+    line-height:46rpx;
+}
+
 .service-wrap .servie-info .header{
     font-size:13px;
     color:black;

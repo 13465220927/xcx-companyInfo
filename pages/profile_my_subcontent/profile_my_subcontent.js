@@ -16,8 +16,8 @@ Page({
     userLib.getUserContent(1,app.globalData.userData._id,this)
   },
   toSubMessage(){
-     wx.navigateTo({
-       url:"../sub_message/sub_message"
+     wx.switchTab({
+       url:"../submit/submit"
      })
   },
   /**

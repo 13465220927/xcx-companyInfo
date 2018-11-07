@@ -6,6 +6,8 @@
         logo="{{company.logo}}"
         latitude="{{company.latitude}}"
         longitude="{{company.longitude}}"
+        kind="{{company.kind}}"
+        uid="{{company_id}}"
 >
 </mechanize-header>
 <mechanize-body
@@ -21,3 +23,5 @@
 <mechanize-footer bind:toggleKind="toggleKind"></mechanize-footer>
 
 <recruit-info contentList="{{docs}}"></recruit-info>
+
+<i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />

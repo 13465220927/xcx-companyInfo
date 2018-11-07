@@ -45,6 +45,8 @@ function getContentList(that,current=1,typeId){     //获取所有招聘文章�
     })
 }
 function getCompanyConts(that,current,typeId,user){      //获取一个公司主页下的文章
+    console.log(user);
+    console.log(typeId);
     let api=`/manage/content/getList?user=${user}&current=${current}&state=true&model=simple&typeId=${typeId}`;
     return lib.get(api).then(result=>{
         console.log(result)
@@ -55,7 +57,27 @@ function getCompanyConts(that,current,typeId,user){      //获取一个公司主
             })
         }
         let data=Docs.tidyArticleData(result.data.docs);
-
+        
+        console.log(data)
+        that.setData({
+            docs:data,
+            bLoadData:false,
+            totalPage:result.data.pageInfo.totalPage
+        })
+    })
+}
+function getCompanyTypeList(that,current,company_kind_name){         //获取某个公司类型下的文章
+    let api=`/manage/content/getList?current=${current}&state=true&model=simple&company_kind_name=${company_kind_name}`;
+    return lib.get(api).then(result=>{
+        console.log(result)
+        if(result.data.docs.length<=0){
+            that.setData({
+                bLoadMore:false,
+                loadTip:"没有更多数据了",
+            })
+        }
+        let data=Docs.tidyArticleData(result.data.docs);
+        
         console.log(data)
         that.setData({
             docs:data,
@@ -114,5 +136,6 @@ module.exports={
     getOneAnnounceContent,
     getCompanyList,
     addContact,
-    getCompanyConts
+    getCompanyConts,
+    getCompanyTypeList
 }

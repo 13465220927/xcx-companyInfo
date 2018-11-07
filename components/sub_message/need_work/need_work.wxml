@@ -1,5 +1,5 @@
 <view class="info-item">
-    <text>期望职位</text>
+    <text>{{company_type!=0?'招聘职位':'期望职位'}}</text>
     <view>
        <i-tag 
        i-class="tags"
@@ -48,7 +48,7 @@
             </view>
        </picker>
    </view>
-   <i-input i-class="textareaInp" bind:change="modifyInput" data-type="service_item"  title="自我评价" type="textarea" placeholder="个人介绍，工作经历，职位等信息,为了保护个人隐私,请不要泄漏个人qq或者微信号" />
+   <i-input i-class="textareaInp" bind:change="modifyInput" data-type="service_item"  title="{{company_type!=0?'公司描述':'自我评价'}}" type="textarea" placeholder="{{company_type!=0?'请对您的公司进行中肯的描述':'个人介绍，工作经历，职位等信息,为了保护个人隐私,请不要泄漏个人qq或者微信号'}}" />
    
    <i-input title="添加照片" placeholder="最多提交9张" disabled/>
    <view class="addImg-wrap">

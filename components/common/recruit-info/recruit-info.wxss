@@ -95,6 +95,9 @@
      background:rgb(232, 233, 229);
      width:100%;
  }
+ .time{
+     position: relative;
+ }
  .opera{
     width:385rpx;
     height:80rpx;
@@ -109,7 +112,7 @@
     padding:0 8rpx;
     position: absolute;
     right:60rpx;
-    bottom:60rpx;
+    top:-9rpx;
     z-index:2;
 }
 

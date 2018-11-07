@@ -30,3 +30,7 @@
     flex:1;
     margin-bottom:18rpx;
 }
+.slide-image{
+    width: 100%;
+    height:100%;
+}

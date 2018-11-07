@@ -69,10 +69,10 @@ function getUserUploadVideo(uid){
     return lib.get(api);
 }
 function uploadImg(filePath){
-    let api=`/system/upLoadVideo`;
+    let api=`/manage/upLoadVideo`;
     return new Promise((resolve,reject)=>{
         wx.uploadFile({
-            url: config.hostname+api, 
+            url: config.ajaxHost+api, 
             filePath:filePath,
             name:"img",
             formData:{
@@ -89,23 +89,23 @@ function uploadImg(filePath){
     })
     
 }
-function addOneContent(){       //发布消息
-    var params = {
-        categories: "Nycd05pP",
-        comments: "哥要发一条求职信息",
-        discription: "哥来自小程序",
-        sImg: "/upload/images/img201810j18181228.jpg",
-        tags: "Bk3BDBJoX",
-        title: "哥来自小程序",
-        uid:'SJdChE1sX',
+function addOneContent(params){       //发布消息
+    // var params = {
+    //     categories: "Nycd05pP",
+    //     comments: "哥要发一条求职信息",
+    //     discription: "哥来自小程序",
+    //     sImg: "/upload/images/img201810j18181228.jpg",
+    //     tags: "Bk3BDBJoX",
+    //     title: "哥来自小程序",
+    //     uid:'SJdChE1sX',
 
-        workTimes:"一到三年",
-        hopeSalary:"3000以上",
-        gender:"0/1//2",
-        birthday:"1997-12-26",
-        evaluate:"这是自我评价",
-        contact:"15110436770"
-    }
+    //     workTimes:"一到三年",
+    //     hopeSalary:"3000以上",
+    //     gender:"0/1//2",
+    //     birthday:"1997-12-26",
+    //     evaluate:"这是自我评价",
+    //     contact:"15110436770"
+    // }
     return lib.post('/api/content/addOne',params)
 }
 function updateUserLogo(uid,logo){

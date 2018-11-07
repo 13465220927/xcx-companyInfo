@@ -1,8 +1,8 @@
-const {hostname}=require('./config');
+const {hostname,ajaxHost}=require('./config');
 function get(api){
     return new Promise((resolve,reject)=>{
         wx.request({
-            url:hostname+api,
+            url:ajaxHost+api,
             data:{},
             success(res){
                if(res.data.status==500){
@@ -17,7 +17,7 @@ function get(api){
 function post(api,data){
     return new Promise((resolve,reject)=>{
         wx.request({
-            url:hostname+api,
+            url:ajaxHost+api,
             method:'POST',
             contentType: "application/json; charset=utf-8",
             data:JSON.stringify(data),
@@ -36,7 +36,7 @@ function normalPost(api,data){
     console.log('发送的数据是',data)
     return new Promise((resolve,reject)=>{
         wx.request({
-            url:hostname+api,
+            url:ajaxHost+api,
             method:'POST',
             header: {
                 "content-type": "application/x-www-form-urlencoded",

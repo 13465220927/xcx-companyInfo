@@ -3,4 +3,4 @@
     <i-button i-class="btn" bind:click="toSubMessage" type="ghost">继续发布</i-button>
 </view>
 
-<government-body  docs="{{docs}}"  bShowToggerBar="{{false}}"></government-body>
+<government-body  isActive="4" docs="{{docs}}"  bShowToggerBar="{{false}}"></government-body>

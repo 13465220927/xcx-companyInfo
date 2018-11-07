@@ -13,14 +13,14 @@
                 <i-icon type="coordinates" size="16" color="#ffc600" />
             </view>
             <view>
-                分类 : 机械制造
+                分类 :{{kind}}
             </view>
      </view>
 </view>
 <view class="contact" >
     <i-icon wx:if="{{!isMe}}" bindtap="toggleOpera"  i-class="floRight" type="more" size="24" color="white" />
     <view wx:if="{{bShowOpera}}" class="opera">
-         <view class="item">
+         <view data-uid="{{uid}}" class="item" bindtap="toChat">
             <i-icon type="interactive_fill" size="16" color="white" />
             私信
          </view>

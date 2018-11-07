@@ -62,7 +62,47 @@ class User{
             case "gangtieyelian":
                 return "钢铁冶炼";
                 break; 
-
+            case "jiancaichanye":
+                return "建材产业";
+                break;
+            case "zhongjiejigou":
+                return "中介机构";
+                break;
+            case "jinrongbaoxian":
+                return "金融保险";
+                break;
+            case "guanggaochuanmei":
+                return "广告传媒";
+                break;
+            case "wuliuyunshu":
+                return "物流运输";
+                break;
+            case "jiudiancanyin":
+                return "酒店餐饮";
+                break;
+            case "jiazhengbaoan":
+                return "家政保安";
+                break;
+            case "yulexiuxian":
+                return "娱乐休闲";
+                break;
+            case "jiaoyupeixun":
+                return "教育培训";
+                break;
+            case "jianzhujiazhuang":
+                return "建筑家装";
+                break;
+            case "lingshoubaihuo":
+                return "零售百货";
+                break;
+            case "qichefuwu":
+                return "汽车服务";
+                break;
+            case "yiliaobaojian":
+                return "医疗保健";
+                break;
+            default:
+                return  company_kind_name;                                                                  
         }
     }
     tidyCompany(result,that){
@@ -77,6 +117,15 @@ class User{
             loadTip:"没有更多数据了",
             bLoadData:false
         })
+    }
+    searchCategory(categoryList,name){
+        console.log(name)
+        let arr=[];
+        arr=categoryList.filter(item=>{
+            return item.name==name;
+        });
+        console.log(arr)
+        return arr[0].id;
     }
 }
 

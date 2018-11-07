@@ -94,7 +94,7 @@ Component({
     },
     toChat(e){
        
-          let userData=this.data.contentList[e.currentTarget.dataset.index];   
+       let userData=this.data.contentList[e.currentTarget.dataset.index];   
        if(userData.uid!=app.globalData.userData._id){
           wx.navigateTo({
             url:`../chat_detail/chat_detail?name=${userData.userName}&friendId=${userData.uid}`

@@ -25,7 +25,7 @@ Page({
     if(this.data.isActive==0){
       this.getList();
     }else{
-      //this.getContentList()
+      this.getContentList()
     }
    },
   /**
@@ -44,6 +44,9 @@ Page({
     manageLib.getCompanyList(this.data.current,this.data.company_type,this.data.company_kind_name).then(result=>{
       User.tidyCompany(result,this)
     })
+  },
+  getContentList(){
+    manageLib.getCompanyTypeList(this,this.data.current,this.data.company_kind_name)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -96,7 +99,11 @@ Page({
         current:this.data.current+1,
         bLoadData:false
       })
-      this.getList();
+      if(this.data.isActive==0){
+        this.getList();
+      }else{
+        this.getContentList()
+      }
     }  
   },
 

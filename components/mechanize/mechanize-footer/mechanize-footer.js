@@ -38,7 +38,7 @@ Component({
            kind="招聘信息";
            break;   
         case  "tab4":
-           kind="综合项目";
+           kind="综合发布";
            break;     
        }
        return kind

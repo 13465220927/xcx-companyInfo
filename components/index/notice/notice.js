@@ -16,11 +16,15 @@ Component({
       ]
     )
     .then((result)=>{
-      console.log(result);
+     
       let noticeData=[];
       result.forEach(item=>{
-        item.data.docs[0].date=item.data.docs[0].date.split(' ')[0];
-        noticeData.push(item.data.docs[0])
+        console.log('事件')
+        if(item.data.docs.length>0){
+          item.data.docs[0].date=item.data.docs[0].date.split(' ')[0];
+          noticeData.push(item.data.docs[0])
+        }
+       
       })
       this.setData({noticeData});
     });

@@ -11,7 +11,7 @@
              资质荣誉
       </view>
       <view class="prizeImg">
-          <image bindtap="previewImg" src="{{defaultPrizeImg}}" data-url="{{defaultPrizeImg}}" />
+          <image wx:if="{{honor_photo.length==0}}" bindtap="previewImg" src="{{defaultPrizeImg}}" data-url="{{defaultPrizeImg}}" />
           <image bindtap="previewImg" wx:for="{{honor_photo}}" wx:key="{{index}}" src="{{hostname}}{{item}}"  data-url="{{hostname}}{{item}}"/>
      </view>
      <view wx:if="{{company_type==1}}">

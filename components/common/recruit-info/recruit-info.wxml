@@ -17,7 +17,7 @@
                </view> 
                <view class="content">
                    <view>
-                      {{item.discription}}
+                      {{item.discription?item.discription:item.comments}}
                    </view>
                    <view class="subType">
                        {{item.company_type!=0?'企业发布':'个人发布'}}
@@ -46,6 +46,7 @@
                             {{item.name}}:{{item.comment}}
                         </view>
                    </view> -->
+                   <picture></picture>
                     <view class="clickNum">
                             <i-icon i-class="triangle" type="play_fill" size="20" color="#e2dcdc" />
                             <i-icon i-class="rubb" bindtap="showOpera" type="like" size="16" color="#2e74af" />   

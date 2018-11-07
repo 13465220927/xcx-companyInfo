@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   ready(){
-    if(app.globalData.contentTags.length>0){
+    if(app.globalData.contentTags.length==0){
       manageLib.getCategoryList(this,app);
       manageLib.getContentTagList(this,app)
     }  
@@ -52,12 +52,18 @@ Component({
     array: ['美国', '中国', '巴西', '日本'],
     upLoadImages:[],
     contentTags:[],
-    categoryList:[]
+    categoryList:[],
+    company_type:0
   },
 
   /**
    * 组件的方法列表
    */
+  ready(){
+      this.setData({
+        company_type:app.globalData.userData.company_type
+      })
+  },
   methods: {
     onChange(event){
       const detail = event.detail;
