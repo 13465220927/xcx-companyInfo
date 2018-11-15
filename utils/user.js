@@ -49,7 +49,7 @@ function replyMessage(content,user_id,contentId){        //回复一条消息
 }
 function getUserContent(current=1,user_id,that,isAdmin=false){     //获取指定用户的发布文章
     console.log(user_id)
-    let api=`/users/getUserContents?current=${current}&user_id=${user_id}&isAdmin=${isAdmin}`;
+    let api=`/users/getUserContents?state=true&current=${current}&user_id=${user_id}&isAdmin=${isAdmin}`;
     return lib.get(api).then(result=>{
         let data=Docs.tidyArticleData(result.data.docs);
         that.setData({
@@ -65,7 +65,7 @@ function getUserContent(current=1,user_id,that,isAdmin=false){     //获取指�
     });
 }
 function getUserUploadVideo(uid){
-    let api=`/users/getUploadVideo?uid='${uid}'`;
+    let api=`/users/getUploadVideo?uid=${uid}`;
     return lib.get(api);
 }
 function uploadImg(filePath){
@@ -90,22 +90,7 @@ function uploadImg(filePath){
     
 }
 function addOneContent(params){       //发布消息
-    // var params = {
-    //     categories: "Nycd05pP",
-    //     comments: "哥要发一条求职信息",
-    //     discription: "哥来自小程序",
-    //     sImg: "/upload/images/img201810j18181228.jpg",
-    //     tags: "Bk3BDBJoX",
-    //     title: "哥来自小程序",
-    //     uid:'SJdChE1sX',
-
-    //     workTimes:"一到三年",
-    //     hopeSalary:"3000以上",
-    //     gender:"0/1//2",
-    //     birthday:"1997-12-26",
-    //     evaluate:"这是自我评价",
-    //     contact:"15110436770"
-    // }
+   
     return lib.post('/api/content/addOne',params)
 }
 function updateUserLogo(uid,logo){
@@ -122,10 +107,10 @@ function getChatList(openId,userName,userImg,that){
 function getConversatiomDetail(openId,friendId){
     return lib.get(`/users/getConversatiomDetail?openId=${openId}&friendId=${friendId}`);
 }
-function sendChatMessage(sender_id,receive_id,message_type,message_content){
+function sendChatMessage(sender_id,receive_id,message_type,message_content,name,img){
     
     return lib.normalPost('/users/sendMessage',{
-        sender_id,receive_id,message_type,message_content
+        sender_id,receive_id,message_type,message_content,name,img
     });
 }
 function updateUserInfo(userData){

@@ -8,20 +8,24 @@
     align-items: center;
     border-top:1px solid #d8d8d8;
     font-size:30rpx;
+    padding-left:30rpx;
+    background:white;
 }
 .sendInput button{
-    width:120rpx;
-    height:100%;
+    width:110rpx;
+    height:73rpx;
     padding:0;
-    line-height:85rpx;
+    line-height:73rpx;
     color:white;
     background:rgb(31, 209, 31);
     text-align:Center; 
     margin-left:10rpx;
-    font-size:30rpx;
-    padding-left:20rpx;
+    font-size:13px;
+    position: relative;
+    top:-7rpx; 
 }
 .sendInput input{
     flex:1;
     border-bottom:1px solid #8de64e;
+    
 }

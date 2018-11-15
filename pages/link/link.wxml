@@ -1,1 +1,13 @@
-<link-item></link-item>
+<!-- <i-message id="message" />
+<link-item></link-item> -->
+
+<!-- <pickerSpecific></pickerSpecific> -->
+
+
+<canvas style=""  id="myCanvas">
+    <image src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"/>
+
+    <!-- <video id="v1" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"  >
+
+    </video> -->
+</canvas>

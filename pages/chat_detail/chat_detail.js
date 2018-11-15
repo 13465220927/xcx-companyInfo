@@ -7,7 +7,9 @@ Page({
    */
   data: {
     conversationData:[],
-    friendId:""
+    friendId:"",
+    name:"",
+    img:""
   },
 
   /**
@@ -18,12 +20,16 @@ Page({
         title:`${options.name}`
       })
       this.setData({
-        friendId:options.friendId
+        friendId:options.friendId,
+        name:options.name,
+        img:options.img
       })
-     userLib.getConversatiomDetail('111',options.friendId).then(result=>{
-         this.setData({
-             conversationData:result
-         })   
+      console.log(options)
+     userLib.getConversatiomDetail(app.globalData.userData._id,options.friendId).then(result=>{
+       console.log(result)   
+       this.setData({
+           conversationData:result
+       })   
       
      })
        
@@ -36,7 +42,7 @@ Page({
        receive_id:this.data.friendId,
        message_type:data.message_type,
        message_content:data.message_content
-      });
+     });
      this.setData({
        conversationData
      }) 

@@ -3,6 +3,7 @@
   "usingComponents": {
     "i-icon":"../../dist/icon/index",
     "i-input": "../../dist/input/index",
-    "picture":"../picture/picture"
+    "picture":"../picture/picture",
+    "workTemp":"../workTemp/workTemp"
   }
 }

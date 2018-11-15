@@ -14,6 +14,7 @@
  **/
 import showdown from './showdown.js';
 import HtmlToJson from './html2json.js';
+const {uploadHost}=require('../utils/config');
 /**
  * 配置及公有属性
  **/
@@ -155,7 +156,8 @@ function emojisInit(reg='',baseSrc="/wxParse/emojis/",emojis){
 module.exports = {
   wxParse: wxParse,
   wxParseTemArray:wxParseTemArray,
-  emojisInit:emojisInit
+  emojisInit:emojisInit,
+  uploadHost
 }
 
 

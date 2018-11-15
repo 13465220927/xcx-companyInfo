@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="section">
   <picker bindcancel="cancelPicker" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">

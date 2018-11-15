@@ -9,6 +9,7 @@
         kind="{{company.kind}}"
         uid="{{company_id}}"
 >
+<i-message id="message" />
 </mechanize-header>
 <mechanize-body
         honor_photo="{{company.honor_photo}}" 
@@ -18,6 +19,7 @@
         prefer_policy="{{company.prefer_policy}}"
         service_item="{{company.service_item}}"
         free_item="{{company.free_item}}"   
+        videoData="{{videoData}}"
 >
 </mechanize-body>
 <mechanize-footer bind:toggleKind="toggleKind"></mechanize-footer>

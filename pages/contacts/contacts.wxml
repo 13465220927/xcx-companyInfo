@@ -1,5 +1,6 @@
 <i-cell-group>
-      <i-cell wx:key="{{index}}" wx:for="{{lists}}" title="{{item.name}}" is-link url="../contacts_detail/contacts_detail?key={{item.key}}"></i-cell>
+      <i-cell wx:key="{{index}}" wx:for="{{lists}}" title="{{item.name}}" is-link url="../contacts_detail/contacts_detail?key={{item._id}}"></i-cell>
        <view bindtap="toAdd" class="toAdd">+</view>
 </i-cell-group>
+<i-message id="message" />
 

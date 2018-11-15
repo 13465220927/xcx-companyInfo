@@ -14,16 +14,28 @@ Page({
    */
   onLoad: function (options) {
       let that=this;
-      wx.getLocation({
-        success(res){
-           wx.openLocation({
-            latitude:res.latitude,
-            longitude:res.longitude,
-            name:"王珏的位置"
-           })
-         
-        }
-      });
+      if(options.obj){
+        console.log('来着快乐')
+        let obj=JSON.parse(options.obj);
+        console.log(!isNaN(Number(obj.latitude)))
+        wx.openLocation({
+          latitude:!isNaN(Number(obj.latitude))?Number(obj.latitude):39.9,
+          longitude:!isNaN(Number(obj.longitude))?Number(obj.longitude):117.11,
+          name:obj.name
+         })  
+      }else{
+        wx.getLocation({
+          success(res){
+             wx.openLocation({
+              latitude:res.latitude,
+              longitude:res.longitude,
+              name:""
+             })
+           
+          }
+        });
+      }
+      
   },
 
   /**

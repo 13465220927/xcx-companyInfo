@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="operaBtns">
         <view data-sign="1"  data-sign="0" bindtap="toggleBtn"  class="toggle  {{isActive=='0'?'active':''}}">
            企业宣传

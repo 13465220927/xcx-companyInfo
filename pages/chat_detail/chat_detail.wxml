@@ -1,4 +1,5 @@
+<i-message id="message" />
 <view>
-    <friend_panel conversationData="{{conversationData}}"></friend_panel>
-    <my-panel bind:postMessage="postMessage" friendId="{{friendId}}"></my-panel>
+    <friend_panel friendImg="{{img}}" conversationData="{{conversationData}}"></friend_panel>
+    <my-panel name="{{name}}" img="{{img}}" bind:postMessage="postMessage" friendId="{{friendId}}"></my-panel>
 </view>

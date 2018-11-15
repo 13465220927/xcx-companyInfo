@@ -1,1 +1,2 @@
+<i-message id="message" />
 <web-view src="https://xcx5.zhuozhida.cn/manage/{{key}}.html"></web-view>

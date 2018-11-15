@@ -15,6 +15,10 @@ class Contact{
             multiArray:nowArr
        })
     }
+    translatePinyin(result){
+       
+       
+    }
 }
 
 module.exports=new Contact();

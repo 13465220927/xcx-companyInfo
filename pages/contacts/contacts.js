@@ -1,4 +1,4 @@
-// pages/contacts/contacts.js
+let manageLib=require('../../utils/manage');
 Page({
 
   /**
@@ -6,16 +6,7 @@ Page({
    */
   data: {
        lists:[
-         {name:"政府机关",key:""},
-         {name:"事业单位",key:""},
-         {name:"新闻媒体",key:""},
-         {name:"医院",key:""},
-         {name:"学校",key:""},
-         {name:"社会团体",key:""},
-         {name:"乡镇单位",key:""},
-         {name:"厂矿企业",key:""},
-         {name:"其他",key:""},
-         {name:"政府",key:""},
+         
        ]
   },
 
@@ -23,8 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
+    wx.showLoading({title:"加载中"})
+    manageLib.getContactList('0').then(result=>{
+      console.log(result);
+      let lists=[];
+      result.forEach(item=>{
+        lists.push({name:item.name,_id:item._id})
+      })
+      this.setData({lists})
+      wx.hideLoading();
+    })
+  },  
   toAdd(){
      wx.navigateTo({
         url:"../add_contact/add_contact"

@@ -12,6 +12,8 @@
                 class="i-index-demo-item" 
                 wx:for="{{item.list}}" 
                 wx:for-index="in" 
+                data-index="{{in}}"
+                bindtap="toDetail"
                 wx:key="{{in}}" 
                 wx:for-item="it">
                 {{it.name}}
@@ -19,3 +21,4 @@
         </i-index-item>
     </i-index>
 </view>
+<i-message id="message" />

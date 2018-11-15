@@ -17,3 +17,11 @@ page{
      display: block;
      margin:50rpx auto 0 !important;
  }
+
+ .otherPromte{
+     display:inline-block;
+     width:20rpx;
+     height:20rpx;
+     border-radius:50%;
+     background:rgb(252, 90, 90);
+ }

@@ -5,7 +5,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    friendId:{type:String,value:""}
+    friendId:{type:String,value:""},
+    name:{type:String,value:""},
+    img:{type:String,value:""}
   },
 
   /**
@@ -26,8 +28,11 @@ Component({
               app.globalData.userData._id,
               this.data.friendId,
               1,
-              this.data.content
+              this.data.content,
+              this.data.name,
+              this.data.img
               )
+            this.setData({content:""})  
         }else{
             wx.showToast({title:"内容不可为空",icon:"none"})
         }

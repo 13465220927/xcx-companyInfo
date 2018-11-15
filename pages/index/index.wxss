@@ -2,3 +2,15 @@ page{
     width:100%;
     background:#f5f5f5;
 }
+
+.specify{
+    position:fixed;
+    width:100rpx;
+    height:100rpx;
+    font-size:12px;
+    text-align:center;
+    background:red;
+    color:white;
+    right:10rpx;
+    top:40%;
+}

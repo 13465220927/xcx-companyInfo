@@ -1,4 +1,4 @@
 
 .areaInput{
-    
+    min-height:200rpx;
 }

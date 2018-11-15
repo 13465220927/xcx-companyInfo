@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="notice_wrap">
      <i-input disabled bind:change="change"  title="类型" placeholder="通知公告" />
 

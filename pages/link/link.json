@@ -1,7 +1,8 @@
 {
     
     "usingComponents": {
-        "link-item":"../../components/link/link-item/link-item"
+        "link-item":"../../components/link/link-item/link-item",
+        "pickerSpecific":"../../components/common/pickerSpecific/pickerSpecific"
       },
       "navigationBarTitleText": "互通"
 }

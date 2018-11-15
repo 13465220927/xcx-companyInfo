@@ -13,17 +13,21 @@ Component({
    * 组件的初始数据
    */
   data: {
+    bSubmit:false,
     oneCat:"企业发布",
     twoCat:"项目合作",
     params:{
-      title:"测试公司类型",
-      stitle:"测试公司小类型",
-      discription:"这是藐视内容",
+      title:"",
+      discription:"",
       company_kind_name:"",
       categories:[],
-      comments:'这是正文内容',
+      comments:'',
       uid:"",
-      tags: "kp_iR2P01"
+      tags:[
+        "kp_iR2P01"
+      ],
+      other_photos:[],
+      specificKind:""
     }
   },
 
@@ -37,11 +41,26 @@ Component({
     params.company_kind_name=app.globalData.userData.company_kind_name;
     params.uid=app.globalData.userData._id;
     categories.push(User.searchCategory(app.globalData.categoryList,this.data.oneCat));
-    categories.push(User.searchCategory(app.globalData.categoryList,this.data.twoCat));
+    categories.push(User.searchCategory(app.globalData.categoryList,this.data.twoCat))
+   
+
     params.categories=categories;
+    console.log(categories);
     this.setData({params});
   },
   methods: {
+    modifySpecificKind(e){
+      let params=this.data.params;
+      params.specificKind=e.detail.specificKind;
+      this.setData({
+        params
+      })
+    },
+    updatePhoto(e){
+      let params=this.data.params;
+      params.other_photos=e.detail.other_photos;
+      this.setData({params})
+    },
     inputChange(e){
         let type=e.currentTarget.dataset.type; 
         let val=e.detail.detail.value;
@@ -50,13 +69,16 @@ Component({
         this.setData({params});
     },
     submit(){
-      console.log(this.data.params);
-      console.log('发布了啦啦');
-
-      userLib.addOneContent(this.data.params).then(result=>{
-        console.log(result); 
+      if(this.data.bSubmit){
+        return
+      }else{
+        this.setData({bSubmit:true}) 
+      }
+      let params=this.data.params; 
+      params.discription=params.comments.substring(0,55);
+      userLib.addOneContent(params).then(result=>{
         wx.showToast({
-           title:"发布成功,审核完成后即可展示",
+           title:"发布成功",
            icon:"none",
            duration:2000
          })
@@ -66,6 +88,7 @@ Component({
          },2000)
         
       }).catch(err=>{
+        this.setData({bSubmit:false});
         console.log(err);
         wx.showToast({
           title:`${err}`,

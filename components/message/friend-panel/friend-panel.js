@@ -1,4 +1,5 @@
 const app=getApp();
+const {hostname}=require('../../../utils/config');
 Component({
   /**
    * 组件的属性列表
@@ -7,18 +8,22 @@ Component({
      conversationData:{
        type:Array,
        value:[]
-     }
+     },
+     friendImg:{type:String,value:""}
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-       openId:""
+       openId:"",
+       img:""
   },
   ready(){
     this.setData({
-      openId:app.globalData.userData._id
+      openId:app.globalData.userData._id,
+      img:hostname+app.globalData.userData.logo,
+      hostname
     })
   },
   /**

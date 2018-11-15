@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="user-header">
     <image src="{{userData.logo}}"></image>
     <view class="userInfo">
@@ -8,5 +9,5 @@
          </view>
     </view>
 </view>
-
+<i-message id="message" />
 <recruit-info contentList="{{docs}}"></recruit-info>

@@ -1,5 +1,6 @@
 const app=getApp();
 const manageLib=require('../../utils/manage');
+const userLib=require('../../utils/user');
 const User=require('../../controller/User');
 Page({
 
@@ -15,15 +16,14 @@ Page({
       totalItems:1,
       loadTip:"正在加载更多数据",
       bLoadData:true,
-      docs:[]
+      docs:[],
+      videoData:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('公司类型')
-  
      if(options.isMe==1){
          if(app.globalData.userData.company_type==2){
           app.globalData.userData.kind='中介机构';
@@ -36,6 +36,7 @@ Page({
           isMe:true,
           company_id:app.globalData.userData._id
          })
+       
      }else{
         let company=JSON.parse(options.userData)
         if(company.company_type==2){
@@ -49,21 +50,28 @@ Page({
             company_id:company._id
         })
      }
-     console.log('公司ID is');
-     console.log(this.data.company_id);
      this.getList();
   },
   getList(){
+    if(this.data.company.company_type==1){
+      console.log('来了')
+      userLib.getUserUploadVideo(this.data.company_id).then(result=>{
+        console.log('video is')
+        console.log(result)
+        if(result.data.length>0){
+          this.setData({videoData:result.data})
+        }
+      })
+    }
+    
     manageLib.getCompanyConts(this,this.data.current,this.searchCateId(this.data.kind),this.data.company_id)
   },  
   toggleKind(e){
-      console.log(e.detail.kind);
       this.setData({
         kind:e.detail.kind,
         current:1,
         totalItems:1
       })
-      console.log('点击了啊啊')
       this.getList();
   },
   searchCateId(name){

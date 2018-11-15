@@ -1,3 +1,4 @@
+<i-message id="message" />
 <map 
    id="map" 
    longitude="{{longitude}}" 

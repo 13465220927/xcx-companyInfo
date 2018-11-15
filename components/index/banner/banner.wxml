@@ -1,7 +1,7 @@
 <view class="banner-wrap">
   <view style="background:{{bg}}"  bindtap="modifyBg" class="myqy">
         <image src="../../../img/index/leftNotice.png" /> 
-        <text>名优企业</text>
+        <text>名城展示</text>
   </view>
  
   <swiper class="banner" indicator-dots="{{false}}"

@@ -1,8 +1,8 @@
 <view class="mess-wrap">
-    <view wx:for="{{chatList}}" data-id="{{item.friend_id}}" wx:key="{{index}}" class="item" bindtap="toDetail">
+    <view wx:for="{{chatList}}" wx:key="{{index}}" data-index="{{index}}" class="item" bindtap="toDetail">
         <view class="userImg" >
-            <i-badge count="66" i-class-alone="demo-badge-alone" />
-            <image src="{{item.img}}" />
+            <!-- <i-badge count="66" i-class-alone="demo-badge-alone" /> -->
+            <image src="{{item.img&&hostname?hostname+item.img:''}}" />
         </view>
         
         <view class="item-content">

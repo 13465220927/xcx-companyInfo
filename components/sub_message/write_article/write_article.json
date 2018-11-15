@@ -6,6 +6,8 @@
     "i-icon": "../../dist/icon/index",
     "i-input": "../../dist/input/index",
     "i-button": "../../dist/button/index",
-    "i-switch": "../../dist/switch/index"
+    "i-switch": "../../dist/switch/index",
+    "uploadPhoto":"../../common/uploadPhoto/uploadPhoto",
+    "pickerSpecific":"../../common/pickerSpecific/pickerSpecific"
   }
 }

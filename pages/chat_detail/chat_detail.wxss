@@ -2,4 +2,5 @@ page{
     width:100%;
     background:#f5f5f5;
     padding-top:20rpx;
+    padding-bottom:100rpx;
 }

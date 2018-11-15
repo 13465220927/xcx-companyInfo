@@ -1,6 +1,5 @@
 const {hostname}=require('../../utils/config');
 const app=getApp();
-const manageLib=require('../../utils/manage');
 const userLib=require('../../utils/user');
 
 Page({
@@ -9,15 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+       chatList:[],
        userName:"",
        logo:"",
        operaData:[
          {icon:"brush_fill",name:"我的发布",url:"../profile_my_subcontent/profile_my_subcontent"},
          {icon:"collection_fill",name:"我的企业",url:"../mechanize/mechanize?isMe=1"},
          {icon:"editor",name:"修改资料",url:"../edit_company_info/edit_company_info"},
-         {icon:"interactive_fill",name:"消息管理",url:"../message/message"},
+         {icon:"interactive_fill",name:"消息管理",url:`../message/message`,extraOpera:true},
          {icon:"emoji_fill",name:"信息反馈",url:"../feedback/feedback"},
        ],
+       hasNewMsg:false,
        hostname:""
   },
 
@@ -37,7 +38,7 @@ Page({
           operaData,
           hostname
        })  
-       //userLib.updateUserLogo(app.globalData.userData.id,"/upload/images/img20181013173940.jpeg");
+      
   },
 
   /**
@@ -74,12 +75,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+     
       this.setData({
         userName:app.globalData.userData.userName,
         logo:app.globalData.userData.logo
-     })  
-    
+      })  
+      userLib.getChatList(app.globalData.userData._id,app.globalData.userData.userName,app.globalData.userData.logo,this)  
     
   },
 

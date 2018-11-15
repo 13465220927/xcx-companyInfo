@@ -1,0 +1,7 @@
+<view class="section">
+  <picker class="picTem" bindcancel="cancelPicker" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      推送特定行业  {{multiArray[0][multiIndex[0]]}}-  {{multiArray[1][multiIndex[1]]}} 
+    </view>
+  </picker>
+</view>

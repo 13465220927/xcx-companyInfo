@@ -1,5 +1,8 @@
 const userLib=require('../../../utils/user');
 const app=getApp();
+const {hostname}=require('../../../utils/config');
+const manageLib=require('../../../utils/manage');
+let WxParse = require('../../../wxParse/wxParse.js');
 Component({
   /**
    * 组件的属性列表
@@ -24,7 +27,9 @@ Component({
        {name:"路人甲",comment:"这是路人甲的评论"},
        {name:"路人已",comment:"这是d2312312路人甲的评论老铁666，无敌，点赞关注走一波"}
      ],
-     bShowOpera:false
+     bShowOpera:false,
+     activeIndex:-1,
+     activeCon:''
   },
 
   /**
@@ -93,14 +98,28 @@ Component({
       })
     },
     toChat(e){
-       
        let userData=this.data.contentList[e.currentTarget.dataset.index];   
+       console.log(userData);
        if(userData.uid!=app.globalData.userData._id){
           wx.navigateTo({
-            url:`../chat_detail/chat_detail?name=${userData.userName}&friendId=${userData.uid}`
+            url:`../chat_detail/chat_detail?name=${userData.userName}&friendId=${userData.uid}&img=${userData.logo.substring(hostname.length)}`
           })
        };
        
+    },
+    getComments(e){
+         let index=e.currentTarget.dataset.index;
+         let id=this.data.contentList[index].id;
+         manageLib.getOneContentDetail(id).then(result=>{
+         let activeCon=WxParse.wxParse('article', 'html', result.data.doc.comments, this, 5);
+         console.log(activeCon)
+         activeCon=activeCon.nodes[0].text;
+        
+           this.setData({
+             activeIndex:index,
+             activeCon
+           })
+         })
     }
   }
 })

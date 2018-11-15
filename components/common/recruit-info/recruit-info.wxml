@@ -5,7 +5,6 @@
                         <image bindtap="toUserDetail" data-index="{{index}}" class="userImg" src="{{item.logo}}" />
                         <text class="userName">{{item.userName}}</text>
                     </view>
-                    
                     <view class="kind">
                         <text style="opacity:{{bShowInfoType?'1':'0'}}" class="infoType">{{item.category}}</text>
                         <view class="call">
@@ -16,12 +15,17 @@
                     </view>
                </view> 
                <view class="content">
-                   <view>
+                   <workTemp company_type="{{item.company_type}}" recruit="{{item.recruit}}"  wx:if="{{item.recruit.expectWork}}"></workTemp>
+                   <view hidden="{{activeIndex==index}}">
+                       <text wx:if="{{item.recruit.expectWork}}"> {{item.company_type==0?"个人描述":"公司描述及待遇"}}</text>
                       {{item.discription?item.discription:item.comments}}
                    </view>
+                   <view class="fadeCon" wx:if="{{activeIndex==index}}">{{activeCon}}</view>
+                   <view hidden="{{activeIndex==index||item.discription.length<50}}" data-index="{{index}}" bindtap="getComments" class="subType">全文</view>
                    <view class="subType">
                        {{item.company_type!=0?'企业发布':'个人发布'}}
                    </view>
+                   <picture pics="{{item.other_photos}}"></picture>
                    <view class="time">
                       {{item.date}}
                        <i-icon i-class="opera-click" bindtap="showOpera" data-index="{{index}}" type="message_fill" size="22" color="#2e74af" />   
@@ -46,7 +50,7 @@
                             {{item.name}}:{{item.comment}}
                         </view>
                    </view> -->
-                   <picture></picture>
+                  
                     <view class="clickNum">
                             <i-icon i-class="triangle" type="play_fill" size="20" color="#e2dcdc" />
                             <i-icon i-class="rubb" bindtap="showOpera" type="like" size="16" color="#2e74af" />   

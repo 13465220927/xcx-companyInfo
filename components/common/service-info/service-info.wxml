@@ -1,7 +1,7 @@
 <view class="service-wrap">
      <view class="item" wx:for="{{docs}}" wx:key="{{index}}">
-         <image bindtap="toDetail" data-index="{{index}}" class="userImg" src="{{hostname}}{{item.logo}}"/>
-         <view class="servie-info">
+         <image bindtap="toDetail" data-index="{{index}}" class="userImg" src="{{item.logo&&hostname?hostname+item.logo:''}}"/>
+         <view bindtap="toDetail" data-index="{{index}}" class="userImg" class="servie-info">
              <view class="header">
                  {{item.userName}}
              </view>

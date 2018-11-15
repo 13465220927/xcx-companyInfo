@@ -2,7 +2,7 @@
 const app = getApp()
 const manageLib=require('../../utils/manage');
 const userLib=require('../../utils/user');
-const apiLib=require('../../utils/api');
+
 
 Page({
   data: {
@@ -19,13 +19,12 @@ Page({
     current:1,
     bLoadMore:true,
     loadTip:"正在加载更多数据",
-    bLoadData:false
+    bLoadData:false,
+    showSpecify:false
   },
   //事件处理函数
 
   onLoad: function (options) {
-    console.log('来首页了')
-    console.log(options)
      let userData=wx.getStorageSync('userData');
      this.setData({
       totalPage:0,
@@ -71,7 +70,15 @@ Page({
     } 
   },
   onShow(){
-       console.log('onshow le ')
+      if(app.globalData.userData.company_type!=0){
+          this.setData({
+            showSpecify:true
+          })
+      }else{
+          this.setData({
+            showSpecify:false
+          })
+      } 
       if(app.bLoginOut==1){
         this.setData({bShowLogin:true})
       }else if(app.bLoginOut==0){
@@ -85,6 +92,11 @@ Page({
         current:1
        })
        manageLib.getContentList(this,1,e.detail.typeId);
+  },
+  toSpecify(){
+    wx.navigateTo({
+      url:"../specifyInfo/specifyinfo"
+    })
   }
   
 })

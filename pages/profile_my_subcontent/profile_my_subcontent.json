@@ -1,7 +1,7 @@
 {
     "navigationBarTitleText": "我的发布",
     "usingComponents": {
-        "government-body":"../../components/government/government-body/government-body",
+        "recruit-info":"../../components/common/recruit-info/recruit-info",
         "i-icon": "../../components/dist/icon/index",
         "i-button": "../../components/dist/button/index"
      }

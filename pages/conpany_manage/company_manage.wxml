@@ -1,3 +1,4 @@
+<i-message id="message" />
 <i-panel title="基础用法">
     <i-input bind:change="change"  title="企业名称*" autofocus placeholder="请输入服务名称" />
     <i-input bind:change="change"  title="服务电话*"  placeholder="请输入服务电话" />

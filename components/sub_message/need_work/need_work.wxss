@@ -69,6 +69,5 @@ picker{
 }
 
 .textareaInp{
-    height:140rpx;
-   
+    min-height:300rpx;
 }

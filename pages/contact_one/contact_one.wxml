@@ -1,0 +1,8 @@
+<i-message id="message" />
+<view class="header">{{obj.name}}</view>
+
+<i-cell bindtap="call" title="{{obj.phone}}" is-link>
+          
+</i-cell>
+
+<i-cell bindtap="toMap" title="{{obj.address?obj.address:'地址'}}" is-link></i-cell>

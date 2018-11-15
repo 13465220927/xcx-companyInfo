@@ -66,6 +66,9 @@ class Docs{
                 obj.isAdmin=0;
                 obj.company_type=item.uAuthor.company_type;
              }
+             obj.recruit=item.recruit;
+             obj.id=item.id;
+             obj.other_photos=item.other_photos;
              obj.title=item.title;
              obj.clickNum=item.clickNum;
              if(item.categories[0]){

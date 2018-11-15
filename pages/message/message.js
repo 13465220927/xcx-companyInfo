@@ -13,7 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    userLib.getChatList(app.globalData.userData._id,app.globalData.userData.userName,app.globalData.userData.logo,this)  
+    console.log(options);
+    if(options.extraData){
+      this.setData({
+        chatList:JSON.parse(options.extraData)
+       })
+    }
+    
   },
 
   /**

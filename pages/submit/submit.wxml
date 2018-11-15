@@ -1,3 +1,4 @@
+<i-message id="message" />
 <i-divider content="请选择您要发布的栏目"></i-divider>
 
 <div class="flex-wrap">

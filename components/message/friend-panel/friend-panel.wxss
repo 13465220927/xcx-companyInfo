@@ -12,13 +12,13 @@
 .item image{
     width:100rpx;
     height:100rpx;
+    border-radius:50%;
     float:left;
 }
 .item .content{
     max-width:460rpx;
     margin-left:20rpx;
     background:white;
-    min-height:100rpx;
     float:left;
     font-size:30rpx;
     padding:20rpx;

@@ -1,1 +1,2 @@
+<i-message id="message" />
 <message-item chatList="{{chatList}}"></message-item>

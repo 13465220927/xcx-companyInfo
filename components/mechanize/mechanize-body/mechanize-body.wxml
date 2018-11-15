@@ -12,24 +12,32 @@
       </view>
       <view class="prizeImg">
           <image wx:if="{{honor_photo.length==0}}" bindtap="previewImg" src="{{defaultPrizeImg}}" data-url="{{defaultPrizeImg}}" />
-          <image bindtap="previewImg" wx:for="{{honor_photo}}" wx:key="{{index}}" src="{{hostname}}{{item}}"  data-url="{{hostname}}{{item}}"/>
+          <image bindtap="previewImg" wx:for="{{honor_photo}}" wx:key="{{index}}" src="{{item?hostname+item:''}}"  data-url="{{hostname}}{{item}}"/>
      </view>
      <view wx:if="{{company_type==1}}">
               <view class="info-header">
              <i-icon type="video" size="18" color="#2b3135" />
              宣传视频
             </view>
-            <view class="pictureImg">
-                <image  bindtap="previewImg" data-url="{{defaultVideoImg}}" src="{{defaultVideoImg}}" />
+            <scroll-view class="videos">
+                <image  wx:if="{{videoData.length==0}}" bindtap="previewImg" data-url="{{defaultVideoImg}}" src="{{defaultVideoImg}}" />
                 
-            </view>
+                 <view class="hidden-wrap" wx:for="{{videoData}}" wx:key="{{index}}">
+                    
+                        <video bindfullscreenchange="fullscreenchange"  bindtap="fullScreen" show-center-play-btn="false"  data-index="{{index}}" id="v{{index}}" bindplay="fullScreen"  x5-video-player-fullscreen="true" show-fullscreen-btn="true"  src="{{item?hostname+item:''}}">
+                            <cover-image hidden="{{activeVideo==index}}" data-index="{{index}}" bindtap="fullScreen"  src="../../../img/index/videoCover.jpg" ></cover-image>
+                        </video>
+                    
+                     
+                 </view>  
+            </scroll-view>
             <view class="info-header">
                     <i-icon type="picture" size="18" color="#2b3135" />
                     产品照片
             </view>
             <view class="pictureImg">
                 <image wx:if="{{product_photo.length==0}}"  bindtap="previewImg" src="{{defaultProImg}}" data-url="{{defaultProImg}}" />
-                <image bindtap="previewImg" data-url="{{hostname}}{{item}}" wx:for="{{product_photo}}" wx:key="{{index}}" src="{{hostname}}{{item}}" />
+                <image bindtap="previewImg" data-url="{{hostname}}{{item}}" wx:for="{{product_photo}}" wx:key="{{index}}" src="{{item?hostname+item:''}}" />
             </view>
      </view>
      <view wx:if="{{company_type!=1}}">

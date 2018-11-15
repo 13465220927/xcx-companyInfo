@@ -1,9 +1,12 @@
- <i-input  title="标题"  placeholder="请填写标题" />
+ <i-input data-type="title" bind:change="inputChange"  title="标题"  placeholder="请填写标题" />
  
-<i-input  title="简短标题"  placeholder="请填写简短标题" />
+<i-input  data-type="comments" bind:change="inputChange" i-class="areaInput" title="正文内容" placeholder="请填写正文"  type="textarea"/>
 
-<i-input  title="内容摘要"   placeholder="请填写内容摘要"/>
+<pickerSpecific bind:modifySpecificKind="modifySpecificKind"></pickerSpecific>
 
-<i-input i-class="areaInput" title="正文内容" placeholder="请填写正文"  type="textarea"/>
+<uploadPhoto bind:updatePhoto="updatePhoto"></uploadPhoto>
 
-<i-button bind:click="handleSubmit" type="primary" size="small">发布</i-button>
+
+
+<i-button bind:click="submit" type="primary" size="small">发布</i-button>
+

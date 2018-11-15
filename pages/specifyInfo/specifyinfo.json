@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "与企业有关的信息",
+    "usingComponents": {
+        "i-load-more": "../../components/dist/load-more/index",
+        "recruit-info":"../../components/common/recruit-info/recruit-info"
+    }
+
+}

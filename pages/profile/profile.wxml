@@ -1,11 +1,12 @@
-
+<i-message id="message" />
 <i-card full title="{{userName}}"  thumb="{{hostname}}{{logo}}" i-class="card-demo">
    
 </i-card>
 <i-cell-group>
     <i-panel wx:for="{{operaData}}" wx:key="{{index}}" class="cell-panel-demo" title="带 icon 的 Cell">
-        <i-cell title="{{item.name}}" is-link url="{{item.url}}">
+        <i-cell title="{{item.name}}" is-link url="{{item.url}}"  extraData="{{item.extraOpera?chatList:''}}">
             <i-icon  size="25" type="{{item.icon}}" slot="icon" />
+            <text wx:if="{{item.extraOpera&&hasNewMsg}}" class="otherPromte" slot="otherOpera"></text>
         </i-cell>
     </i-panel>
 </i-cell-group>

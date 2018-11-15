@@ -13,7 +13,7 @@ Component({
   data: { 
      toolsData:[
        {url:"wuliu",img:"tool/1.jpg",name:"物流查询"},
-       {url:"rili",img:"tool/2.jpg",name:"日历查询"},
+      //  {url:"rili",img:"tool/2.jpg",name:"日历查询"},
        {url:"jipiao",img:"tool/3.jpg",name:"机票查询"},
        {url:"qiche",img:"tool/4.jpg",name:"汽车时刻表"},
        {url:"test",img:"tool/5.jpg",name:"天气查询"},

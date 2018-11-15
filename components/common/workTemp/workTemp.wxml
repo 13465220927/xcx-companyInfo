@@ -1,0 +1,16 @@
+<view>期望职位:<text class="expectWork" wx:for="{{recruit.expectWork}}" wx:key="{{index}}">{{item}}</text>
+   
+    <view wx:if="{{company_type==0}}">
+        <view wx:if="{{recruit.workExperience}}">工作经验:  {{recruit.workExperience}}</view>
+        <view wx:if="{{recruit.salary}}">期望薪水:  {{recruit.salary}} 
+        </view>
+        <view wx:if="{{recruit.birthday}}">出生年份:  {{recruit.birthday}}
+        </view>
+    </view>
+    <view>联系人:   {{recruit.contacter}}
+    </view>
+    <view>联系电话:  {{recruit.tel}}
+    </view>
+    
+    
+</view>

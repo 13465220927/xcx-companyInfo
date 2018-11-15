@@ -1,0 +1,28 @@
+.aboutPhoto{
+     
+}
+.aboutPhoto text{
+    font-size:14px;
+    padding-left:40rpx;
+    color:#495060;
+}
+
+.img-wrap{
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    padding:20rpx 40rpx;
+}
+.img-wrap image{
+    width:100rpx;
+    height:100rpx;
+    margin-right:10rpx;
+}
+.add{
+    width:100rpx;
+    height:100rpx;
+    font-size:60rpx;
+    text-align:center;
+    line-height:80rpx;
+    border:1px solid rgb(214, 207, 207);
+}

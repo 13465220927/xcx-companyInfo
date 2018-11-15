@@ -14,10 +14,17 @@ class User{
 
     }
     loginAfter(result,app,that,email,password,isCompanyUser=false){
-       
+        let  showSpecify=false;
         app.globalData.userData=result.data;
+        if(app.globalData.userData.company_type==2){
+            app.globalData.userData.company_kind_name="zhongjiejigou"
+        }
+
+        if(app.globalData.userData.company_type!=0){
+            showSpecify=true
+        }
         app.bLoginOut=0;
-        that.setData({bShowLogin:false})
+        that.setData({bShowLogin:false,showSpecify})
         wx.setStorage({key:"userData",data:{email,password,isCompanyUser}})
         that.triggerEvent('cancelLoginDialog',{},{});
        
@@ -26,11 +33,29 @@ class User{
         
     }
     reveiveChatList(result,that){
+        let lastestTime=0;
+        result.forEach(item=>{
+            if(item.send_time>lastestTime){
+                lastestTime=item.send_time
+            }
+        })
+        let previousTime=wx.getStorageSync('chatTime');
+        
+        console.log(lastestTime,previousTime)
+        wx.setStorage({
+            key:"chatTime",
+            data:lastestTime
+        })
         result.forEach(item=>{
             item.send_time=formateDate(Number(item.send_time));
         })
+        let  hasNewMsg=false;
+        if(lastestTime>previousTime){
+             hasNewMsg=true
+        }
         that.setData({
-            chatList:result
+            chatList:result,
+            hasNewMsg
         })
     }
     switchKind(company_kind_name){

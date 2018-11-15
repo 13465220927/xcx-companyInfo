@@ -3,7 +3,7 @@
     <view class="notice">
         <view bindtap="toDetail" data-index="{{index}}" wx:for="{{noticeData}}" wx:key="{{index}}" class="item">
             <i-icon color="#363636" type="systemprompt" />
-            <text class="title">[通知公告] {{item.title}}</text>
+            <text class="title">[{{index==0?'通知公告':index==1?'政策宣传':'办事服务'}}] {{item.title}}</text>
             <text class="time">{{item.date}}</text>
         </view>
         <view bindtap="toMore" class="seeMore">

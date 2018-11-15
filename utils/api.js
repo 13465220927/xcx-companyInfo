@@ -25,9 +25,21 @@ function getOneContent(id){       //获取某一篇文章的详情
     let api=`/api/content/getContent?id=${id}`;
     return lib.get(api);
 }
+function readTxt(src){
+    console.log('src is'+src)
+    return new Promise((resolve,reject)=>{
+        wx.request({
+            url:src,
+            success(res){
+                resolve(res.data)
+            }
+        })
+    })
+}
 
 module.exports={
     getAllAds,
     getMessageList,
-    getOneContent
+    getOneContent,
+    readTxt
 }

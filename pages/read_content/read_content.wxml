@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="header">{{doc.title}}</view>
 <view class="promote">
    <text>{{doc.author?doc.author:doc.adminSender.userName}}</text>
@@ -7,3 +8,6 @@
 <view class="content">
     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>
+<i-modal title="读取的内容" visible="{{ visible1 }}" bind:ok="handleClose1" bind:cancel="handleClose1">
+    <view>{{txtData}}</view>
+</i-modal>

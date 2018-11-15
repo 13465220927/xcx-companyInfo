@@ -1,5 +1,5 @@
 <view class="header-wrap">
-     <image class="userImg" src="{{hostname}}{{logo}}" />
+     <image class="userImg" src="{{hostname+logo}}" />
      <view class="company-name">
          {{companyName}}
      </view>

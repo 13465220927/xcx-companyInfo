@@ -1,4 +1,4 @@
-
+const manageLib=require('../../utils/manage');
 Page({
 
   /**
@@ -6,12 +6,8 @@ Page({
    */
   data: {
     units:[
-      {name:"全部",key:"all"},
-      {name:"市政府",key:"shizhengfu"},
-      {name:"政协",key:"zhengxie"},
-      {name:"财政局"},
-      {name:"教育局"},
-      {name:"国税局"},
+     
+      
     ],
     cities : [
       {"label":"北京Beijing010","name":"北京","pinyin":"Beijing",kind:"shizhengfu"},  
@@ -31,6 +27,13 @@ Page({
     console.log(event.detail,'click right menu callback data')
   }, 
   onReady(){
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  initCity(){
     let cities=this.data.cities;
     let storeCity = new Array(26);
     const words = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -40,14 +43,22 @@ Page({
             list : []
         }
     })
+  
     cities.forEach((item)=>{
-        let firstName = item.pinyin.substring(0,1);
+        let firstName = item.pinyin.substring(0,1).toUpperCase();
         let index = words.indexOf( firstName );
+       
         storeCity[index].list.push({
             name : item.name,
             key : firstName,
-            kind:item.kind
+            parentId:item.parentId,
+            longitude:item.longitude,
+            latitude:item.latitude,
+            phone:item.phone,
+            address:item.address
         });
+        console.log('这里')
+        console.log(storeCity)
     })
     storeCity=storeCity.filter(item=>{
          return  item.list.length>0;
@@ -60,15 +71,10 @@ Page({
         toggleCities:this.data.cities
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  initCity(){
-
-  },
   toggle(e){
    let index=e.currentTarget.dataset.index;
    let key=this.data.units[index].key;
+   console.log(this.data.units[index])
    let cities=JSON.parse(JSON.stringify(this.data.cities));
    let toggleCities=[];
    
@@ -78,7 +84,7 @@ Page({
    }else{
     cities.forEach((item)=>{
         item.list=item.list.filter(chil=>{
-            return chil.kind==key;
+            return chil.parentId==key;
         })
      })
      toggleCities=cities;
@@ -89,9 +95,26 @@ Page({
     })
   },
   onLoad: function (options) {
-
+    console.log(options);
+    manageLib.getContactRoot(options.key).then(result=>{
+        let units=[{name:"全部",key:"all"}];
+        console.log(result)
+        result.parentData.forEach(item=>{
+            units.push({name:item.name,key:item._id})
+        })
+        this.setData({units,cities:result.children});
+        this.initCity();
+    });
+     
   },
-
+  toDetail(e){
+     let index=e.currentTarget.dataset.index;
+     console.log(index)
+     let obj=this.data.toggleCities[0].list[index];
+     wx.navigateTo({
+         url:`../contact_one/contact_one?obj=${JSON.stringify(obj)}`
+     })
+  }, 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

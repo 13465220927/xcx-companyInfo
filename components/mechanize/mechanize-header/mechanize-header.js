@@ -44,7 +44,7 @@ Component({
       console.log(uid);
       if(uid!=app.globalData.userData._id){
           wx.navigateTo({
-            url:`../chat_detail/chat_detail?name=${this.data.companyName}&friendId=${uid}`
+            url:`../chat_detail/chat_detail?img=${this.data.logo}&name=${this.data.companyName}&friendId=${uid}`
           })
       };
     },

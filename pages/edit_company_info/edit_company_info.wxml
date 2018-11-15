@@ -1,3 +1,4 @@
+<i-message id="message" />
 <view class="logo-wrap">
    <image src="{{hostname}}{{userData.logo}}" />
    <i-button bindtap="chooseLogo" type="primary" i-class="btn">修改logo</i-button>

@@ -32,7 +32,7 @@ Component({
           kind="供求信息"
           break;
         case  "tab2":
-           kind="创业项目";
+           kind="项目合作";
            break;
         case  "tab3":
            kind="招聘信息";

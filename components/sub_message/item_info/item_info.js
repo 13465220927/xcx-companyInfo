@@ -15,14 +15,17 @@ Component({
   data: {
     oneCat:"个人发布",
     twoCat:"创业项目",
+    bSubmit:false,
     params:{
       title:"",
-      stitle:"",
       discription:"",
       categories:[],
       comments:'',
       uid:"",
-      tags: "kp_iR2P01"
+      tags:[
+        "kp_iR2P01"
+      ],
+      other_photos:[]
     }
   },
 
@@ -39,6 +42,11 @@ Component({
     this.setData({params});
   },
   methods: {
+    updatePhoto(e){
+      let params=this.data.params;
+      params.other_photos=e.detail.other_photos;
+      this.setData({params})
+    },
     inputChange(e){
         let type=e.currentTarget.dataset.type; 
         let val=e.detail.detail.value;
@@ -47,10 +55,15 @@ Component({
         this.setData({params});
     },
     submit(){
-      console.log(this.data.params);
-      console.log('发布了啦啦');
-
-      userLib.addOneContent(this.data.params).then(result=>{
+      if(this.data.bSubmit){
+          return
+      }else{
+          this.setData({bSubmit:true}) 
+      }
+      let params=this.data.params; 
+      params.discription=params.comments.substring(0,55);
+      console.log(params.discription);
+      userLib.addOneContent(params).then(result=>{
          wx.showToast({
            title:"发布成功,审核完成后即可展示",
            icon:"none",
@@ -61,6 +74,12 @@ Component({
            wx.navigateBack()
          },2000)
         
+      }).catch(err=>{
+        this.setData({bSubmit:false})
+        wx.showToast({
+          title:`${err}`,
+          icon:"none"
+        })
       })
     }
   }

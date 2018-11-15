@@ -46,6 +46,10 @@ Component({
         url: {
             type: String,
             value: ''
+        },
+        extraData:{
+            type: Array,
+            value: {}
         }
     },
 
@@ -55,7 +59,8 @@ Component({
 
     methods: {
         navigateTo () {
-            const { url } = this.data;
+            let  { url,extraData} = this.data;
+            url=`${url}?extraData=${JSON.stringify(extraData)}`;
             const type = typeof this.data.isLink;
 
             this.triggerEvent('click', {});

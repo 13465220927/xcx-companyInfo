@@ -1,0 +1,7 @@
+<view class="aboutPhoto">
+        <text>附件图片</text>
+        <view  class="img-wrap">
+          <image bindtap="delProductPho" wx:for="{{other_photos}}" wx:key="{{index}}" data-index="{{index}}" src="{{hostname}}{{item}}" />
+          <view bindtap="chooseProductPho"  class="add">+</view>
+        </view>    
+</view>

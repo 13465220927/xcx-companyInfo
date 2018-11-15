@@ -1,5 +1,6 @@
+<i-message id="message" />
 
-<need-work wx:if="{{key=='招聘求职'||key=='招聘信息'}}"></need-work>
+<need-work wx:if="{{key=='招聘信息'||key=='个人求职'}}"></need-work>
 
 <write-article wx:if="{{key=='综合发布'}}"></write-article>
 
@@ -9,6 +10,7 @@
 <supplyAndDem wx:if="{{key=='供求信息'}}"></supplyAndDem>
 
 <item-info wx:if="{{key=='创业项目'}}"></item-info>
+
 
 <!-- 
 <project_info></project_info> -->

@@ -1,5 +1,6 @@
 const lib=require('./util');
 const Docs=require('../controller/Docs');
+const Contact=require('../controller/Contact');
 function addAnnounceOne(){
     let s={
         title:'小程序段的公告屌不屌ccc',
@@ -38,12 +39,33 @@ function getContentList(that,current=1,typeId){     //获取所有招聘文章�
 
         console.log(data)
         that.setData({
-            docs:data,
+            docs:that.data.docs.concat(data),
             bLoadData:false,
             totalPage:result.data.pageInfo.totalPage
         })
     })
 }
+function getSpecifyContentList(that,current=1,specificKind){
+    let api=`/manage/content/getList?current=${current}&state=true&model=simple&specificKind=${specificKind}`;
+    return lib.get(api).then(result=>{
+        console.log(result)
+        if(result.data.docs.length<=0){
+            that.setData({
+                bLoadMore:false,
+                loadTip:"没有更多数据了",
+            })
+        }
+        let data=Docs.tidyArticleData(result.data.docs);
+
+        console.log(data)
+        that.setData({
+            docs:that.data.docs.concat(data),
+            bLoadData:false,
+            totalPage:result.data.pageInfo.totalPage
+        })
+    })
+}
+
 function getCompanyConts(that,current,typeId,user){      //获取一个公司主页下的文章
     console.log(user);
     console.log(typeId);
@@ -104,7 +126,7 @@ function getCategoryList(that,app){
       });
 }
 function serachArticle(key,that){
-    let api=`/manage/content/getList?searchkey=${decodeURI(key)}`;
+    let api=`/manage/content/getList?searchkey=${decodeURI(key)}&state=true`;
     return lib.get(api).then(result=>{
         let data=Docs.tidyArticleData(result.data.docs);
         that.setData({
@@ -122,7 +144,22 @@ function getCompanyList(current,company_type=1,company_kind_name){
 }
 
 function addContact(name,phone,parentId,address,latitude,longitude){
-    return lib.normalPost("/manage/contact/addOne",{name,phone,parentId,address,latitude,longitude,fromXcx:1})
+    return lib.normalPost("/manage/contact/addOne",{name,phone,parentId,address,latitude,longitude,fromXcx:'true'})
+}
+
+function getContactList(parentId,key){
+    let api;
+    if(key){
+        key=encodeURI(key);
+        api=`/manage/contact/getList?key=${key}`;
+    }
+    if(parentId){
+        api=`/manage/contact/getList?parentId=${parentId}`;
+    }
+    return lib.get(api);
+}
+function getContactRoot(rootId){           //获取一个根下的二级树节点
+    return lib.get(`/manage/contact/getRoot?rootId=${rootId}`)
 }
 
 module.exports={
@@ -137,5 +174,8 @@ module.exports={
     getCompanyList,
     addContact,
     getCompanyConts,
-    getCompanyTypeList
+    getCompanyTypeList,
+    getContactList,
+    getContactRoot,
+    getSpecifyContentList
 }

@@ -1,8 +1,8 @@
 const ajaxHost="https://paxj.zhuozhida.com.cn";  //接口地址
 const hostname="http://47.92.123.206:8096";      //静态资源地址
-
-//const ajaxHost="http://localhost:8080";
-//const hostname="http://localhost:8080";
+const uploadHost="https://paxj.zhuozhida.com.cn/public"; //下载域名 
+// const ajaxHost="http://localhost:8080";
+// const hostname="http://localhost:8080";
 const map_key="RDRBZ-2R734-5MRUI-XCYTY-DC246-AKBPE";
 let allContactGroup=[    
     {name:"zhengfujiguan",children:[
@@ -54,6 +54,7 @@ let allContactGroup=[
 module.exports={
     ajaxHost,
     hostname,
+    uploadHost,
     appId:"wx20bfc5b736d98eaf",
     defaultPassword:"8weqw8888888",
     allContactGroup,

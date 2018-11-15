@@ -1,1 +1,3 @@
-/* components/sub_message/supplyAndDem/supplyAndDem.wxss */
+.areaInput{
+    min-height:200rpx;
+}

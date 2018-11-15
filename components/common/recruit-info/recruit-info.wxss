@@ -26,6 +26,12 @@
  .infoData .item .header .userName{
      font-size:26rpx;
      color:#575d86;
+     display:inline-block;
+     width:280rpx;
+     overflow:hidden;
+     text-overflow: ellipsis;
+     white-space:nowrap;
+     padding-left:26rpx;
  }
  .infoData .item .header .userData{
      width:60%;
@@ -71,7 +77,6 @@
      font-size:13px;
      line-height:18px;
      color:#9b9b9b;
-   
      padding-bottom:38rpx;
  }
  .infoData .item .content .subType{
@@ -147,4 +152,14 @@
     bottom:20rpx; 
     left:25rpx;
     transform: rotate(-90deg);
+}
+
+.fadeCon{
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
 }

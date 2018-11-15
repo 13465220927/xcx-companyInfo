@@ -7,7 +7,7 @@ Page({
   data: {
     infoData:[
       
-      {img:"index/enterprise.png",name:"招聘求职"},
+      {img:"index/enterprise.png",name:"个人求职"},
       {img:"index/service.png",name:"创业项目"}
      
     ]
@@ -50,8 +50,8 @@ Page({
       
    }else{
     infoData=[
-      {img:"index/enterprise.png",name:"招聘求职"},
-      {img:"index/service.png",name:"创业信息"}
+      {img:"index/enterprise.png",name:"个人求职"},
+      {img:"index/service.png",name:"创业项目"}
     ]
    }
    this.setData({

@@ -1,8 +1,15 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/link/link",
+    
+    "pages/specifyInfo/specifyinfo",
+    
+    
+    "pages/tool/tool",
+    "pages/contacts/contacts",
     "pages/info-group/info-group",
-    "pages/intermediary/intermediary", 
+    "pages/intermediary/intermediary",
     "pages/service_organ/service_organ",
     "pages/sub_message/sub_message",
     "pages/contacts_detail/contacts_detail",
@@ -14,7 +21,6 @@
     "pages/conpany_manage/company_manage",
     "pages/sub_notice/sub_notice",
     "pages/company_pub/company_pub",
-    "pages/contacts/contacts",
     "pages/web-view/web-view",
     "pages/feedback/feedback",
     "pages/search/search",
@@ -27,15 +33,18 @@
     "pages/signin/signin",
     "pages/profile_my_subcontent/profile_my_subcontent",
     "pages/profile/profile",
-    "pages/link/link",
-    "pages/tool/tool",
-    "pages/read_content/read_content"
+    "pages/read_content/read_content",
+    "pages/contact_one/contact_one"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3792d9",
     "navigationBarTitleText": "新绛县中小企业公众服务",
     "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "i-message": "./components/dist/message/index"
   },
   "tabBar": {
     "color": "#666666",
@@ -52,7 +61,7 @@
         "text": "工具",
         "iconPath": "img/tarbar/link.png",
         "selectedIconPath": "img/tarbar/link_active.png",
-        "pagePath": "pages/tool/tool"  
+        "pagePath": "pages/tool/tool"
       },
       {
         "text": "发布",
@@ -64,9 +73,7 @@
         "text": "号码录",
         "iconPath": "img/tarbar/tool.png",
         "selectedIconPath": "img/tarbar/tool_active.png",
-        
         "pagePath": "pages/contacts/contacts"
-        
       },
       {
         "text": "我的",

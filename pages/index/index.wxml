@@ -10,5 +10,8 @@
 
 <login  wx:if="{{bShowLogin}}"  bind:cancelLoginDialog="cancelLoginDialog"></login>
 
+<i-message id="message" />
 <!-- <mine></mine> -->
 <i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />
+
+<view wx:if="{{showSpecify}}"  bindtap="toSpecify" class="specify">去查看涉及我的信息</view>
