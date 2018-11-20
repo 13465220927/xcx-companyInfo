@@ -1,0 +1,5 @@
+<video_item wx:for="{{docs}}" doc="{{item.video_url}}" userData="{{item.userData}}" wx:key="{{index}}" id="{{index}}"></video_item>
+
+
+
+<i-load-more tip="{{loadTip}}" loading="{{bLoadMore}}" />

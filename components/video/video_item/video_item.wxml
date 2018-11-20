@@ -1,0 +1,9 @@
+<view class="video-wrap">
+    <view class="item" wx:for="{{doc}}" wx:key="{{index}}">
+         <video bindfullscreenchange="fullscreenchange" id="v{{id+index}}" bindplay="fullScreen" bindtap="fullScreen" data-index="{{index}}"  poster="{{randomNumber+index>posters.length?posters[randomNumber%posters.length]:posters[randomNumber+index]}}"  src="{{item}}"></video>
+         <view bindtap="toCompInfo" class="company_info">
+             <image src="{{hostname&&userData.logo?hostname+userData.logo:''}}" />
+             <text>{{userData.userName}}</text> 
+         </view>
+    </view>
+</view>

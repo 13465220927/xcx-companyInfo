@@ -15,16 +15,17 @@ Page({
     bLoadData:true,
     docs:[],
     infoData:[
-      {url:"../company_pub/company_pub?company_type=3&company_kind_name=jinrongbaoxian",img:"service/1.png",name:"金融保险"},
+      
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=yulexiuxian",img:"service/2.png",name:"娱乐休闲"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=jianzhuanzhuang",img:"service/3.png",name:"建筑安装"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=lingshoubaihuo",img:"service/4.png",name:"零售百货"},
-      {url:"../company_pub/company_pub?company_type=3&company_kind_name=yiliaobaoxian",img:"service/5.png",name:"医疗保健"},
+      {url:"../company_pub/company_pub?company_type=3&company_kind_name=yiliaobaoxian",img:"service/5.png",name:"生活服务"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=qichefuwu",img:"service/6.png",name:"汽车服务"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=jiazhengbaoan",img:"service/7.png",name:"家政保安"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=guanggaochuanmei",img:"service/8.png",name:"广告传媒"},
       {url:"../company_pub/company_pub?company_type=3&company_kind_name=jiaoyupeixun",img:"service/9.png",name:"教育培训"},
-      {url:"../company_pub/company_pub?company_type=3&company_kind_name=wuliuyunshu",img:"service/10.png",name:"物流运输"}
+      {url:"../company_pub/company_pub?company_type=3&company_kind_name=wuliuyunshu",img:"service/10.png",name:"物流运输"},
+      {url:"../company_pub/company_pub?company_type=3&company_kind_name=jinrongbaoxian",img:"service/1.png",name:"其他服务"}
     ]
   },
 

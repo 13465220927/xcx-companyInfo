@@ -1,5 +1,6 @@
 const lib=require('./util');
 const Docs=require('../controller/Docs');
+const { $Message } = require('../components/dist/base/index');
 const Contact=require('../controller/Contact');
 function addAnnounceOne(){
     let s={
@@ -45,8 +46,8 @@ function getContentList(that,current=1,typeId){     //获取所有招聘文章�
         })
     })
 }
-function getSpecifyContentList(that,current=1,specificKind){
-    let api=`/manage/content/getList?current=${current}&state=true&model=simple&specificKind=${specificKind}`;
+function getSpecifyContentList(that,current=1,specificKind,pageSize=5){
+    let api=`/manage/content/getList?pageSize=${pageSize}&current=${current}&state=true&model=simple&specificKind=${specificKind}`;
     return lib.get(api).then(result=>{
         console.log(result)
         if(result.data.docs.length<=0){
@@ -54,10 +55,24 @@ function getSpecifyContentList(that,current=1,specificKind){
                 bLoadMore:false,
                 loadTip:"没有更多数据了",
             })
+        }else{
+            let previousTime=wx.getStorageSync('companyInfoTime');
+              
+            if(new Date(result.data.docs[0].date).valueOf()>previousTime||!previousTime){
+                console.log('来这了')
+                $Message({
+                    content: '有关于您的消息了',
+                    type: 'success'
+                });
+                that.setData({isHasComInfo:true})
+            }
+            wx.setStorage({
+                key:"companyInfoTime",
+                data:new Date(result.data.docs[0].date).valueOf()
+            })
         }
         let data=Docs.tidyArticleData(result.data.docs);
 
-        console.log(data)
         that.setData({
             docs:that.data.docs.concat(data),
             bLoadData:false,
@@ -162,6 +177,9 @@ function getContactRoot(rootId){           //获取一个根下的二级树节�
     return lib.get(`/manage/contact/getRoot?rootId=${rootId}`)
 }
 
+function getToolList(){
+    return lib.get('/manage/tool/getList?pageSize=100')
+}
 module.exports={
     addAnnounceOne,
     getAnnounceList,
@@ -177,5 +195,6 @@ module.exports={
     getCompanyTypeList,
     getContactList,
     getContactRoot,
-    getSpecifyContentList
+    getSpecifyContentList,
+    getToolList
 }

@@ -22,6 +22,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    toVideo(){
+      
+    },
     modifyBg(){
         if(this.data.bg=="#f0a027"){
           this.setData({
@@ -32,6 +35,9 @@ Component({
             bg:"#f0a027"
           })
         }
+        wx.navigateTo({
+          url:"../video/video"
+        })
         
     }
   }

@@ -16,10 +16,10 @@ Component({
       ]
     )
     .then((result)=>{
-     
+      console.log('notice')
+      console.log(result[0])
       let noticeData=[];
       result.forEach(item=>{
-        console.log('事件')
         if(item.data.docs.length>0){
           item.data.docs[0].date=item.data.docs[0].date.split(' ')[0];
           noticeData.push(item.data.docs[0])
@@ -42,6 +42,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
+     toVideo(){
+        wx.navigateTo({
+          url:"../video/video"
+        })   
+     },
      toDetail(e){
         let content=this.data.noticeData[e.currentTarget.dataset.index];
       

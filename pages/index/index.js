@@ -2,7 +2,7 @@
 const app = getApp()
 const manageLib=require('../../utils/manage');
 const userLib=require('../../utils/user');
-
+let companyTimer=null;
 
 Page({
   data: {
@@ -20,11 +20,13 @@ Page({
     bLoadMore:true,
     loadTip:"正在加载更多数据",
     bLoadData:false,
-    showSpecify:false
+    showSpecify:false,
+    hideStarPage:false,
+    isHasComInfo:false
   },
   //事件处理函数
 
-  onLoad: function (options) {
+  onLoad: function (options) { 
      let userData=wx.getStorageSync('userData');
      this.setData({
       totalPage:0,
@@ -37,11 +39,25 @@ Page({
      }else if(userData&&userData.isCompanyUser){
         userLib.companyUserLogin(userData.email,userData.password,app,this)
      }else{
-       this.setData({bShowLogin:true})
+       this.setData({bShowLogin:true});
+       wx.hideTabBar({animation:true});
      }
      manageLib.getContentList(this);
      manageLib.getContentTagList(this,app);
      manageLib.getCategoryList(this,app);
+
+     setTimeout(()=>{
+       this.setData({hideStarPage:true})
+     },5000)
+
+     companyTimer=setInterval(()=>{
+       if(app.globalData.userData.company_type!=0){
+          manageLib.getSpecifyContentList(this,1,app.globalData.userData.company_kind_name,1)
+       }else{
+        
+       }
+     },20000) 
+
   },
   getUserInfo: function(e) {
    
@@ -80,9 +96,11 @@ Page({
           })
       } 
       if(app.bLoginOut==1){
-        this.setData({bShowLogin:true})
+        this.setData({bShowLogin:true});
+        wx.hideTabBar({animation:true});
       }else if(app.bLoginOut==0){
-        this.setData({bShowLogin:false})
+        this.setData({bShowLogin:false});
+        wx.showTabBar({animation:true});
       }
   },
   toggleType(e){
@@ -94,9 +112,12 @@ Page({
        manageLib.getContentList(this,1,e.detail.typeId);
   },
   toSpecify(){
+    this.setData({
+      isHasComInfo:false
+    })
     wx.navigateTo({
       url:"../specifyInfo/specifyinfo"
-    })
+    });
   }
   
 })

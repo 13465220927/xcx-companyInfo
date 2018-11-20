@@ -149,12 +149,6 @@ Component({
         })
         return;
       }
-      if(this.data.bSubmit){
-        return
-      }else{
-        this.setData({bSubmit:true}) 
-      }
-      
       let params=this.data.params; 
       let arr=[];
       this.data.tags.forEach(item=>{
@@ -162,7 +156,6 @@ Component({
               arr.push(item.name);
           }
       })
-      params.recruit.expectWork=arr;
       if(arr.length==0){
         wx.showToast({
             title:"请至少选择一个职位",
@@ -177,7 +170,19 @@ Component({
       }else if(!params.recruit.contacter){
         wx.showToast({title:"请填写联系人",icon:"none"});
         return
+      }else if(params.comments.length<5){
+        wx.showToast({title:"描述信息至少5个字",icon:"none"});
+        return
       }
+      if(this.data.bSubmit){
+        return
+      }else{
+        this.setData({bSubmit:true}) 
+      }
+      
+     
+      params.recruit.expectWork=arr;
+      
       params.recruit.birthday=this.data.birthday;
       params.recruit.salary=this.data.salary[this.data.salaryIndex];
       params.recruit.workExperience=this.data.workExperience[this.data.workIndex];

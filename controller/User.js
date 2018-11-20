@@ -27,8 +27,11 @@ class User{
         that.setData({bShowLogin:false,showSpecify})
         wx.setStorage({key:"userData",data:{email,password,isCompanyUser}})
         that.triggerEvent('cancelLoginDialog',{},{});
-       
-        
+       console.log('登陆成功了')
+        setTimeout(()=>{
+            wx.showTabBar({animation:true});
+        },2000)
+      
         wx.showToast({title: `登录成功`});
         
     }

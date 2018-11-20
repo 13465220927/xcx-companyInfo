@@ -63,12 +63,21 @@ Component({
       this.setData({params});
     },
     submit(){
+      let params=this.data.params; 
+      if(params.comments.length<5){
+        wx.showToast({title:"内容信息至少5个字",icon:"none"});
+        return
+      }else if(params.title.length<5){
+        wx.showToast({title:"标题信息至少5个字",icon:"none"});
+        return
+      }
+
       if(this.data.bSubmit){
         return
       }else{
         this.setData({bSubmit:true}) 
       }
-      let params=this.data.params; 
+      
       params.discription=params.comments.substring(0,55);
       console.log(params.discription);
       userLib.addOneContent(params).then(result=>{

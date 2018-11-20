@@ -14,4 +14,11 @@
 <!-- <mine></mine> -->
 <i-load-more tip="{{loadTip}}" loading="{{ bLoadMore }}" />
 
-<view wx:if="{{showSpecify}}"  bindtap="toSpecify" class="specify">去查看涉及我的信息</view>
+<view wx:if="{{showSpecify}}"  bindtap="toSpecify" class="specify">
+     <i-icon type="mail_fill" size="40" color="{{isHasComInfo?'#f56c6c':'#ccc'}}" />
+</view>
+
+<view  wx:if="{{!hideStarPage}}"   class="startImg">
+     <image src="../../img/index/logo.png" />
+     <image src="../../img/index/startImg.jpg"/>
+</view>

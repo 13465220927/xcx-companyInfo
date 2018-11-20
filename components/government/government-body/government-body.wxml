@@ -24,7 +24,7 @@
               </view>
               <view class="info-promote">
                   <view>
-                      发布人:{{item.adminSender?item.adminSender.userName:item.userName}}
+                      发布人:{{item.adminSender?item.adminSender.name:item.userName}}
                   </view>
                   <view>
                       时间: {{item.date}}

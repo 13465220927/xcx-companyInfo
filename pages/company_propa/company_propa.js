@@ -18,7 +18,7 @@ Page({
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=jixiezhizao`,img:"company/1.png",name:"机械制造"},
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=fangzhifangsha`,img:"company/2.png",name:"纺织纺纱"},
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=suliaozhipin`,img:"company/3.png",name:"塑料制品"},
-      {url:`../company_pub/company_pub?company_type=1&company_kind_name=yiyaozhipin`,img:"company/4.png",name:"医药制品"},
+      {url:`../company_pub/company_pub?company_type=1&company_kind_name=yiyaozhipin`,img:"company/4.png",name:"名优作坊"},
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=chuantonggongyi`,img:"company/5.png",name:"传统工艺"},
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=xinxichanye`,img:"company/6.png",name:"信息产业"},
       {url:`../company_pub/company_pub?company_type=1&company_kind_name=gangtieyelian`,img:"company/7.png",name:"钢铁冶炼"},

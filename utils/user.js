@@ -198,6 +198,10 @@ function companyUserLogin(account,password,app,that,isInCompanyPage){
         });
     })
 }
+
+function getVideoList(current){
+    return lib.get(`/users/getVideoList?current='${current}'`);
+}
 module.exports={
     doReg,
     doLogin,
@@ -215,5 +219,6 @@ module.exports={
     getOpenId,
     decryptPhone,
     addOneFeedMsg,
-    companyUserLogin
+    companyUserLogin,
+    getVideoList
 }

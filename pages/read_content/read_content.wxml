@@ -1,7 +1,7 @@
 <i-message id="message" />
 <view class="header">{{doc.title}}</view>
 <view class="promote">
-   <text>{{doc.author?doc.author:doc.adminSender.userName}}</text>
+   <text>{{doc.author?doc.author:doc.adminSender.name}}</text>
    <text>{{doc.date}}</text>
 </view>
 <import src="../../wxParse/wxParse.wxml"/>

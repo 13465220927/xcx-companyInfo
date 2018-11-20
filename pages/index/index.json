@@ -8,6 +8,7 @@
       "banner":"../../components/index/banner/banner",
       "login":"../../components/index/login/login",
       "mine":"../../components/index/mine/mine",
+      "i-icon":"../../components/dist/icon/index",
       "i-load-more": "../../components/dist/load-more/index"
     }
 }

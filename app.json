@@ -1,11 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/video/video",
+    
     "pages/link/link",
-    
     "pages/specifyInfo/specifyinfo",
-    
-    
     "pages/tool/tool",
     "pages/contacts/contacts",
     "pages/info-group/info-group",

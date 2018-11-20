@@ -56,7 +56,7 @@
    <uploadPhoto bind:updatePhoto="updatePhoto"></uploadPhoto>
    <i-input i-class="posLeft" data-type="contacter" bind:change="inputChange"  title="联系人" placeholder="请填写联系人姓名" />
    <i-input i-class="posLeft" bind:change="inputChange" data-type="tel"  title="电话" placeholder="请填写联系人电话" />
-   <pickerSpecific bind:modifySpecificKind="modifySpecificKind"></pickerSpecific>
+   <pickerSpecific wx:if="{{company_type==0}}" bind:modifySpecificKind="modifySpecificKind"></pickerSpecific>
 </i-panel>
  <i-cell title="是否同意条款">
         <text bindtap="toBack" class="otherOpera" slot="otherOpera">条款说明</text>
